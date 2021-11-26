@@ -11,9 +11,19 @@ const {socketEmit} = require("../../../sockets/config");
 const { CHAT_MESSAGE } = require("../../../sockets/eventTypes");
 
 route.get('/home',(req, res, next)=>{
+
     socketEmit(CHAT_MESSAGE, "TOBY HOME");
     
     res.status(200).send({"messagae":"Api-rest food sales system runing"})
+})
+
+const users=[]
+route.get('/lista/name=:name',(req, res, next)=>{
+    
+    users.push(req.params.name) 
+    socketEmit("[user]addNewUser", users);
+
+    res.json(users)
 })
 
 

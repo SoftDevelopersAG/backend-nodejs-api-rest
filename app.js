@@ -6,7 +6,7 @@ const cors = require("cors");
 
 const {app, server} = require("./sockets/config");
 
-const connect = require("./database/collection/connectionDB");
+// const connect = require("./database/collection/connectionDB");
 const services = require("./routes/api/v0.1/services");
 const roles = require("./database/collection/setupConfigRoles/setupConfigRoles");
 
@@ -15,7 +15,7 @@ const {socketEmit} = require("./sockets/config")
 const {CHAT_MESSAGE} = require("./sockets/eventTypes")
 
 
-roles();
+// roles();
 
 
 const PORT = process.env.PORT || 4000;
