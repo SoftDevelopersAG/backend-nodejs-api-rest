@@ -2,7 +2,8 @@
 
 const mongoose = require('mongoose');
 
-const URL = 'mongodb://192.168.100.9:27017/restaurantDB';
+// const URL = 'mongodb://192.168.100.9:27017/restaurantDB';
+const URL = "mongodb://localhost:27017/restaurantDB";
 
 // funcion recursiva de 3 intentos de conxion a la base da datos de mongofb
 const connectDB =async ( reques=1 )=>{

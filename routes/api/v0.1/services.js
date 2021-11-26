@@ -6,7 +6,13 @@ const  AccessRoleControl = require('../../../middleware/acessRoleControl/acessRo
 
 const User = require('./businesLogic/user')
 
+
+const {socketEmit} = require("../../../sockets/config");
+const { CHAT_MESSAGE } = require("../../../sockets/eventTypes");
+
 route.get('/home',(req, res, next)=>{
+    socketEmit(CHAT_MESSAGE, "TOBY HOME");
+    
     res.status(200).send({"messagae":"Api-rest food sales system runing"})
 })
 
