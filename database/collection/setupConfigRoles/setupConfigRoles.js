@@ -1,11 +1,11 @@
 'use strict'
 
 const Role = require("../models/Roles")
-const ListRoles = require('../../../config/roles')
+const Config = require('../../../config/roles')
 
 
 // lista roles en la base de datos
-const roles = ListRoles.listRoles
+const roles = Config.listRoles
 
 // funcion que crea los roles en el primer inicio de la aplicacion
 const creatRoles = async ()=>{
@@ -21,7 +21,7 @@ const creatRoles = async ()=>{
     } catch (error) {
         console.log('error el guaradar los roles en la primera inicio de la api-rest', error)
     }
-}
+}   
 
 
 module.exports = creatRoles
