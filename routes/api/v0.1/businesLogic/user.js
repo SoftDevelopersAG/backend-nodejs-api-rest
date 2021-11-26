@@ -10,42 +10,72 @@ const Role = require('../../../../database/collection/models/Roles')
 
 // funccion que permite crear un nuevo usuario
 const signUp =async (req,res,next) => {
-    console.log(req.body)
+    const {name,lastName,ci,email,phoneNumber,direction,urlPhotoAvatar,password,password1, role} = req.body;
     if(
-        req.body.name == '' || req.body.name == undefined  ||
-        req.body.lastName == '' || req.body.lastName == undefined  ||
-        req.body.ci == '' || req.body.ci == undefined  ||
-        req.body.email == '' || req.body.email == undefined  ||
-        req.body.phoneNumber == '' || req.body.phoneNumber == undefined  ||
-        req.body.password == '' || req.body.password == undefined  
+       name         == '' ||   name        == undefined  ||
+       lastName     == '' ||   lastName    == undefined  ||
+       ci           == '' ||   ci          == undefined  ||
+       email        == '' ||   email       == undefined  ||
+       phoneNumber  == '' ||   phoneNumber == undefined  ||
+       direction    == '' ||   direction   == undefined  || 
+       password     == '' ||   password    == undefined  ||
+       password1    == '' ||   password1    == undefined
 
     ){
         res.status(400).send({error:'complete los campos requeridos'});
         return null;
     }
+    if(password != password1){
+        res.status(206).send({
+            status:'No fount',
+            error:'Las contracenias no son iguales',
+            message:'Las contraceñas no coninciden'
+        })
+        return null;
+    }
 
     var newUser = new User.user({
-        name           : req.body.name,
-        lastName       : req.body.lastName,
-        ci             : req.body.ci,
-        email          : req.body.email,
-        phoneNumber    : req.body.phoneNumber,
-        urlPhotoAvatar : req.body.urlPhotoAvatar,
+        name           :name,
+        lastName       :lastName,
+        ci             :ci,
+        email          :email,
+        phoneNumber    :phoneNumber,
+        direction      :direction,
+        urlPhotoAvatar :urlPhotoAvatar,
         password       : sha1(req.body.password),
-        password1      : req.body.password,
+        password1      :password,
     })
 
-    newUser.role = await Roles.find({name: req.body.role===''|| req.body.role===undefined? 'user' : req.body.role})
+    newUser.role = await Roles.find({name: role===''|| role===undefined? 'user' : role})
 
-    const exisData = await User.user.find({email:req.body.email})
-    if(exisData.length>0){
+    const existEmail = await User.user.find({email});
+    const existCI = await User.user.find({ci});
+
+    console.log(existCI, ' esto es del email');
+    if(existEmail.length>0){
         console.log('error el email ya fue registrado')
-        return res.status(206).send({error:'Correo electronico existente', message:'el correo electronico ya fue registrado por otro usuario'})
+        return res.status(206).send({
+            status:'No fount',
+            error:'Correo electronico existente', 
+            message:'el correo electronico ya fue registrado por otro usuario'
+        })
+    }
+    if(existCI.length>0){
+        return res.status(206).send({
+            status:'No fount',
+            error:'C.I. existenete', 
+            message:'C.I. ya esta en uso'
+        })
     }
 
     newUser.save(async(err,data)=>{
         if(err){
-            res.status(404).send({error:'Failed to save data', message:'Error al guardar los datos'})
+            console.log(err, 'esto es el error')
+            res.status(404).send({
+                status:'No fount',
+                error:'Failed to save data', 
+                message:'Error al guardar los datos'
+            })
             return null
         }
         
@@ -53,13 +83,14 @@ const signUp =async (req,res,next) => {
 
         res.status(200).send({
             status:'ok',
-            message:'datos guardados correctamente',
+            message:'Datos guardados correctamente',
             result:{
                 name:data.name,
                 lastName:data.lastName,
                 ci: data.ci,
                 email:data.email,
                 phoneNumber: data.phoneNumber,
+                direction: data.direction,
                 urlPhotoAvatar: data.urlPhotoAvatar,
             },
             tokenAcces
@@ -68,13 +99,11 @@ const signUp =async (req,res,next) => {
 
 
 }
-
-
 const signIn =async (req, res, next) =>{
+    console.log('esto es el loginin')
     console.log(req.body)
-
     var dataUser =await  User.user.find({email:req.body.email, password1:req.body.password })
-    console.log(dataUser)
+   
     if(dataUser.length===1 && dataUser[0].email === req.body.email && dataUser[0].password1 === req.body.password){
         var token = await Token.generateToken(dataUser[0])
         return res.status(200).send({
@@ -93,12 +122,11 @@ const signIn =async (req, res, next) =>{
         })
     }
     
-    return res.status(401).send({
+    return res.status(206).send({        
         status: 'No fount',
         message:'Error en la contraseña o email, usuairio no existente'
     })
 }
-
 // muestra los datos de los usuarios activos
 const showListUser = async (req, res, next)=>{
     
@@ -108,7 +136,7 @@ const showListUser = async (req, res, next)=>{
     // try{
         switch (stateUser) {
             case "active":
-                var listUser = await User.user.find({state:true});
+                var listUser = await User.user.find({state:true}).populate("role");
                 return res.status(200).send({status:'ok', result:listUser});
 
             case "inactive":
@@ -128,6 +156,7 @@ const showListUser = async (req, res, next)=>{
                     "ci":user.ci, 
                     "email":user.email, 
                     "phoneNumber":user.phoneNumber, 
+                    "direction":user.direction,
                     "state":user.state,
                     "roles": user.role
                 }))
@@ -194,21 +223,68 @@ const editDataUser = async (req, res, nuxt) =>{
 
     
 }
+//actulizar datos personales
+const editPersonalData = async (req,res) => {
+    console.log('esto esrta funcionando')
+    const {name,lastName,direction,ci,email,phoneNumber,role,password,password1}= req.body;
+    const {idUser} = req.params;
+    //verficar si existe el usuario
+    const verifyUser = await verifyIdUser(idUser);   
+    const {success,dataUser} = verifyUser;
+    if(success == false) return res.status(206).json({status:'No fount', error:'Id incorrecto',message:verifyUser.message}) 
 
+    //validamos los datos
+    const verifyDatas = await validateDatas(ci,email,phoneNumber,role,password,password1,idUser);
+    
+    if(verifyDatas.success == false){
+        return res.status(206).json({
+            status:'No fount',
+            error:'No se puede actualizar los datos', 
+            message:verifyDatas.message
+        })
+    }      
+    const updateDatas = await{
+        name:name || dataUser.name,
+        lastName:lastName || dataUser.lastName,
+        direction:direction || dataUser.direction,
+        ci:ci || dataUser.ci,
+        email: email || dataUser.email,
+        phoneNumber: phoneNumber || dataUser.phoneNumber,
+        password: password ? sha1(password) : dataUser.password,
+        password1:password1 || dataUser.password1,
+    };
+    
+    try {
+        await User.user.findOneAndUpdate({_id:idUser}, updateDatas);
+        const datas = await User.user.findById({_id:idUser}).populate('role');
+        res.status(200).json({
+            status:'ok', 
+            message:'Se actualizo los datos',
+            result:datas            
+        })
+    } catch (error) {
+        console.log(error)
+        return res.status(400).json({status:'No fount',error})
+    }
+    
+}
 // Agregar un nuevo role 
 const addNewRole = async (req, res, next) =>{
-
+    
     try{
-        const {idUser, newRole} = req.body;
-        if(idUser =='' || !idUser && newRole =='' || !newRole){
+        const {role} = req.body;
+        const {idUser} = req.params;
+        
+        if(idUser =='' || !idUser && role =='' || !role){
+            console.log('esto entrando al error')
             return res.status(400).send({status:404, error:"Los datos de idUser y rol son requeridos"})
         }
         
         var userData = await User.user.findById({_id:idUser});
-        if(!userData) return res.status(401).send({"status":401, 'error':'id de usuario invalido'});
+        if(!userData) return res.status(206).send({status:'No fount', message:'id de usuario invalido'});
         
-        var roleVerify = await Roles.findOne({name:newRole})
-        if(!roleVerify) return res.status(401).send({'status':401, 'error':'El rol que intenta agregar no es valido'});
+        var roleVerify = await Roles.findOne({name:role})
+        if(!roleVerify) return res.status(206).send({status:'No fount', message:'El rol que intenta agregar no es valido'});
         
         if(userData.role.includes(roleVerify._id)){
             var updateData=await User.user.findById({_id:userData._id}).populate('role');
@@ -220,11 +296,10 @@ const addNewRole = async (req, res, next) =>{
         return res.status(200).send({status:'ok', message:'Nuevo rol agregado',updateData})
     }
     catch(error){
-        console.log('error in function addNewRole')
+        console.log('error in function addNewRole',error)
         return res.status(404).send({status:404, error: 'error no se puede actualizar el nuevo rol, revise el id que introdujo'})
     }
 }
-
 // Remover un rol de un usuario
 const removeRoleUser = async (req, res, next)=>{
     try{
@@ -234,21 +309,25 @@ const removeRoleUser = async (req, res, next)=>{
         }
         
         var userData = await User.user.findById({_id:idUser});
-        if(!userData) return res.status(401).send({"status":401, 'error':'id de usuario invalido'});
+        if(!userData) return res.status(206).send({status:'No fount', message:'id de usuario invalido'});
         
         var roleVerify = await Roles.findOne({name:currentRole})
-        if(!roleVerify) return res.status(401).send({'status':401, 'error':'El rol que intenta remover no es valido'});
+        if(!roleVerify) return res.status(206).send({status:'No fount', message:'El rol que intenta remover no es valido'});
         
         if(!userData.role.includes(roleVerify._id) && userData.role.length > 1){
             var updateData=await User.user.findById({_id:userData._id}).populate('role');
             return res.status(200).send({status:'ok', message:'El rol fue removido',updateData})
         }
 
-        userData.role.remove(roleVerify._id)
-        console.log(userData.role.length);
-        if(userData.role){
+        if(currentRole == 'user') return res.status(206).json({
+            status:'No fount',
+            message:'Ese rol no se puede eliminar'
+        })
+
+        userData.role.remove(roleVerify._id)        
+        if(userData.role.length === 0){
             var roleDefault = await Roles.findOne({name:'user'});
-            console.log(roleDefault)
+            
             userData.role = roleDefault._id
         } 
         
@@ -261,6 +340,131 @@ const removeRoleUser = async (req, res, next)=>{
         return res.status(404).send({status:404, error: 'error no se puede remover el rol, revise el id que introdujo'})
     }
 }
+//lista de roles del usuario
+const userRoleList= async(req,res) => {
+    const {idUser}=req.params;
+    const verifyUser = await verifyIdUser(idUser);
+    if(verifyUser.success == false) return res.status(206).json({status:'No fount', error:'Id incorrecto',message:verifyUser.message})
+    try {
+        const listRole = await User.user.findById({_id:idUser}).populate('role');
+        res.status(200).json({
+            status:'ok',
+            message:'Roles del usuario',
+            result:listRole.role
+        })
+    } catch (error) {
+        console.log(error);
+        return res.status(200).json({status:'No fount',error})
+    }
+}
+//actualizar el estado del usuario
+const updateStateUser = async (req,res) => {
+    const {idUser} = req.params;
+    const validateUserId = await verifyIdUser(idUser)
+    if(validateUserId.success === false) return res.status(206).json({status:'No fount', message:validateUserId.message})
+    try {
+        const datas = await User.user.findById({_id:idUser}).populate('role');
+        await User.user.findOneAndUpdate({_id:idUser}, {
+            state: !datas.state
+        });
+        const dataUser = await User.user.findById({_id:idUser});
+        res.status(200).json({
+            status:'ok', 
+            message:'Se actualizo el estado del usuario',
+            result:dataUser            
+        })
+    } catch (error) {
+        console.log(error);
+        return res.status(400).json({status:'No fount', error})
+    }
+}
+//verifica si su estado del usuario esta activo 
+const simpleRute = async (req,res)=>{
+    const {idUser} = req.params;
+    try {
+        const roleUser = await User.user.findById({_id:idUser});
+        if(roleUser.state){
+            return res.status(200).send({
+                status:'ok',
+                state:'active',
+                msg:'Token no expirado'
+            }) 
+        }
+        return res.status(200).send({
+            status:'ok',
+            state:'inactive',
+            msg:'Token no expirado'
+        })
+        
+    } catch (error) {
+        console.log(error);
+        return res.status(400).json({status:'No fount',error})
+    }
+    
+}
+
+
+///funciones de validacion
+//valida los datos segun se les envie
+const validateDatas = async (ci,email,phoneNumber,role,password,password1,idUser) =>{
+    if(ci||email||phoneNumber){
+        try {
+            const resp = await User.user.find({$or:[ {ci},{phoneNumber},{email} ]}).populate("role");
+            if(resp.length > 0){
+                let obj = ''
+                await resp.map((data)=>{
+                    if(data.ci == ci){
+                        obj = 'CI ya esta en uso';
+                        return;
+                    } 
+                    if(data.email == email){
+                        obj = 'Email ya esta en uso'
+                        return;
+                    }
+                    if(data.phoneNumber == phoneNumber){
+                        obj = 'Telfono ya esta en uso';
+                        return;
+                    }
+                })
+                return {success:false,message:obj}
+            }
+            return {success:true}
+        } catch (error) {
+            return {success:false,message:'error 500'}
+        }  
+    }
+    if(password || password1){
+        if(!password ) return {success:false,message:'Contraceña es obligatorio',name:'password'};
+        if(!password1 ) return {success:false,message:'Inserte la contraceña de verificacion',name:'password1'};
+        if(password != password1) return {success:false,message:'Las contraceña no pueden ser diferentes', name:'password1'}
+        return {success:true}
+    }
+    if(role){
+        const roleUser = await User.user.findById({_id:idUser}).populate('role');
+        let roleExist = false;
+        await roleUser.role.map((data)=>{
+            if(data.name == role ) {
+                roleExist = true;
+            }
+        });
+        if(roleExist){
+            return {success:false,message:'Ese rol ya esta registrado en este usario'}
+        }
+        return {success:true};        
+    }
+    return {success:true} ;   
+}
+//verificar si el id de un usario existe
+const verifyIdUser =async (id_user)=>{
+    if(!id_user) return {success:false,message:'No estas mandando el id de la tabla para actualizar los datos'}
+    try {
+        const dataUser = await User.user.findById({_id: id_user});    
+        return {success:true,dataUser}       
+    } catch (error) {
+        console.log(error);
+        return {success:false,message:'Ese usuario no existe'}
+    }
+}
 
 
 
@@ -270,5 +474,9 @@ module.exports = {
     showListUser,
     editDataUser,
     addNewRole,
-    removeRoleUser
+    removeRoleUser,
+    simpleRute,
+    editPersonalData,
+    userRoleList,
+    updateStateUser
 }

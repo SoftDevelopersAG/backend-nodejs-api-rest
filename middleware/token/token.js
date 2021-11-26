@@ -13,9 +13,9 @@ const generateToken =async (dataUser={})=>{
             id: dataUser._id, 
             email:dataUser.email,
             init : moment().format('LLL'),
-            end: moment().add(14,'day').format('LLL'),
-            expira: moment().add(14,'day').unix(),
-            timeLife: moment().add(14,'day').unix() - moment().unix()
+            end: moment().add(1,'day').format('LLL'),
+            expira: moment().add(1,'day').unix(),
+            timeLife: moment().add(1,'day').unix() - moment().unix()
         };
 
         var token =await jwt.encode( payload, config.SECRET_TOKEN )

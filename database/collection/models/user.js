@@ -10,9 +10,10 @@ const User = new Schema({
     ci             : String,
     email          : String,
     phoneNumber    : Number,
+    direction      : String,
     urlPhotoAvatar : String,
     password       : String,
-    password1   : String,
+    password1      : String,
     state: {
         type: Boolean,
         enum: [true, false],

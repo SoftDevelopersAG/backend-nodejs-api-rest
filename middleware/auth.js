@@ -8,7 +8,7 @@ const token = require('../middleware/token/token')
 
 const auth =async(req,res, next)=>{
 
-    console.log(req.headers)
+    console.log(req.headers,'esto son los headers sds')
     // console.log(req.headers.authorization.split(' '))
 
     if(!req?.headers?.authorization){
@@ -17,7 +17,7 @@ const auth =async(req,res, next)=>{
     }
 
     
-    const stateAuthorization = await token.validateToken(req, req.headers.authorization.split(' ')[1])
+    const stateAuthorization = await token.validateToken(req, req.headers.authorization)
     if(stateAuthorization){
         next();
     }

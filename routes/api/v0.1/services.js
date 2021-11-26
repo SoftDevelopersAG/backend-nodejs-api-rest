@@ -23,31 +23,25 @@ route.get('/products/list', [Auth, AccessRoleControl.isUser],  (req, res, next)=
 
 // ::::::::::user:::::::::::::::::
 route.post('/user/signup', User.signUp)
-route.get('/user/signin', User.signIn)
+route.post('/user/signin', User.signIn)
   //muestra la lista de usuarios de acuerdo al parametro state que puede ser active, inactive, all 
 route.get('/user/list/state=:state',[Auth, AccessRoleControl.isAdmin], User.showListUser)
 route.put('/user/update', User.editDataUser );
    // agregar nuevo role un determanido usuario
-route.put('/user/add/newrole', User.addNewRole);
+route.put('/user/add/newrole/:idUser', User.addNewRole);
     // remover o quitar un ro de un determario usuario
 route.put('/user/remove/role', User.removeRoleUser);
 
+//verificar si token esta vigente
+route.get('/api/verifyToken/:idUser', Auth, User.simpleRute);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//udpate user datas
+route.put('/user/updateUser/:idUser', User.editPersonalData);
+//lista de roles del usuario
+// a esta ruta tienen que poder entrar todos los roles ya que esto es verificado para las rutas en el cliente
+// con esta ruta podemos ver quien tiene que rol para ver a donde hay acceso en el cliente
+route.get('/user/roleList/:idUser', User.userRoleList);
+//update state user
+route.patch('/user/update/state/:idUser', User.updateStateUser);
 
 module.exports = route;
