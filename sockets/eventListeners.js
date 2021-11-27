@@ -1,27 +1,21 @@
-const { CHAT_MESSAGE } = require("./eventTypes");
+// const { CHAT_MESSAGE } = require("./eventTypes");
 
-const eventsList = [];
+// const eventsList = [];
 
-// function handleMessageEvent(...args){
+
+
+// addNewEventListeners(CHAT_MESSAGE, (...args)=>{
 //     console.log(typeof args);
 //     console.log("message received", args);
+// });
+
+// function addNewEventListeners(eventName, callback) {
+//   eventsList.push({
+//     eventName: eventName,
+//     callback: callback,
+//   });
 // }
 
-// addNewEventListeners(CHAT_MESSAGE, handleMessageEvent);
-
-
-addNewEventListeners(CHAT_MESSAGE, (...args)=>{
-    console.log(typeof args);
-    console.log("message received", args);
-});
-
-function addNewEventListeners(eventName, callback) {
-  eventsList.push({
-    eventName: eventName,
-    callback: callback,
-  });
-}
-
-module.exports = {
-  eventsList
-};
+// module.exports = {
+//   eventsList
+// };

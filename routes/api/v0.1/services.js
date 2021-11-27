@@ -1,31 +1,37 @@
 
+'use strict'
 const express = require('express');
 const route = express.Router();
 const Auth = require('../../../middleware/auth');
 const  AccessRoleControl = require('../../../middleware/acessRoleControl/acessRoleControl')
+const socketControllers = require('../../../socket/controllers/socketControllers')
+// const io = require('../../../app')
+
 
 const User = require('./businesLogic/user')
 
 
-const {socketEmit} = require("../../../sockets/config");
-const { CHAT_MESSAGE } = require("../../../sockets/eventTypes");
-
 route.get('/home',(req, res, next)=>{
-
-    socketEmit(CHAT_MESSAGE, "TOBY HOME");
-    
     res.status(200).send({"messagae":"Api-rest food sales system runing"})
 })
 
-const users=[]
-route.get('/lista/name=:name',(req, res, next)=>{
+
+// endpoint test socket-io
+// io.on('connection',()=>{
+//     console.log('socket services connected')
+// })
+
+const users=[];
+
+route.get('/socket/name=:name',(req, res, next)=>{
+    console.log(req.params.name);
+    users.push(req.params.name)
+    // console.log(Object.keys(io.defalut.sockets))
     
-    users.push(req.params.name) 
-    socketEmit("[user]addNewUser", users);
-
-    res.json(users)
+    socketControllers('[user] addNewUser',users);
+    
+    res.status(200).send({'lista de usuarios':users})
 })
-
 
 // end point for test how use middleware and access role control
 route.get('/showdata', [Auth, AccessRoleControl.isAdmin],  (req, res, next)=>{
@@ -47,22 +53,6 @@ route.put('/user/update', User.editDataUser );
 route.put('/user/add/newrole', User.addNewRole);
     // remover o quitar un ro de un determario usuario
 route.put('/user/remove/role', User.removeRoleUser);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

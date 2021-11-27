@@ -1,6 +1,6 @@
-const CHAT_MESSAGE = "CHAT_MESSAGE";
+// const CHAT_MESSAGE = "CHAT_MESSAGE";
 
 
-module.exports = {
-    CHAT_MESSAGE
-}
+// module.exports = {
+//     CHAT_MESSAGE
+// }
