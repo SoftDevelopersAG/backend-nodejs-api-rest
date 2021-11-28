@@ -1,29 +1,31 @@
 'use strict';
 const UsageControl = require('../../../../database/collection/tiemposDeUsoYpermisos/controlUseModel');
 
-const createUsageControl=(dataTienda)=>{
+const createUsageControl=async (dataTienda)=>{
     if(dataTienda !== undefined && dataTienda != '' && JSON.stringify(dataTienda)!='{}'){
+    
+        try{
+            const UsageControlData = new UsageControl.usageControl({
+
+                idTienda    : dataTienda?._id,
+                nameTienda  : dataTienda?.nombre,
+                nameOwner   : dataTienda?.propietario,
+                country     : dataTienda?.country,
+                phoneNumber : dataTienda?.phoneNumber,
+                callingCode : dataTienda?.callingCodes,
+                state       : 'active',
+                paymentPlan : "2021/06/18 20:17:30",
+            })
+            // paymentPlan: "2021/06/18 16:17:30" --> plan de pago actual --> axample : new Date("2021/06/18 16:17:30")
+    
+            const data = await UsageControlData.save()
+            return data;
+        }
+        catch(err){
+            console.log({error:'error en usagecontrol ',err})
+            return ''
+        }
         
-
-        const UsageControlData = new UsageControl.usageControl({
-
-            idTienda    : dataTienda._id,
-            nameTienda  : dataTienda.nombre,
-            nameOwner   : dataTienda.propietario,
-            country     : dataTienda.country.name,
-            phoneNumber : dataTienda.telefono,
-            callingCode : dataTienda.country.callingCodes[0],
-            state       : 'active',
-            paymentPlan : "2021/06/18 20:17:30",
-        })
-        // paymentPlan: "2021/06/18 16:17:30" --> plan de pago actual --> axample : new Date("2021/06/18 16:17:30")
-
-            UsageControlData.save((err, dataSaved)=>{
-            if(dataSaved){
-               return console.log({message:"UsageControl guardado exitosamente", deatil:dataSaved})
-            }
-            return console.log({error:"error al guardar usagecControl",detail:dataTienda, detailError:err})
-        })
     }
 }
 

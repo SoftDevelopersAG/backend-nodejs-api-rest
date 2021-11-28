@@ -3,7 +3,7 @@
 const Negocio = require('../../../../database/collection/models/negocio');
 const UplaoFile = require('../../../../Utils/uploadFile'); 
 // const Owner = require('../../../database/collection/user')
-const usageControl = require('./usageControl')
+const UsageControl = require('./usageControl')
 
 
 
@@ -39,7 +39,7 @@ const createNegocio = async (req, res)=>{
             nombre: req.body.nombre,
             slug:slugName.replace(/ /g,'-'),
             idClient : req.body.idClient!=undefined && req.body.idClient!=''?req.body.idClient : '',
-            nit: req.body.nit,
+            nit: req.body.nit?req.body.nit : '',
             propietario: req.body.propietario,
             address: req.body.address,
             phoneNumber: req.body.phoneNumber,
@@ -56,9 +56,9 @@ const createNegocio = async (req, res)=>{
             urlFotoLugar:''
         
         })
-
-        console.log(newNegocio)
-         
+        
+       
+    
        const nombre = await Negocio.negocio.find({nombre:req.body.nombre});
        const nit = await Negocio.negocio.find({nit:req.body.nit});
        if(nombre.length>0){
@@ -71,16 +71,21 @@ const createNegocio = async (req, res)=>{
              return res.status(400).send({err:'El Nit ya fue registrdo',message:'El número de Nit ya fue resgistrado'})
        }
 
-       newNegocio.save((err, data)=>{
+       newNegocio.save(async(err, data)=>{
         //    if(err) throw err;
            if(err){
                res.status(400).send({err:'no se guardaron los datos'})
            }
            try {
-                usageControl.createUsageControl(data)
+                var state = await UsageControl.createUsageControl(data);
+               await  Negocio.negocio.findByIdAndUpdate({_id:data._id},{state})
+                
            } catch (error) {
-               console.log('error en usageControl')
+               console.log({error:'error en usageControl', error})
            }
+
+           
+
            res.status(200).send({
                data
             })

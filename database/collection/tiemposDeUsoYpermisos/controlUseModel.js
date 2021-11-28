@@ -19,7 +19,7 @@ const ControlUsage = new Schema({
 
 })
 
-var usageControl = mongoose.model("usagecontrol", ControlUsage);
+var usageControl = mongoose.model("Usagecontrol", ControlUsage);
 
 module.exports = {
     usageControl

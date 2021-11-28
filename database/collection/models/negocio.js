@@ -20,16 +20,8 @@ const Negocio = new Schema({
     subcategory:String,
     flagCountry:String,
     state:{
-        type:String,
-        enum:[
-            'active',
-            'pending',  
-            'invalid',
-            'deleted',
-            'trialPeriod'
-        ],
-        default: 'trialPeriod'
-    },
+        ref:'Usagecontrol',
+        type:Schema.Types.ObjectId},
     log: Number, 
     lat: Number, 
     urlLogo: String,
@@ -40,7 +32,7 @@ const Negocio = new Schema({
 
 
 
-var negocio = mongoose.model('negocios',Negocio);
+var negocio = mongoose.model('negocio',Negocio);
 
 
 module.exports = {
