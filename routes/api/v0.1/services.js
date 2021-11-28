@@ -5,6 +5,10 @@ const route = express.Router();
 const Auth = require('../../../middleware/auth');
 const  AccessRoleControl = require('../../../middleware/acessRoleControl/acessRoleControl')
 const socketControllers = require('../../../socket/controllers/socketControllers')
+
+// import source negocio
+const Negocio = require('./businesLogic/negocio')
+
 // const io = require('../../../app')
 
 
@@ -53,6 +57,11 @@ route.put('/user/update', User.editDataUser );
 route.put('/user/add/newrole', User.addNewRole);
     // remover o quitar un ro de un determario usuario
 route.put('/user/remove/role', User.removeRoleUser);
+
+
+
+// ::::::::::negocio:::::::::::::::::
+route.post('/negocio/create', Negocio.createNegocio )
 
 
 

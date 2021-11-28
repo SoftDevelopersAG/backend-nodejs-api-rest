@@ -3,7 +3,9 @@
 const types = require('../types/type');
 
 
+// controla el tipo de acciones que emite socket.io
 const socketControllers = ( action, data={} ) =>{
+
     switch(action){
         case types.addNewUser:{
             

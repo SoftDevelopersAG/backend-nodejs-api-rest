@@ -73,14 +73,14 @@ const signUp =async (req,res,next) => {
 const signIn =async (req, res, next) =>{
     console.log(req.body)
 
-    var dataUser =await  User.user.find({email:req.body.email, password1:req.body.password })
+    var dataUser =await  User.user.find({email:req.body.email, password1:req.body.password }).populate("role")
     console.log(dataUser)
-    if(dataUser.length===1 && dataUser[0].email === req.body.email && dataUser[0].password1 === req.body.password){
+    if(dataUser.length===1 && dataUser[0].email === req.body.email && dataUser[0].password1 === req.body.password && dataUser[0].state===true){
         var token = await Token.generateToken(dataUser[0])
         return res.status(200).send({
             status:'ok',
             result: {
-                id:dataUser[0]._id,
+                _id:dataUser[0]._id,
                 name:dataUser[0].name,
                 lastName:dataUser[0].lastName,
                 ci:dataUser[0].ci,
@@ -91,6 +91,14 @@ const signIn =async (req, res, next) =>{
             },
             token
         })
+    }
+
+    if(dataUser.length===1 && dataUser[0].email === req.body.email && dataUser[0].password1 === req.body.password && dataUser[0].state===false){
+        return res.status(206).send({
+            status:'error',
+            message:'Usuario inactivo'
+        })
+        
     }
     
     return res.status(401).send({
@@ -132,7 +140,7 @@ const showListUser = async (req, res, next)=>{
                     "roles": user.role
                 }))
 
-                return res.status(200).send({status:'ok', result:listUserfilter});
+                return res.status(200).send({status:'ok', totalResults:listUser?.length, result:listUserfilter});
 
             default:
                 return res.status(400).send({status:'error', message:'state no valido'});

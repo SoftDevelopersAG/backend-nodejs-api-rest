@@ -13,6 +13,10 @@ const User = new Schema({
     urlPhotoAvatar : String,
     password       : String,
     password1   : String,
+    interactionLogs: [{
+        ref: 'InteractionLog',
+        type: Schema.Types.ObjectId,
+    }],
     state: {
         type: Boolean,
         enum: [true, false],
@@ -22,7 +26,10 @@ const User = new Schema({
         ref: "Role",
         type: Schema.Types.ObjectId,
     }],
-    dateCreateAcount : { type : Date, default : Date.now }
+    dateCreateAcount : { type : Date, default : Date.now },
+    updateDateAcount : { type : Date, default : Date.now },
+    
+   
 })
 
 
