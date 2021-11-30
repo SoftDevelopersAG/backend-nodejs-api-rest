@@ -50,10 +50,8 @@ const signUp =async (req,res,next) => {
 
     const existEmail = await User.user.find({email});
     const existCI = await User.user.find({ci});
-
-    console.log(existCI, ' esto es del email');
+    
     if(existEmail.length>0){
-        console.log('error el email ya fue registrado')
         return res.status(206).send({
             status:'No fount',
             error:'Correo electronico existente', 
@@ -69,8 +67,7 @@ const signUp =async (req,res,next) => {
     }
 
     newUser.save(async(err,data)=>{
-        if(err){
-            console.log(err, 'esto es el error')
+        if(err){         
             res.status(404).send({
                 status:'No fount',
                 error:'Failed to save data', 
@@ -79,7 +76,7 @@ const signUp =async (req,res,next) => {
             return null
         }
         
-        const tokenAcces = await  Token.generateToken(data)
+        const tokenAcces = await  Token.generateToken(data);
 
         res.status(200).send({
             status:'ok',
@@ -100,8 +97,6 @@ const signUp =async (req,res,next) => {
 
 }
 const signIn =async (req, res, next) =>{
-    console.log('esto es el loginin')
-    console.log(req.body)
     var dataUser =await  User.user.find({email:req.body.email, password1:req.body.password })
    
     if(dataUser.length===1 && dataUser[0].email === req.body.email && dataUser[0].password1 === req.body.password){
@@ -131,8 +126,6 @@ const signIn =async (req, res, next) =>{
 const showListUser = async (req, res, next)=>{
     
     const stateUser = await req?.params?.state;
-    console.log(stateUser)
-
     // try{
         switch (stateUser) {
             case "active":
@@ -190,7 +183,6 @@ const editDataUser = async (req, res, nuxt) =>{
 
     var dataUser = await User.user.findById({_id: idUser})
 
-    console.log(dataUser)
     const newDataUser = await{ 
         name: name!='' && name? name:dataUser.name,
         lastName: lastName!='' && lastName? lastName:dataUser.lastName,
@@ -211,10 +203,7 @@ const editDataUser = async (req, res, nuxt) =>{
             await newRoles.push(verifyNewRole._id)
         }
         // await dataUser.role.push(newRoles);
-        newDataUser.role = await  newRoles;
-        console.log('-------------------')
-        console.log(verifyNewRole, verfyOldRole, newRoles)
-      
+        newDataUser.role = await  newRoles;      
     }
 
     var userDataUpdate = await User.user.findOneAndUpdate({_id:dataUser._id}, newDataUser);
@@ -225,7 +214,6 @@ const editDataUser = async (req, res, nuxt) =>{
 }
 //actulizar datos personales
 const editPersonalData = async (req,res) => {
-    console.log('esto esrta funcionando')
     const {name,lastName,direction,ci,email,phoneNumber,role,password,password1}= req.body;
     const {idUser} = req.params;
     //verficar si existe el usuario
@@ -276,10 +264,8 @@ const addNewRole = async (req, res, next) =>{
         const {idUser} = req.params;
         
         if(idUser =='' || !idUser && role =='' || !role){
-            console.log('esto entrando al error')
             return res.status(400).send({status:404, error:"Los datos de idUser y rol son requeridos"})
-        }
-        
+        }        
         var userData = await User.user.findById({_id:idUser});
         if(!userData) return res.status(206).send({status:'No fount', message:'id de usuario invalido'});
         
@@ -296,7 +282,6 @@ const addNewRole = async (req, res, next) =>{
         return res.status(200).send({status:'ok', message:'Nuevo rol agregado',updateData})
     }
     catch(error){
-        console.log('error in function addNewRole',error)
         return res.status(404).send({status:404, error: 'error no se puede actualizar el nuevo rol, revise el id que introdujo'})
     }
 }
@@ -402,7 +387,73 @@ const simpleRute = async (req,res)=>{
     }
     
 }
-
+//ruta temporal que indique que el sitema esta expirado
+const datas = {//ejemplo de dato que se rescata para validar
+    _id:'23dd',
+    cliente:'Maria Luiza Arancibia',
+    pais:'Bolivia',
+    cuidad:'Chuquisaca',
+    provincia:'Sucre',
+    direccion:'calle 3993',
+    telefono:'85562',
+    isCreated:'18-12-2021',
+    clientFull:true    
+}
+/* 
+licencia del cliente
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
+.eyJpZCI6IjIzZGQiLCJjbGllbnRlIjoiTWFyaWEgTHVpem
+EgQXJhbmNpYmlhIiwidGVsZWZvbm8iOiI4NTU2MiIsImlua
+XQiOiJOb3ZlbWJlciAyNiwgMjAyMSAxMjo1MCBQTSIsImVu
+ZCI6Ik5vdmVtYmVyIDI3LCAyMDIxIDEyOjUwIFBNIiwiZXhwa
+XJhIjoxNjM4MDMxODM0LCJ0aW1lTGlmZSI6ODY0MDB9.xJXna
+YdCjfFQlBJaqvukk0ixUn_6RilJ6MXreuOs8ZI */
+const generateLicence = async (req,res) => {
+    //verificamos si el sitema con su id esta vigente
+    try {
+        const tokenAcces = await  Token.generateLicenceToken(datas, 'day');
+    
+        return res.status(200).json({
+            status:'ok',
+            message:'Se creo la licencia del usuario',
+            licence:tokenAcces
+        })
+    } catch (error) {
+        console.error(error);
+        return res.status(400).json({
+            status:'No fount',
+            message:'No se puedo crear la licencia del cliente'
+        })  
+    }
+    
+    
+}
+//verificacion de la licencia
+const verifiLisence = async (req,res)=>{    
+    const {lisence,phone}= req.body;
+    console.log(phone == datas.telefono && datas.clientFull == true,' esto es lo que quiero ver ');
+    if(phone == datas.telefono && datas.clientFull == true){
+        return res.status(200).json({
+            status:'ok',
+            message:'Licencia eterna'
+        });
+    }
+    try {
+        const stateAuthorization = await Token.validateLicence(req, lisence)
+        if(stateAuthorization){
+            res.status(200).json({
+                status:'ok',
+                message:'Licencia vigente'
+            });
+        }
+        else{
+            res.status(206).send({status:'No fount',message:'Licencia expirada'});
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({status:'No fount',message:'Error 400', error});
+    }
+}
 
 ///funciones de validacion
 //valida los datos segun se les envie
@@ -478,5 +529,7 @@ module.exports = {
     simpleRute,
     editPersonalData,
     userRoleList,
-    updateStateUser
+    updateStateUser,
+    generateLicence,
+    verifiLisence
 }

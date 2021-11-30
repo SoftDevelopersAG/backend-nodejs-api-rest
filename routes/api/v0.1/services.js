@@ -25,7 +25,7 @@ route.get('/products/list', [Auth, AccessRoleControl.isUser],  (req, res, next)=
 route.post('/user/signup', User.signUp)
 route.post('/user/signin', User.signIn)
   //muestra la lista de usuarios de acuerdo al parametro state que puede ser active, inactive, all 
-route.get('/user/list/state=:state',[Auth, AccessRoleControl.isAdmin], User.showListUser)
+route.get('/user/list/state=:state',[Auth, /* AccessRoleControl.isAdmin, */ AccessRoleControl.isCajero], User.showListUser)
 route.put('/user/update', User.editDataUser );
    // agregar nuevo role un determanido usuario
 route.put('/user/add/newrole/:idUser', User.addNewRole);
@@ -43,5 +43,9 @@ route.put('/user/updateUser/:idUser', User.editPersonalData);
 route.get('/user/roleList/:idUser', User.userRoleList);
 //update state user
 route.patch('/user/update/state/:idUser', User.updateStateUser);
+
+//generate license
+route.get('/cliente/generate/licence', User.generateLicence);
+route.post('/cliente/verify/licence', User.verifiLisence);
 
 module.exports = route;

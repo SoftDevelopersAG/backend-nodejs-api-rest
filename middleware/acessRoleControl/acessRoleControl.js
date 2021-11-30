@@ -9,12 +9,14 @@ const isAdmin = async (req, res, next) => {
     
 }
 
-
 const isUser = async (req, res, next) => {
     console.log('acces role control')
     findAccesRole('user', req, res, next)
 }
-
+const isCajero = async (req, res, next) => {
+    console.log('acces role control')
+    findAccesRole('caja', req, res, next)
+}
 
 
 
@@ -28,9 +30,10 @@ const findAccesRole = async (ROLE, req, res, next)=>{
     console.log(listRolesUser)
 
     const roles = await Roles.find({_id: {$in: listRolesUser}})
-    console.log(roles)
+    console.log(roles, ' ----------------------*-*-*-*')
 
     const existRole = await roles.map(nameRole=>nameRole.name === ROLE)
+    console.log(ROLE,existRole,' -***********--*-*-***********-*-*-*-*-*')
     const existeRoleAdmin = await roles.map(nameRole=>nameRole.name === 'admin')
     if(dataUser){
 
@@ -48,5 +51,6 @@ const findAccesRole = async (ROLE, req, res, next)=>{
 
 module.exports={
     isAdmin,
-    isUser
+    isUser,
+    isCajero
 }
