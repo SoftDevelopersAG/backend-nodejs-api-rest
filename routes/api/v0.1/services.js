@@ -1,15 +1,41 @@
 
+'use strict'
 const express = require('express');
 const route = express.Router();
 const Auth = require('../../../middleware/auth');
 const  AccessRoleControl = require('../../../middleware/acessRoleControl/acessRoleControl')
+const socketControllers = require('../../../socket/controllers/socketControllers')
+
+// import source negocio
+const Negocio = require('./businesLogic/negocio')
+
+// const io = require('../../../app')
+
 
 const User = require('./businesLogic/user')
+
 
 route.get('/home',(req, res, next)=>{
     res.status(200).send({"messagae":"Api-rest food sales system runing"})
 })
 
+
+// endpoint test socket-io
+// io.on('connection',()=>{
+//     console.log('socket services connected')
+// })
+
+const users=[];
+
+route.get('/socket/name=:name',(req, res, next)=>{
+    console.log(req.params.name);
+    users.push(req.params.name)
+    // console.log(Object.keys(io.defalut.sockets))
+    
+    socketControllers('[user] addNewUser',users);
+    
+    res.status(200).send({'lista de usuarios':users})
+})
 
 // end point for test how use middleware and access role control
 route.get('/showdata', [Auth, AccessRoleControl.isAdmin],  (req, res, next)=>{
@@ -44,8 +70,13 @@ route.get('/user/roleList/:idUser', User.userRoleList);
 //update state user
 route.patch('/user/update/state/:idUser', User.updateStateUser);
 
+
 //generate license
 route.get('/cliente/generate/licence', User.generateLicence);
 route.post('/cliente/verify/licence', User.verifiLisence);
+
+// ::::::::::negocio:::::::::::::::::
+route.post('/negocio/create', Negocio.createNegocio )
+
 
 module.exports = route;

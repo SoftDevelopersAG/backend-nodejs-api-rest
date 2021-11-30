@@ -20,6 +20,8 @@ const isCajero = async (req, res, next) => {
 
 
 
+
+
 const findAccesRole = async (ROLE, req, res, next)=>{
 
     const dataUser = await User.user.findById({_id:req.idUser})
@@ -33,8 +35,8 @@ const findAccesRole = async (ROLE, req, res, next)=>{
     console.log(roles, ' ----------------------*-*-*-*')
 
     const existRole = await roles.map(nameRole=>nameRole.name === ROLE)
-    console.log(ROLE,existRole,' -***********--*-*-***********-*-*-*-*-*')
     const existeRoleAdmin = await roles.map(nameRole=>nameRole.name === 'admin')
+
     if(dataUser){
 
         if(existRole.includes(true) || existeRoleAdmin.includes(true)){
@@ -54,3 +56,4 @@ module.exports={
     isUser,
     isCajero
 }
+
