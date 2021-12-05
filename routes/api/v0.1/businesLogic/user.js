@@ -105,7 +105,7 @@ const signIn =async (req, res, next) =>{
         return res.status(200).send({
             status:'ok',
             result: {
-                _id:dataUser[0]._id,
+                id:dataUser[0]._id,
                 name:dataUser[0].name,
                 lastName:dataUser[0].lastName,
                 ci:dataUser[0].ci,
@@ -334,6 +334,7 @@ const removeRoleUser = async (req, res, next)=>{
         return res.status(404).send({status:404, error: 'error no se puede remover el rol, revise el id que introdujo'})
     }
 }
+//esta ruto se esta usando mucho y lo necesitan todos los roles
 //lista de roles del usuario
 const userRoleList= async(req,res) => {
     const {idUser}=req.params;
@@ -348,7 +349,7 @@ const userRoleList= async(req,res) => {
         })
     } catch (error) {
         console.log(error);
-        return res.status(200).json({status:'No fount',error})
+        return res.status(400).json({status:'No fount',error})
     }
 }
 //actualizar el estado del usuario

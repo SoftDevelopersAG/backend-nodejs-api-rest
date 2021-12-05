@@ -13,6 +13,15 @@ const Negocio = require('./businesLogic/negocio')
 
 
 const User = require('./businesLogic/user')
+//salas
+const SalasRoutes = require('./businesLogic/salas');
+//mesas
+const Mesa = require('./businesLogic/mesas');
+//menu
+const Menu = require('./businesLogic/menu');
+
+//imagen
+const {uploadFileFotoProducto} = require('../../../Utils/uploadFile');
 
 
 route.get('/home',(req, res, next)=>{
@@ -76,7 +85,22 @@ route.get('/cliente/generate/licence', User.generateLicence);
 route.post('/cliente/verify/licence', User.verifiLisence);
 
 // ::::::::::negocio:::::::::::::::::
-route.post('/negocio/create', Negocio.createNegocio )
+route.post('/negocio/create', Negocio.createNegocio );
+
+/* =======================salas=============================== */
+route.post('/salas/create/:idUser', SalasRoutes.create);
+route.get('/salas/list', SalasRoutes.list);
+
+/* =======================Mesas=============================== */
+route.post('/mesas/create/:idSala', Mesa.create);
+route.get('/mesas/list/:idSala', Mesa.list);
+
+/* =======================Producto=============================== */
+route.post('/menu/create/:idUser', Menu.create);
+route.get('/menu/list', Menu.list);
+
+//registrar las imagenes
+route.post('/image/product/:idmenu', uploadFileFotoProducto);
 
 
 module.exports = route;

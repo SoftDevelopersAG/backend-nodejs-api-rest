@@ -11,6 +11,10 @@ const cors = require('cors')
 const http = require('http');
 const socketIo = require('socket.io');
 
+const path =  require('path');
+
+
+
 
 
 const connect = require('./database/collection/connectionDB')
@@ -30,6 +34,9 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
 app.use(cors());
+const publicDirectoryPath = path.join(__dirname, 'public');
+
+app.use(express.static(publicDirectoryPath));
 
 // Environment for development
 app.use('/',services)

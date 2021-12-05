@@ -5,10 +5,13 @@ const Schema = mongoose.Schema;
 
 const Menu = new Schema({
     idRestaurant: String,
-    nombre: String,
-    precio: Number,
-    descripcion: String,
-    fotoProducto: String,
+    idUser:String,
+    name: String,
+    price: Number,
+    description: String,
+    quantity:Number,
+    typeProduct:String,
+    fotoProduct: String,
     fechaRegistro: {type: Date, default: Date.now},
 
 })
