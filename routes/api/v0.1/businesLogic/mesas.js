@@ -25,6 +25,7 @@ class Mesas {
             return res.status(400).json({status:'No fount',message:'Error 400', error})
         }
     }
+    
     static async list(req,res){  
         const {idSala} = req.params      
         try {

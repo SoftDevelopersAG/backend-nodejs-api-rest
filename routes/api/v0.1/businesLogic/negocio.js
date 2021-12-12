@@ -71,14 +71,14 @@ const createNegocio = async (req, res)=>{
              return res.status(400).send({err:'El Nit ya fue registrdo',message:'El número de Nit ya fue resgistrado'})
        }
 
-       newNegocio.save(async(err, data)=>{
+       newNegocio.save( async (err, data)=>{
         //    if(err) throw err;
            if(err){
                res.status(400).send({err:'no se guardaron los datos'})
            }
            try {
                 var state = await UsageControl.createUsageControl(data);
-               await  Negocio.negocio.findByIdAndUpdate({_id:data._id},{state})
+                await  Negocio.negocio.findByIdAndUpdate({_id:data._id},{state})
                 
            } catch (error) {
                console.log({error:'error en usageControl', error})
@@ -87,10 +87,24 @@ const createNegocio = async (req, res)=>{
            
 
            res.status(200).send({
-               data
+            status: 'ok', 
+            message: 'negocio creado',  
+            data
             })
        })
     
+}
+
+const showNegocioId=async (req, res)=>{
+   try{
+        var negocio = await Negocio.negocio.findById({_id:req.params.idnegocio})
+        if(!negocio) return res.status(400).send({status:404, error:'id no valido', message:"negocio no encontrado"})
+        return res.status(200).send({status:"Ok",result:negocio})
+   }
+   catch(err){
+
+        return res.status(400).send({status:404, error:'id no valido', message:"negocio no encontrado"})
+   }
 }
 
 // recibe logo, y fotolugar u otros 
@@ -218,6 +232,7 @@ const detalNegocioClient = async(req, res)=>{
 
 module.exports = {
     createNegocio,
+    showNegocioId,
     uploadLogo,
     uploadLocation,
     listarNegocios,

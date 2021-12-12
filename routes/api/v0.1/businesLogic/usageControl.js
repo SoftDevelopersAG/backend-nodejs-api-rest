@@ -14,7 +14,7 @@ const createUsageControl=async (dataTienda)=>{
                 phoneNumber : dataTienda?.phoneNumber,
                 callingCode : dataTienda?.callingCodes,
                 state       : 'active',
-                paymentPlan : "2021/06/18 20:17:30",
+                paymentPlan : "2050/12/18 20:17:30",
             })
             // paymentPlan: "2021/06/18 16:17:30" --> plan de pago actual --> axample : new Date("2021/06/18 16:17:30")
     
@@ -56,12 +56,12 @@ const checkPaymentControl = async(req, res)=>{
                 var dataUpdated =await  UsageControl.usageControl.findById({_id:data._id})
                 return res.status(200).send({message:'show detail payment use',result:dataUpdated})
             }
-            return res.status(200).send({message:'show detail payment use',result:data})
+            return res.status(200).send({status:"ok",message:'show detail payment use',result:data})
         }
-        return res.status(400).send({err:'no found data'})
+        return res.status(400).send({status:404, error:'no found data', message:"idneogcio no vigente"})
         
     }
-    return res.status(400).send({err:'idNegocio is required'})
+    return res.status(400).send({status:404, error:'no found data', message:"idneogcio requerido"})
 
     
 }
