@@ -1,16 +1,20 @@
 'use strict';
-const { estadoFinaniero }= require("../../../../database/collection/models/estadoFinanciero");
+const { estadoFinanciero }= require("../../../../database/collection/models/estadoFinanciero");
 const Negocio = require('../../../../database/collection/models/negocio');
+const UtilsEstadoFinancier = require('./utilsEstadFinanciero/utilsEstadoFinanciero');
 
  class EstadoFinanciero {
 
     static async  createEstadoFinanciero (req, res, next) {
-        
-          var stateNecogio = Negocio.negocio.findById()
+          var idNegocio = req.body.idNegocio;
+
+     
+          var dataStadoFinanciero = await UtilsEstadoFinancier.buscarEstadoFinancieroVigente(idNegocio);
+       
           
 
          console.log("createEstadoFinanciero");
-         res.status(200).send({message:"show estado financiero"});
+         res.status(200).send({status:"ok", message:"show estado financiero", result:dataStadoFinanciero});
     }
 }
 

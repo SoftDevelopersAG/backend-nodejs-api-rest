@@ -91,7 +91,11 @@ route.post('/cliente/verify/licence', User.verifiLisence);
 route.post('/negocio/create', Negocio.createNegocio );
 
 route.get('/negocio/detail/idnegocio=:idnegocio', Negocio.showNegocioId)
-// control de pagos del servicio
+    // update data negocio 
+route.put('/negocio/update',[Auth, AccessRoleControl.isAdmin], Negocio.updateDataNegocio);
+    // dar de baja un negocio
+route.delete('/negocio/delete',[Auth, AccessRoleControl.isAdmin], Negocio.deleteNegocio);
+     // control de pagos del servicio
 route.get('/negocio/payment/control/show/idnegocio=:idnegocio', PaymentConrtol.checkPaymentControl)
 
 
@@ -116,7 +120,7 @@ route.post('/image/product/:idmenu', uploadFileFotoProducto);
 
 
 // estado financiero
-route.get('/financiero/state', EstadoFinanciero.createEstadoFinanciero);
+route.post('/financiero/state', EstadoFinanciero.createEstadoFinanciero);
 
 
 module.exports = route;
