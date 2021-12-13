@@ -40,3 +40,8 @@ class Mesas {
     }
 }
 module.exports = Mesas;
+
+/* .catch(err=>{
+    // console.log(Object.keys(err))
+    console.log(err?.response?.data?.error);
+}) */

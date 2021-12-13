@@ -8,9 +8,7 @@ const File = require('../database/collection/models/fille');
 const Negocio = require('../database/collection/models/negocio');
 const Menu = require('../database/collection/models/menu');
 const User = require('../database/collection/models/user');
-
-
-
+const socketControllers = require('../socket/controllers/socketControllers');
 
 // congig beasic of mullter::::::::::
 const storage = multer.diskStorage({
@@ -84,10 +82,10 @@ const uploadFileFotoProducto = (req, res) => {
     upload(req, res, async (err) => {
         /* console.log('arrived file api uploadFileFotoProducto');
         console.log(req.file) */
-        if (!req.file) return res.status(400).send({ error: 'file is requered for fotoproducto' })
-         console.log(req.params.idmenu , ' esto es el id');
-         console.log(req.file, 'esto es la imgen');
-        if (err) return res.status(400).send({ error: 'error al guardar el archivo' });
+        if (!req.file) return res.status(400).send({ status:'No fount', message: 'La imagen es obligatorio' })
+         /* console.log(req.params.idmenu , ' esto es el id');
+         console.log(req.file, 'esto es la imgen'); */
+        if (err) return res.status(400).send({ status:'No fount', message: 'error al guardar el archivo' });
 
         const ruta = req.file.path.substr(6);
         var restaurant = await Menu.menu.findById({ _id: req.params.idmenu });
@@ -107,9 +105,13 @@ const uploadFileFotoProducto = (req, res) => {
                 //if(req.params.file==="fotoProduct"){
                 //const fotoProduct =await  data.physicalPath;
                 await Menu.menu.findOneAndUpdate({ _id: req.params.idmenu }, { fotoProduct: ruta })
-                var newRest = await Menu.menu.findById({ _id: req.params.idmenu })
-                //    console.log(u) 
-                res.status(200).send({ message: "ok", menu: newRest })
+                const newRest = await Menu.menu.findById({ _id: req.params.idmenu })
+               
+                //console.log(newRest);               
+                // se emite aqui per que recien aqui se registra la imagen del producto ya que si se emite en el create menu funciona
+                // pero la imagen no se manda
+                socketControllers('[product] addNewProduct',newRest);
+                res.status(200).send({ status:'ok',message: "Imagen insertada", menu: newRest })
                 //}
                 // if(req.params.file==="fotolugar"){
                 //     var fotoLugar =await  data.linkFile;

@@ -98,6 +98,7 @@ route.get('/mesas/list/:idSala', Mesa.list);
 /* =======================Producto=============================== */
 route.post('/menu/create/:idUser', Menu.create);
 route.get('/menu/list', Menu.list);
+route.put('/menu/update/:idMenu', Menu.updateMenuDatas);
 
 //registrar las imagenes
 route.post('/image/product/:idmenu', uploadFileFotoProducto);

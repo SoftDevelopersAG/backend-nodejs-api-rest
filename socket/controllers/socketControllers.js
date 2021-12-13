@@ -13,6 +13,11 @@ const socketControllers = ( action, data={} ) =>{
             io.emit(types.addNewUser, data);
             break;
         }
+        case types.addNewProduct:{
+        
+            io.emit(types.addNewProduct, data);
+            break;
+        }
         default:{
             console.log('no se encontro el tipo de accion')
             console.log(action)
