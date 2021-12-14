@@ -20,8 +20,15 @@ const Negocio = new Schema({
     subcategory:String,
     flagCountry:String,
     state:{
-        ref:'Usagecontrol',
-        type:Schema.Types.ObjectId},
+        type:String,
+        enum:[
+            'active',
+            'pending',  
+            'invalid',
+            'deleted'
+        ],
+        default: 'active'
+    },
     log: Number, 
     lat: Number, 
     urlLogo: String,

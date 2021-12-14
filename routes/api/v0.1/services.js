@@ -4,7 +4,8 @@ const express = require('express');
 const route = express.Router();
 const Auth = require('../../../middleware/auth');
 const  AccessRoleControl = require('../../../middleware/acessRoleControl/acessRoleControl')
-const socketControllers = require('../../../socket/controllers/socketControllers')
+const socketControllers = require('../../../socket/controllers/socketControllers');
+const PaymentConrtol = require('./businesLogic/usageControl');
 
 // import source negocio
 const Negocio = require('./businesLogic/negocio')
@@ -20,11 +21,16 @@ const Mesa = require('./businesLogic/mesas');
 //menu
 const Menu = require('./businesLogic/menu');
 
+const EstadoFinanciero = require('./businesLogic/estadoFinanciero');
+
 //imagen
 const {uploadFileFotoProducto} = require('../../../Utils/uploadFile');
 
+//clientes
+const Clientes =require('./businesLogic/clientes')
 
-route.get('/home',(req, res, next)=>{
+
+route.get('/',(req, res, next)=>{
     res.status(200).send({"messagae":"Api-rest food sales system runing"})
 })
 
@@ -84,8 +90,18 @@ route.patch('/user/update/state/:idUser', User.updateStateUser);
 route.get('/cliente/generate/licence', User.generateLicence);
 route.post('/cliente/verify/licence', User.verifiLisence);
 
-// ::::::::::negocio:::::::::::::::::
+// :::::::::::::::NEGOCIO:::::::::::::::::
 route.post('/negocio/create', Negocio.createNegocio );
+
+route.get('/negocio/detail/idnegocio=:idnegocio', Negocio.showNegocioId)
+    // update data negocio 
+route.put('/negocio/update',[Auth, AccessRoleControl.isAdmin], Negocio.updateDataNegocio);
+    // dar de baja un negocio
+route.delete('/negocio/delete',[Auth, AccessRoleControl.isAdmin], Negocio.deleteNegocio);
+     // control de pagos del servicio
+route.get('/negocio/payment/control/show/idnegocio=:idnegocio', PaymentConrtol.checkPaymentControl)
+
+
 
 /* =======================salas=============================== */
 route.post('/salas/create/:idUser', SalasRoutes.create);
@@ -102,6 +118,19 @@ route.put('/menu/update/:idMenu', Menu.updateMenuDatas);
 
 //registrar las imagenes
 route.post('/image/product/:idmenu', uploadFileFotoProducto);
+
+
+/* =======================Clientes=============================== */
+route.post('/cliente/create/:idUser', Clientes.create);
+route.get('/cliente/list', Clientes.list);
+route.put('/cliente/update/:idCliente', Clientes.update);
+
+
+
+
+
+// estado financiero
+route.post('/financiero/state', EstadoFinanciero.createEstadoFinanciero);
 
 
 module.exports = route;

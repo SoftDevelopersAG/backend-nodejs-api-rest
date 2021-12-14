@@ -59,6 +59,7 @@ const validateToken= async(req, token = '') => {
         return false;
     }
 }
+
 //generate token de prueva
 const generateLicenceToken =async (data={}, time)=>{
     console.log(time,'esto es ddddd')
