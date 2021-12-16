@@ -79,7 +79,7 @@ res.json(listName)
 
 app.post('/listnames',(req,res)=>{
     listName.push(req.body.name)
-    io.emit('listNames',listName)
+    io.emit('[user] addNewUser',listName)
     console.log(Object.keys(io))
     // console.log(io)
     

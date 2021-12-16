@@ -26,6 +26,9 @@ const EstadoFinanciero = require('./businesLogic/estadoFinanciero');
 //imagen
 const {uploadFileFotoProducto} = require('../../../Utils/uploadFile');
 
+//clientes
+const Clientes =require('./businesLogic/clientes')
+
 
 route.get('/',(req, res, next)=>{
     res.status(200).send({"messagae":"Api-rest food sales system runing"})
@@ -114,9 +117,16 @@ route.get('/mesas/list/:idSala', Mesa.list);
 /* =======================Producto=============================== */
 route.post('/menu/create/:idUser', Menu.create);
 route.get('/menu/list', Menu.list);
+route.put('/menu/update/:idMenu', Menu.updateMenuDatas);
 
 //registrar las imagenes
 route.post('/image/product/:idmenu', uploadFileFotoProducto);
+
+
+/* =======================Clientes=============================== */
+route.post('/cliente/create/:idUser', Clientes.create);
+route.get('/cliente/list', Clientes.list);
+route.put('/cliente/update/:idCliente', Clientes.update);
 
 
 
