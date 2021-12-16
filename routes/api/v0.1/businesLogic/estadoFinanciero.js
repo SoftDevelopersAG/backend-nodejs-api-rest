@@ -8,11 +8,8 @@ const UtilsEstadoFinancier = require('./utilsEstadFinanciero/utilsEstadoFinancie
     static async  createEstadoFinanciero (req, res, next) {
           var idNegocio = req.body.idNegocio;
 
-     
           var dataStadoFinanciero = await UtilsEstadoFinancier.buscarEstadoFinancieroVigente(idNegocio);
        
-          
-
          console.log("createEstadoFinanciero");
          res.status(200).send({status:"ok", message:"show estado financiero", result:dataStadoFinanciero});
     }

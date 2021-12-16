@@ -88,7 +88,7 @@ route.get('/cliente/generate/licence', User.generateLicence);
 route.post('/cliente/verify/licence', User.verifiLisence);
 
 // :::::::::::::::NEGOCIO:::::::::::::::::
-route.post('/negocio/create', Negocio.createNegocio );
+route.post('/negocio/create',[Auth, AccessRoleControl.isAdmin], Negocio.createNegocio );
 
 route.get('/negocio/detail/idnegocio=:idnegocio', Negocio.showNegocioId)
     // update data negocio 
@@ -97,6 +97,9 @@ route.put('/negocio/update',[Auth, AccessRoleControl.isAdmin], Negocio.updateDat
 route.delete('/negocio/delete',[Auth, AccessRoleControl.isAdmin], Negocio.deleteNegocio);
      // control de pagos del servicio
 route.get('/negocio/payment/control/show/idnegocio=:idnegocio', PaymentConrtol.checkPaymentControl)
+
+// :::::::::::::::estado financiero::::::::::::::::::::
+route.post('/financiero/state', EstadoFinanciero.createEstadoFinanciero);
 
 
 
@@ -119,8 +122,7 @@ route.post('/image/product/:idmenu', uploadFileFotoProducto);
 
 
 
-// estado financiero
-route.post('/financiero/state', EstadoFinanciero.createEstadoFinanciero);
+
 
 
 module.exports = route;

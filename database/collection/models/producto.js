@@ -15,7 +15,8 @@ const Product = new Schema({
         default:true
     },
     unidadesDiponibles:Number, 
-    precioUnitario: Number,  //orecio de ventas
+    cantidadComprada:Number,
+    precioUnitario: Number,  //Precio de venta
     precioCosto: Number,   //precio cost de adquisicion
     
     colorsAvailable:{type:String, enum:[

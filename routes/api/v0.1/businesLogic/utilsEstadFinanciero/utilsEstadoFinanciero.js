@@ -29,19 +29,19 @@ const buscarEstadoFinancieroVigente = async( idNegocio) => {
     }
 }
 
-// si no hay un estado finaciero activo se crea uno
+// si no hay un estado finaciero activo se crea uno nuevo
 const crearEstadoFinanciero = async ( dataNegocio )=>{
     console.log(dataNegocio)
     try{
         var NewEstadoFinaciero = new EstadoFinanciero.estadoFinanciero({
             idNegocio : dataNegocio._id,
-            montoInicial : 300.90,
-            montoCierreCaja : 89.89,
+            montoInicial : 0.0,
+            montoCierreCaja : 0.0,
             montoActualDisponble: 0.00,
             montoActualUtilizado: 0.00,
             cierreDeCaja:{
                 description:'',
-                conformiadCajero:false,
+                conformidadCajero:false,
                 conformidadAdministrador:false,
             }
         })
