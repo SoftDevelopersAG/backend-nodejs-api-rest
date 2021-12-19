@@ -28,7 +28,8 @@ const {uploadFileFotoProducto} = require('../../../Utils/uploadFile');
 
 //clientes
 const Clientes =require('./businesLogic/clientes')
-
+//gastos y tipo de gastos y tipo
+const Gastos = require('./businesLogic/gastos');
 
 route.get('/',(req, res, next)=>{
     res.status(200).send({"messagae":"Api-rest food sales system runing"})
@@ -128,6 +129,15 @@ route.post('/cliente/create/:idUser', Clientes.create);
 route.get('/cliente/list', Clientes.list);
 route.put('/cliente/update/:idCliente', Clientes.update);
 
+/* gastos y tipo de gastos */
+route.post('/gastos/createTipoGastos', Gastos.createTipoGastos);
+route.get('/gastos/listTipoGastos', Gastos.listTipoGastos);
+route.get('/gastos/gastosTipos/:idTipoGastos', Gastos.listGastosTipo);
+route.put('/gastos/updateTipoGastos/:idTipoGasto',Gastos.updateTipoGasto);
+/* gastos user */
+route.post('/userGastos/createUserGastos/:idUser', Gastos.createGastosUser);
+route.get('/userGastos/listUserGastos/:idUser', Gastos.listGastosUser);
+route.put('/userGastos/updateGastosUser/:idGastoUser/:idUser', Gastos.updateGastoUser);
 
 
 
