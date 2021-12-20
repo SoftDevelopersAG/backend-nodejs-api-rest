@@ -14,10 +14,9 @@ const Product = new Schema({
         enum:[true, false],
         default:true
     },
-    unidadesDiponibles:Number, 
-    cantidadComprada:Number,
     precioUnitario: Number,  //Precio de venta
     precioCosto: Number,   //precio cost de adquisicion
+    unidadesDisponibles:Number, 
     
     colorsAvailable:{type:String, enum:[
         "color de la foto",
@@ -107,16 +106,18 @@ const Product = new Schema({
         ],
         default:"nuevo"
     },
-    marcaproduct:String,
-    urlImages= Array,
+    marcaproduct: String,
+    description:  String, 
+    urlImages: Array,
     fechaRegistro: {type: Date, default: Date.now},
+    facheUpdate: {type: Date, default: Date.now},
 })
 
 
 
-var product = mongoose.model('producto', Product);
+var producto = mongoose.model('producto', Product);
 
 
 module.exports = {
-    product
+    producto
 }

@@ -1,6 +1,7 @@
 const { tipoGastos } = require('../../../../database/collection/models/tipoGasto');
 const { gastosUser } = require('../../../../database/collection/models/gastosUser');
 const { user } = require('../../../../database/collection/models/user');
+
 class Gastos {
     static async createTipoGastos(req, res) {
         const { name, description } = req.body;

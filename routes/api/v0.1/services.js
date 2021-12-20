@@ -6,6 +6,8 @@ const Auth = require('../../../middleware/auth');
 const  AccessRoleControl = require('../../../middleware/acessRoleControl/acessRoleControl')
 const socketControllers = require('../../../socket/controllers/socketControllers');
 const PaymentConrtol = require('./businesLogic/usageControl');
+const Ventas = require('./businesLogic/ventas');
+const Products = require('./businesLogic/productos');
 
 // import source negocio
 const Negocio = require('./businesLogic/negocio')
@@ -102,10 +104,17 @@ route.delete('/negocio/delete',[Auth, AccessRoleControl.isAdmin], Negocio.delete
      // control de pagos del servicio
 route.get('/negocio/payment/control/show/idnegocio=:idnegocio', PaymentConrtol.checkPaymentControl)
 
-// :::::::::::::::estado financiero::::::::::::::::::::
+// :::::::::::::ESTADO FINANCIERO::::::::::::::::::::
 route.post('/financiero/state', EstadoFinanciero.createEstadoFinanciero);
 
 
+// ::::::::::::::::::::VENTAS:::::::::::::::::::::::::::::::
+route.post('/venta/create', Ventas.addNewVenta);
+route.post('/venta/list', Ventas.getVentas);
+
+// :::::::::::::::::::PRODUCTS:::::::::::::::::::::::::::::::
+route.post('/products/add', Products.addNewProduct);
+route.post('/products/get/list', Products.getAllProducts);
 
 /* =======================salas=============================== */
 route.post('/salas/create/:idUser', SalasRoutes.create);

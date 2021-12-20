@@ -3,7 +3,9 @@ const { user } = require('../../../../database/collection/models/user');
 //const socketControllers = require('../../../../socket/controllers/socketControllers')
 //roles permitidos add solo el admin y el cocinero
 //los que pueden ver son el addmin user caja mesero cocinero
+
 class Menu {
+
     static async create(req, res) {
         //constroles que tiene que tener 
         //id de sala que exista nombres no repetidos

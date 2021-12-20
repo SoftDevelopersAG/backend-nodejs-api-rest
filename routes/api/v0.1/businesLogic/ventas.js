@@ -1,30 +1,42 @@
 'use strict';
 
+const VentaSchema = require('../../../../database/collection/models/venta');
+const { verificacionCamposRequeridos } = require('../../../../Utils/verifyCampos/verifyCampos');
+const { verifyListProducts, comprovacionDeProductosInDB, createVenta } = require('./utilsVentas/utils');
+
 class Ventas{
 
-    static async nuevaVenta(req, res, next){
+    static async addNewVenta(req, res, next){
 
-        const {idNegocio, precioTotal, products, state, tipoDePago, notaVenta} = req.body;
+        const { idNegocio, products, precioTotal } = await req.body;
+
+        var verifyCamposReq = await verificacionCamposRequeridos([idNegocio]);
+        if(!verifyCamposReq) return res.status(400).send({error:"venta no procesada", message:"Complete los campos requiridos"});
         
-        const venta = new Venta({
-            idNegocio,
-            precioTotal,
-            products,
-            state,
-            tipoDePago,
-            notaVenta
-        });
+        var stateVerify = await verifyListProducts(res, products);
+        if(!stateVerify) return res.status(400).send({error:"venta no procesada", message:"Comple los campos requeridos los productos"});
 
-        await venta.save();
+        var stateExistProducts = await comprovacionDeProductosInDB(res, products);
+        if(!stateExistProducts) return res.status(400).send({error:"venta no procesada", message:"el id de uno de los productos es incorrecto"});
 
-        res.json({
-            status:'ok',
-            message:'Venta creada correctamente',
-            result: venta
-        });
+        createVenta(res, products, idNegocio, precioTotal);
+
 
     }
 
+
+
+    static async getVentas(req, res, next){
+        try{
+            const { idNegocio } = req.body;
+            const ventas = await VentaSchema.Venta.find({idNegocio: idNegocio});
+            res.status(200).send({status:"ok",message:"lista de ventas", result:ventas});
+        }
+        catch(err){
+            console.log('error en utilsVentas', err);
+            res.status(500).send({error:"error en el servidor"});
+        }
+    }
 }
 
 

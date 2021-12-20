@@ -2,7 +2,6 @@
 
 
 const { spawn } = require('child_process');
-const { sign } = require('crypto');
 const path = require('path');
 
 const DB_NAME = 'restaurantDB';
