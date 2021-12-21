@@ -2,6 +2,7 @@
 const productSchema = require('../../../../../database/collection/models/producto');
 const VentaSchema = require('../../../../../database/collection/models/venta')
 const NegocioSchema = require('../../../../../database/collection/models/negocio');
+const { updateEstadoFinanciero } = require('../estadoFinanciero');
 
 class UtilsVentas{
 
@@ -47,24 +48,32 @@ class UtilsVentas{
     // crea una nueva un nuevo producto en la base de datos pVenta 
     static async createVenta(res, ArrayListProducts, idNegocio, precioTotal){
     
-        const DataResult = await createPventas(ArrayListProducts);
-        const dataNegocio = await NegocioSchema.negocio.findById({ _id: idNegocio });
-        const dataVenta = await VentaSchema.Venta.find({ idNegocio: idNegocio });
-
-        var newVenta = new VentaSchema.Venta({
-            idNegocio: dataNegocio._id,
-            nit: dataNegocio.nit,
-            venta: dataVenta.length + 1,
-            precioTotal: precioTotal,
-            precioTotalBackend: DataResult.precioTotalBackend,
-            products: DataResult.listPventas,
-            state: 'pendiente',
-            tipoDePago:'efectivo',
-            notaVenta:[]
-        })
-
-        var resultVenta = await newVenta.save()
-        res.status(200).send({status:"of", message:`Venta creada con exito`, data:resultVenta})
+        try {
+            const DataResult = await createPventas(ArrayListProducts);
+            const dataNegocio = await NegocioSchema.negocio.findById({ _id: idNegocio });
+            const dataVenta = await VentaSchema.Venta.find({ idNegocio: idNegocio });
+    
+            var newVenta = new VentaSchema.Venta({
+                idNegocio: dataNegocio._id,
+                nit: dataNegocio.nit,
+                venta: dataVenta.length + 1,
+                precioTotal: precioTotal,
+                precioTotalBackend: DataResult.precioTotalBackend,
+                products: DataResult.listPventas,
+                state: 'pendiente',
+                tipoDePago:'efectivo',
+                notaVenta:[]
+            })
+    
+            var resultVenta = await newVenta.save();
+    
+            updateEstadoFinanciero(idNegocio, resultVenta._id,resultVenta.precioTotalBackend, "venta" );
+            var nVenta = await  VentaSchema.Venta.findOne({_id: resultVenta._id}).populate('products');
+            res.status(200).send({status:"ok", message:`Venta creada con exito`, data:nVenta})
+        } catch (error) {
+            console.log('error en utilsVentas\n', error);
+            return res.status(400).send({error:"error", message:`Error al crear la venta`})
+        }
     }
 }
 
