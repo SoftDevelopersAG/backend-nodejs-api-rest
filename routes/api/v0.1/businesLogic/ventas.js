@@ -10,6 +10,7 @@ class Ventas{
 
         const { idNegocio, products, precioTotal } = await req.body;
 
+        if(products.length === 0 || products === undefined || products === null) return res.status(400).send({error:"error", message:"No se ha enviado ningun producto"});
         var verifyCamposReq = await verificacionCamposRequeridos([idNegocio]);
         if(!verifyCamposReq) return res.status(400).send({error:"venta no procesada", message:"Complete los campos requiridos"});
         

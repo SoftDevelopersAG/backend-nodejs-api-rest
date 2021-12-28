@@ -9,7 +9,7 @@ const buscarEstadoFinancieroVigente = async( idNegocio) => {
 
     try{
         const dataNegocio = await Negocio.negocio.findById({_id: idNegocio});
-        const dataEstadoFinancier = await EstadoFinanciero.estadoFinanciero.findOne({idNegocio:dataNegocio._id, state:true});  
+        const dataEstadoFinancier = await EstadoFinanciero.estadoFinanciero.findOne({idNegocio:dataNegocio._id, state:true}).populate('listVentas');
         console.log("eatados financiero\n",dataEstadoFinancier);
         if(dataEstadoFinancier){
             await Data.push(dataEstadoFinancier);
