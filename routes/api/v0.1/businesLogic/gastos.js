@@ -115,6 +115,7 @@ class Gastos {
     }
     /* ========================= gastos user ==================================== */
     static async createGastosUser(req, res) {
+        
         const { idTipoGastos, description, montoGasto } = req.body;
         const { idUser } = req.params;
 

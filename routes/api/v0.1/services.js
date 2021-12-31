@@ -64,8 +64,12 @@ route.get('/products/list', [Auth, AccessRoleControl.isUser],  (req, res, next)=
     res.status(200).send({message:'show list data products'})
 })
 
+/* // ::::::::::register admin::::::::::::::::: */
+route.post('/user/registerAdmin', User.registerAdmin);
+route.post('/user/validateDatasUser', User.verifiDatasUser );
 
-// ::::::::::user:::::::::::::::::
+
+/* // ::::::::::user::::::::::::::::: */
 route.post('/user/signup', User.signUp)
 route.post('/user/signin', User.signIn)
   //muestra la lista de usuarios de acuerdo al parametro state que puede ser active, inactive, all 
@@ -94,7 +98,8 @@ route.get('/cliente/generate/licence', User.generateLicence);
 route.post('/cliente/verify/licence', User.verifiLisence);
 
 // :::::::::::::::NEGOCIO:::::::::::::::::
-route.post('/negocio/create',[Auth, AccessRoleControl.isAdmin], Negocio.createNegocio );
+route.post('/negocio/create',/* [Auth, AccessRoleControl.isAdmin], */ Negocio.createNegocio );
+
 
 route.get('/negocio/detail/idnegocio=:idnegocio', Negocio.showNegocioId)
     // update data negocio 
@@ -109,12 +114,13 @@ route.post('/financiero/state', EstadoFinanciero.createEstadoFinanciero);
 
 
 // ::::::::::::::::::::VENTAS:::::::::::::::::::::::::::::::
-route.post('/venta/create', Ventas.addNewVenta);
+route.post('/venta/create/:idNegocio/:idUser', Ventas.addNewVenta);
 route.post('/venta/list', Ventas.getVentas);
 
 // :::::::::::::::::::PRODUCTS:::::::::::::::::::::::::::::::
-route.post('/products/add', Products.addNewProduct);
-route.post('/products/get/list', Products.getAllProducts);
+route.post('/products/add/:idNegocio/:idUser', Products.addNewProduct);
+route.get('/products/get/list/:idNegocio', Products.getAllProducts);
+route.put('/products/update/:idProducto', Products.updateProducto);
 
 /* =======================salas=============================== */
 route.post('/salas/create/:idUser', SalasRoutes.create);
@@ -137,6 +143,7 @@ route.post('/image/product/:idmenu', uploadFileFotoProducto);
 route.post('/cliente/create/:idUser', Clientes.create);
 route.get('/cliente/list', Clientes.list);
 route.put('/cliente/update/:idCliente', Clientes.update);
+route.post('/cliente/buscar',Clientes.searchCliente);
 
 /* gastos y tipo de gastos */
 route.post('/gastos/createTipoGastos', Gastos.createTipoGastos);

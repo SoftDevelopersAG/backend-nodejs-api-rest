@@ -8,10 +8,14 @@ const TIPOS_POGO = ['efectivo', 'tarjeta', 'transferencia', 'deposito'];
 
 const VentaSchema = new Schema({
     idNegocio: String,
+    idUser:String,
+    idCLiente:String,
     nit: String,
     venta: Number,
     precioTotal: Number,
     precioTotalBackend: Number,
+    pagoCliente:String,
+    cambioCliente:String,
     products:[{
         ref: 'pvendido',
         type: Schema.Types.ObjectId
@@ -19,17 +23,14 @@ const VentaSchema = new Schema({
     state: {
         type:String,
         enum:['pendiente','preparado','entregado','Cancelado'],
-        default:'pendiente'
+        default:'Cancelado'
     },
     tipoDePago:{
         type:String,
         emun:TIPOS_POGO,
         default:'efectivo'
     },
-    notaVenta:[{
-        ref: 'NotaVenta',
-        type: Schema.Types.ObjectId
-    }],
+
     dateCreate : { type : Date, default : Date.now },
     updateDate : { type : Date, default : Date.now },
 
@@ -54,11 +55,18 @@ const VentaSchema = new Schema({
 const pVenta= new Schema({
     idNegocio: String,
     idProduct: String,
+
+    /* idVenta:String, */
+
     nameProduct: String,
     category:String,
     subcategory:String,     //ref. utilsProducts > CategoriasSubcategorias 
+
     unidadesVendidos:Number, 
     precioUnitario: Number,  //Precio de venta
+    precioCosto:Number,
+    total:Number,
+
     colorsAvailable:String, 
     envioDesde:String,
     costoEnvio:Number,

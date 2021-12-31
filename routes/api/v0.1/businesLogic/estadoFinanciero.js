@@ -24,9 +24,15 @@ const ventaSchema = require('../../../../database/collection/models/venta');
             case "venta":{
                 var dataVenta  = await ventaSchema.Venta.findById({_id: idVenta});
                 var dataEstadoFinanciero = await estadoFinancieroSchema.estadoFinanciero.findOne({idNegocio : idNegocio, state: true});
+                console.log('===================================================');
                 console.log(dataEstadoFinanciero);
+                console.log(dataVenta, ' dataVenta *****');
+
+                console.log('===================================================');
+
                 var auxSuma = await dataEstadoFinanciero.montoActualDisponble + dataVenta.precioTotalBackend;
-                await estadoFinancieroSchema.estadoFinanciero.findByIdAndUpdate({_id: dataEstadoFinanciero._id}, {montoActualDisponble: auxSuma});
+                var total = await dataEstadoFinanciero.montoTotal + dataVenta.precioTotal;
+                await estadoFinancieroSchema.estadoFinanciero.findByIdAndUpdate({_id: dataEstadoFinanciero._id}, {montoActualDisponble: auxSuma,montoTotal:total });
                 break;
             }
             case "compra":{

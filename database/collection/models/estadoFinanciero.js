@@ -9,6 +9,7 @@ const estadoFinaciero = new Schema({
     montoInicial : Number,
     montoCierreCaja : Number,
     montoActualDisponble: Number,
+    montoTotal:Number,
     montoActualUtilizado: Number,
     dateCreated:{ type: Date, default: Date.now },
     cierreDeCaja:{
