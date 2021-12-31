@@ -3,6 +3,9 @@ const estadoFinancieroSchema = require("../../../../database/collection/models/e
 const Negocio = require('../../../../database/collection/models/negocio');
 const UtilsEstadoFinancier = require('./utilsEstadFinanciero/utilsEstadoFinanciero');
 const ventaSchema = require('../../../../database/collection/models/venta');
+const utilsEstadoFinanciero = require('./utilsEstadFinanciero/utilsEstadoFinanciero');
+
+
 
  class EstadoFinanciero {
 
@@ -23,6 +26,10 @@ const ventaSchema = require('../../../../database/collection/models/venta');
         switch(StringTipoDeOperacion){
             case "venta":{
                 var dataVenta  = await ventaSchema.Venta.findById({_id: idVenta});
+
+                
+                await utilsEstadoFinanciero.buscarEstadoFinancieroVigente(idNegocio);
+
                 var dataEstadoFinanciero = await estadoFinancieroSchema.estadoFinanciero.findOne({idNegocio : idNegocio, state: true});
                 console.log('===================================================');
                 console.log(dataEstadoFinanciero);
@@ -31,8 +38,8 @@ const ventaSchema = require('../../../../database/collection/models/venta');
                 console.log('===================================================');
 
                 var auxSuma = await dataEstadoFinanciero.montoActualDisponble + dataVenta.precioTotalBackend;
-                var total = await dataEstadoFinanciero.montoTotal + dataVenta.precioTotal;
-                await estadoFinancieroSchema.estadoFinanciero.findByIdAndUpdate({_id: dataEstadoFinanciero._id}, {montoActualDisponble: auxSuma,montoTotal:total });
+                var listVentas = await [...dataEstadoFinanciero.listVentas,dataVenta._id];
+                await estadoFinancieroSchema.estadoFinanciero.findByIdAndUpdate({_id: dataEstadoFinanciero._id}, {montoActualDisponble: auxSuma,  listVentas});
                 break;
             }
             case "compra":{

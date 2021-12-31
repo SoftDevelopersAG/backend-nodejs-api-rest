@@ -18,16 +18,19 @@ class UtilsVentas {
         try {
 
             for (var i = 0; i < ArrayListProducts.length; i++) {
-                if (ArrayListProducts[i].idProduct === undefined || ArrayListProducts[i].idProduct === null || ArrayListProducts[i].idProduct === '') return res.status(206).send({ status: 'No fount', error: "error", message: "Comple los campos requeridos, idProduct" });
-                if (ArrayListProducts[i].precio === undefined || ArrayListProducts[i].precio === null || ArrayListProducts[i].precio === '') return res.status(206).send({ status: 'No fount', error: "error", message: "Comple los campos requeridos" });
-                if (ArrayListProducts[i].description === undefined || ArrayListProducts[i].description === null || ArrayListProducts[i].description === '') return res.status(206).send({ status: 'No fount', error: "error", message: `Comple los campos requeridos del producto, detalleVenta}` });
-                if (parseInt(ArrayListProducts[i].precio) <= 0) return res.status(206).send({ status: 'No fount', error: "error", message: `Para realizar la venta el precio del prodcuto ${ArrayListProducts[i].idProduct} debe ser mayor a 0` });
+                console.log(ArrayListProducts[i], ' =================================================================')
+                if (ArrayListProducts[i].idProduct === undefined || ArrayListProducts[i].idProduct === null || ArrayListProducts[i].idProduct === '') return{ status: 'No fount', error: "error", message: "Comple los campos requeridos, idProduct" };
+                if (ArrayListProducts[i].precio === undefined || ArrayListProducts[i].precio === null || ArrayListProducts[i].precio === '') return { status: 'No fount', error: "error", message: "Comple los campos requeridos" };
+                if (ArrayListProducts[i].nombre === undefined || ArrayListProducts[i].nombre === null || ArrayListProducts[i].nombre === '') return { status: 'No fount', error: "error", message: "Comple los campos requeridos" };
+
+                if (ArrayListProducts[i].description === undefined || ArrayListProducts[i].description === null || ArrayListProducts[i].description === '') return { status: 'No fount', error: "error", message: `Comple los campos requeridos del producto, detalleVenta}` };
+                if (parseInt(ArrayListProducts[i].precio) <= 0) return { status: 'No fount', error: "error", message: `Para realizar la venta el precio del prodcuto ${ArrayListProducts[i].idProduct} debe ser mayor a 0` };
             }
-            return true;
+            return {status: 'ok'};
         }
         catch (err) {
             console.log('error en utilVentas');
-            return false;
+            return {status: 'No fount'};;
         }
     }
 

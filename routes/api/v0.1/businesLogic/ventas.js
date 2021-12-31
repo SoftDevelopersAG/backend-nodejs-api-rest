@@ -25,6 +25,7 @@ class Ventas {
             return res.status(206).json({status: 'No fount',message: 'El pago del cliente es menor al cambio'})
         }
 
+        if(products.length === 0 || products === undefined || products === null) return res.status(400).send({error:"error", message:"No se ha enviado ningun producto"});
         var verifyCamposReq = await verificacionCamposRequeridos([idNegocio]);
         /* console.log('===================================================================');
         console.log(verifyCamposReq, 'verifyCamposReq')
@@ -36,7 +37,7 @@ class Ventas {
         console.log('===================================================================>>>');
         console.log(stateVerify, 'stateVerify')
         console.log('===================================================================>>>>');
-        if (!stateVerify) return res.status(206).send({status: 'No fount', error: "venta no procesada", message: "Comple los campos requeridos los productos" });
+        if (stateVerify.status === 'No fount') return res.status(206).send({status: 'No fount', error: "venta no procesada", message: stateVerify });
 
         var stateExistProducts = await comprovacionDeProductosInDB(res, products);
        /*  console.log('===================================================================');
