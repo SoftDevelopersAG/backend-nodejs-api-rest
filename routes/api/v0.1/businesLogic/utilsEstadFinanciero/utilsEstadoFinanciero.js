@@ -40,9 +40,11 @@ const crearEstadoFinanciero = async ( dataNegocio )=>{
             montoActualDisponble: 0.00,
             montoActualUtilizado: 0.00,
             cierreDeCaja:{
-                description:'',
+                detalle:'',
                 conformidadCajero:false,
                 conformidadAdministrador:false,
+                fechaInicio:new Date(),
+                fechaCierre:new Date(),
             }
         })
     

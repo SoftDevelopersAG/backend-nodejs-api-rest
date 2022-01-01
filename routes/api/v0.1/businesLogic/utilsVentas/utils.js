@@ -68,6 +68,7 @@ class UtilsVentas{
             var resultVenta = await newVenta.save();
     
             updateEstadoFinanciero(idNegocio, resultVenta._id,resultVenta.precioTotalBackend, "venta" );
+
             var nVenta = await  VentaSchema.Venta.findOne({_id: resultVenta._id}).populate('products');
             res.status(200).send({status:"ok", message:`Venta creada con exito`, data:nVenta})
         } catch (error) {
@@ -112,6 +113,8 @@ const createPventas=async ( ArrayListProducts )=>{
         return false;
     }
 }
+
+
 
 
 module.exports = UtilsVentas;

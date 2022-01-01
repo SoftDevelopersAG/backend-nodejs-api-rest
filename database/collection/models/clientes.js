@@ -4,10 +4,10 @@ const { Schema } = mongoose;
 
 const Cliente = new Schema({
     idUser:String,
-    name:String,
-    lastName:String,
-    ci:String,
-    phoneNumber:Number,
+name:String,
+lastName:String,
+ci:String,
+phoneNumber:Number,
     description:String,
     dateCreate : { type : Date, default : Date.now },
     updateDate : { type : Date, default : Date.now },
