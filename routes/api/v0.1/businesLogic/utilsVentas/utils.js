@@ -10,27 +10,23 @@ class UtilsVentas {
 
     // verifica los campos requeridos de cada producto vendido
     static async verifyListProducts(res, ArrayListProducts) {
-        console.log('================================================================')
+        /* console.log('================================================================')
         console.log(ArrayListProducts)
         console.log('================================================================')
-
-
+         */
         try {
 
             for (var i = 0; i < ArrayListProducts.length; i++) {
-                console.log(ArrayListProducts[i], ' =================================================================')
-                if (ArrayListProducts[i].idProduct === undefined || ArrayListProducts[i].idProduct === null || ArrayListProducts[i].idProduct === '') return{ status: 'No fount', error: "error", message: "Comple los campos requeridos, idProduct" };
+                if (ArrayListProducts[i].idProduct === undefined || ArrayListProducts[i].idProduct === null || ArrayListProducts[i].idProduct === '') return { status: 'No fount', error: "error", message: "Comple los campos requeridos, idProduct" };
                 if (ArrayListProducts[i].precio === undefined || ArrayListProducts[i].precio === null || ArrayListProducts[i].precio === '') return { status: 'No fount', error: "error", message: "Comple los campos requeridos" };
                 if (ArrayListProducts[i].nombre === undefined || ArrayListProducts[i].nombre === null || ArrayListProducts[i].nombre === '') return { status: 'No fount', error: "error", message: "Comple los campos requeridos" };
-
-                if (ArrayListProducts[i].description === undefined || ArrayListProducts[i].description === null || ArrayListProducts[i].description === '') return { status: 'No fount', error: "error", message: `Comple los campos requeridos del producto, detalleVenta}` };
                 if (parseInt(ArrayListProducts[i].precio) <= 0) return { status: 'No fount', error: "error", message: `Para realizar la venta el precio del prodcuto ${ArrayListProducts[i].idProduct} debe ser mayor a 0` };
             }
-            return {status: 'ok'};
+            return { status: 'ok' };
         }
         catch (err) {
             console.log('error en utilVentas');
-            return {status: 'No fount'};;
+            return { status: 'No fount' };;
         }
     }
 
@@ -129,7 +125,7 @@ const createPventas = async (ArrayListProducts) => {
 
                 unidadesVendidos: 0,
                 precioUnitario: dataProduct.precioUnitario ? dataProduct.precioUnitario : 0,
-                precioCosto:dataProduct.precioCosto ? dataProduct.precioCosto : 0,
+                precioCosto: dataProduct.precioCosto ? dataProduct.precioCosto : 0,
 
                 envioDesde: dataProduct.envioDesde ? dataProduct.envioDesde : 'no asignado',
                 costoEnvio: dataProduct.costoEnvio ? dataProduct.costoEnvio : 0,
