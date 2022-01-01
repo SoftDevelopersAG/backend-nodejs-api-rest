@@ -1,6 +1,5 @@
 'use strict'
 
-
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
@@ -14,6 +13,7 @@ const User = new Schema({
     urlPhotoAvatar : String,
     password       : String,
     password1   : String,
+    idNegocio:String,
     interactionLogs: [{
         ref: 'InteractionLog',
         type: Schema.Types.ObjectId,

@@ -1,6 +1,4 @@
 'use strict';
-
-
 class Verify{
     
     // verifica que los campos requeridos sean completos en una peticion

@@ -31,7 +31,12 @@ const utilsEstadoFinanciero = require('./utilsEstadFinanciero/utilsEstadoFinanci
                 await utilsEstadoFinanciero.buscarEstadoFinancieroVigente(idNegocio);
 
                 var dataEstadoFinanciero = await estadoFinancieroSchema.estadoFinanciero.findOne({idNegocio : idNegocio, state: true});
+                console.log('===================================================');
                 console.log(dataEstadoFinanciero);
+                console.log(dataVenta, ' dataVenta *****');
+
+                console.log('===================================================');
+
                 var auxSuma = await dataEstadoFinanciero.montoActualDisponble + dataVenta.precioTotalBackend;
                 var listVentas = await [...dataEstadoFinanciero.listVentas,dataVenta._id];
                 await estadoFinancieroSchema.estadoFinanciero.findByIdAndUpdate({_id: dataEstadoFinanciero._id}, {montoActualDisponble: auxSuma,  listVentas});

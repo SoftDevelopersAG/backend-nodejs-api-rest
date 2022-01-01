@@ -106,6 +106,23 @@ class Clientes {
             return res.status(400).json({ status: 'No fount', message: 'Error 400', error })
         }
     }
+
+    static async searchCliente (req,res){
+        const {buscador} = req.body;
+        const cliente = await filterCliente(buscador);
+        if(cliente.status === 'No fount') return res.status(206).json(cliente);
+
+        var pageNumber =  0;
+        var pageSize = 2;
+        let pag = cliente.result?.slice(pageNumber*pageSize, (pageNumber + 1) * pageSize);
+        
+        return res.status(200).json({
+            status:'ok',
+            message:'lista clientes',
+            result:pag
+        })
+        
+    }
 }
 
 async function validateDatas(name, lastName, ci, phoneNumber) {
@@ -132,6 +149,22 @@ async function validateIdCliente(idCliente) {
     } catch (error) {
         console.error(erro);
         return { status: 'No fount' }
+    }
+}
+
+async function filterCliente(buscador){
+    
+    try {
+        const resp = await cliente.find();
+        const filter = await resp.filter((data)=>{
+            return data.ci?.includes(buscador)
+        })
+        
+        return {status: 'ok', message:'Clientes encontrados', result:filter}
+        
+    } catch (error) {
+        console.log(error);
+        return {status: 'No fount', message: 'No se puede mostrar la lista filtrada'}
     }
 }
 

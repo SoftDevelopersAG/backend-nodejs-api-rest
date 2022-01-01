@@ -22,7 +22,9 @@ const createUsageControl=async (dataTienda)=>{
             return data;
         }
         catch(err){
+            console.log('ddddddd3333333333333333333333333333333333')
             console.log({error:'error en usagecontrol ',err})
+            console.log('ddddddd3333333333333333333333333333333333')
             return ''
         }
         
