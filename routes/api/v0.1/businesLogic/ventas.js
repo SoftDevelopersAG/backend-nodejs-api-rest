@@ -34,9 +34,6 @@ class Ventas {
         if (!verifyCamposReq) return res.status(206).send({status: 'No fount', error: "venta no procesada", message: "Complete los campos requiridos" });
 
         var stateVerify = await verifyListProducts(res, products);
-        console.log('===================================================================>>>');
-        console.log(stateVerify, 'stateVerify')
-        console.log('===================================================================>>>>');
         if (stateVerify.status === 'No fount') return res.status(206).send({status: 'No fount', error: "venta no procesada", message: stateVerify });
 
         var stateExistProducts = await comprovacionDeProductosInDB(res, products);
