@@ -1,18 +1,38 @@
 const { cliente } = require('../../../../database/collection/models/clientes');
 
 class Clientes {
+
     static async create(req, res) {
-        const { name, lastName, ci, phoneNumber, description } = req.body;
-        const { idUser } = req.params;
-        const verifyDatas = await validateDatas(name, lastName, ci, phoneNumber)
-        if (verifyDatas.status == 'No fount') return res.status(206).json(verifyDatas)
-        const newCliente = new cliente({
+        const {
             name,
             lastName,
             ci,
+            country,  
+            city,    
             phoneNumber,
+            callingCode, 
+            homeAddress,  
             description,
-            idUser
+             } = req.body;
+
+        const { idUser } = req.params;
+        const {idNegocio} = req.params;  
+
+        const verifyDatas = await validateDatas(name, lastName, ci, phoneNumber)
+        if (verifyDatas.status == 'No fount') return res.status(206).json(verifyDatas)
+        
+        const newCliente = new cliente({
+            idUser,
+            name,
+            lastName,
+            ci,
+            country,  
+            city,    
+            phoneNumber,
+            callingCode, 
+            homeAddress,  
+            description,
+            idNegocio:idNegocio?idNegocio:'',
         });
         try {
             const resp = await newCliente.save();

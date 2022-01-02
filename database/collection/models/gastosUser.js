@@ -4,8 +4,10 @@ const { Schema } = mongoose;
 
 const GastosUser = new Schema({
     idTipoGastos:String,
+    idNegocio:String,   
     description:String,
     idUser:String,
+    montoAsignadoA:String,   //nombre de la persona que se le asigna el gasto
     montoGasto:Number,
     responsableUpdate:{
         type:String,

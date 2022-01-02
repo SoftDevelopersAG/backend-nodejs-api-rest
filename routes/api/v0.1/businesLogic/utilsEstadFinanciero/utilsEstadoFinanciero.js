@@ -9,7 +9,7 @@ const buscarEstadoFinancieroVigente = async( idNegocio) => {
 
     try{
         const dataNegocio = await Negocio.negocio.findById({_id: idNegocio});
-        const dataEstadoFinancier = await EstadoFinanciero.estadoFinanciero.findOne({idNegocio:dataNegocio._id, state:true}).populate('listVentas');
+        const dataEstadoFinancier = await EstadoFinanciero.estadoFinanciero.findOne({idNegocio:dataNegocio._id, state:true}).populate('listGastos');
         console.log("eatados financiero\n",dataEstadoFinancier);
         if(dataEstadoFinancier){
             await Data.push(dataEstadoFinancier);
@@ -41,11 +41,11 @@ const crearEstadoFinanciero = async ( dataNegocio )=>{
             montoTotal:0.00,
             montoActualUtilizado: 0.00,
             cierreDeCaja:{
-                detalle:'',
-                conformidadCajero:false,
+                detalle:"",
+                conformiadCajero:false,
                 conformidadAdministrador:false,
-                fechaInicio:new Date(),
-                fechaCierre:new Date(),
+                fechaInicio: Date(),
+                fechaCierre:Date()
             }
         })
     
@@ -59,8 +59,44 @@ const crearEstadoFinanciero = async ( dataNegocio )=>{
 }
 
 
+ async function getVentas(idNegocio){
+    try{
+        var dataVentas = await EstadoFinanciero.estadoFinanciero.findOne({idNegocio:idNegocio, state: true}).populate('listVentas');
+        if(!dataVentas){
+            return {status:"No fount", message:"no se encontro la lista de ventas"}
+        }
+        if(dataVentas){
+            return dataVentas;
+        }
+    }
+    catch(error){
+        console.log('Algo salio mal en la busqueda de los ventas');
+        return {status:"No fount", message:"no se encontro la lista de las ventas"}
+    }
+}
+
+
+ async function getGastos(idNegocio){
+    try{
+        var dataVentas = await EstadoFinanciero.estadoFinanciero.findOne({idNegocio:idNegocio, state: true}).populate('listGastos');
+        if(!dataVentas){
+            return {status:"No fount", message:"no se encontro la lista de los gastos"}
+        }
+        if(dataVentas){
+            return dataVentas;
+        }
+    }
+    catch(error){
+        console.log('Algo salio mal en la busqueda de los gastos');
+        return {status:"No fount", message:"no se encontro la lista de las gastos"}
+    }
+}
+
+
 
 
 module.exports = {
     buscarEstadoFinancieroVigente,
+    getVentas,
+    getGastos
 }

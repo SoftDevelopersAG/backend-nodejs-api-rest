@@ -1,19 +1,26 @@
 const { tipoGastos } = require('../../../../database/collection/models/tipoGasto');
 const { gastosUser } = require('../../../../database/collection/models/gastosUser');
 const { user } = require('../../../../database/collection/models/user');
+const Utils = require('../../../../Utils/verifyCampos/verifyCampos');
+const { negocio } = require('../../../../database/collection/models/negocio');
+const { updateEstadoFinancieroGasto, getEstateFinanciero} = require('./estadoFinanciero');
 
 class Gastos {
+
     static async createTipoGastos(req, res) {
-        const { name, description } = req.body;
+        const { name, description, idNegocio } = req.body;
         //const {idNegocio} = req.params;
-        //todavia no se tiene id de negocio definido en el disenio
+
+        var validateData = await Utils.verificacionCamposRequeridos([name, description, idNegocio]);
+        if(!validateData) return res.status(206).json({status:"No fount",message:"Para crear el tipo de gasto complete los campos requerido", datosRequeridos:[{name:"name",type:"string"},{name:"description",type:"string"},{name:"idNegocio",type:"string"}]});
+
         const nameTipoGastos = await tipoGastos.findOne({ name });
-        if (nameTipoGastos) return res.status(206).json({ status: 'No fount', message: 'Ese nombre ya esta en uso' });
+        if (nameTipoGastos) return res.status(206).json({ status: 'No fount', message: 'El tipo de gasto ya existe' });
 
         const newTipo = new tipoGastos({
             name,
             description,
-            idNegocio: 'esto falta mandar desde frontEnd'
+            idNegocio
         });
         try {
             const resp = await newTipo.save();
@@ -23,9 +30,12 @@ class Gastos {
             return res.status(400).json({ status: 'No fount', message: 'error 400', error })
         }
     }
+
+
     static async listTipoGastos(req, res) {
         try {
-            const resp = await tipoGastos.find();
+            const { idNegocio } = req.params;
+            const resp = await tipoGastos.find({idNegocio:idNegocio});
             return res.status(200).json({
                 status: 'ok',
                 message: 'Lista de tipos de gastos',
@@ -36,6 +46,13 @@ class Gastos {
             return res.status(400).json({ status: 'No fount', message: 'error 400', error })
         }
     }
+    
+    // static async viwDetailTipoGasto(req, res){
+    //     const { idTipoGasto } = req.params;
+
+    // }
+
+
     static async updateTipoGasto(req, res) {
         const { name, description } = req.body;
         console.log(req.body,' sldkfj')
@@ -77,12 +94,16 @@ class Gastos {
             return res.status(400).json({ status: 'No fount', message: 'error 400', error })
         }
     }
+
+
     static async listGastosTipo (req,res) {
-        const {idTipoGastos} = req.params;        
+
+        const { idTipoGastos } = req.params;        
         const verifyidTipoGastos = await validateIdTipoGasto(idTipoGastos);
         if(verifyidTipoGastos.status === 'No fount') return res.status(206).json({status:'No fount', message:'Ese gasto no esta registrado'});
         try {
             const resp = await gastosUser.find({idTipoGastos});
+            console.log(resp);
             let arr = [];
             for (var i = 0; i < resp.length; i++) {
                 const user = await validateUser(resp[i].idUser)
@@ -96,11 +117,11 @@ class Gastos {
                     idUser: `${user.resp.name} ${user.resp.lastName}`,
                     montoGasto: resp[i].montoGasto,                    
                     responsableUpdate:`${responsable.resp.name} ${responsable.resp.lastName}`,
-                    isUpdate: resp[i].isUpdate, 
-                    dateCreate: resp[i].dateCreate,
-                    hora: resp[i].dateCreate?.toString().split(' ')[4],                 
-                    updateDate: resp[i].updateDate,
-                    horaUpdate: resp[i].updateDate?.toString().split(' ')[4],
+                    // isUpdate: resp[i].isUpdate, 
+                    // dateCreate: resp[i].dateCreate,
+                    // hora: resp[i].dateCreate?.toString().split(' ')[4],                 
+                    // updateDate: resp[i].updateDate,
+                    // horaUpdate: resp[i].updateDate?.toString().split(' ')[4],
                 
                 })
             }
@@ -113,27 +134,47 @@ class Gastos {
             return res.status(400).json({ status: 'No fount', message: 'error 400', error })
         }
     }
+
+
+
     /* ========================= gastos user ==================================== */
     static async createGastosUser(req, res) {
         
-        const { idTipoGastos, description, montoGasto } = req.body;
+        const { idNegocio, idTipoGastos, description, montoGasto, montoAsignadoA } = req.body;
         const { idUser } = req.params;
+
+        const stateValidateIdNegocio =await validateIdNeogocio(idNegocio);
+        if(stateValidateIdNegocio.status =='No fount') return res.status(206).json({status:'No fount', message:'Gasto no registrado, idNegocio no valido o no existente'});
+
+        if(!montoGasto || montoGasto < 0) return res.status(206).json({status:'No fount', message:'Monto no valido'});
+
+        const dataEstadoFinanciero = await getEstateFinanciero(idNegocio);
+        if(dataEstadoFinanciero.status =='No fount') return res.status(206).json({status:'No fount', message:'Gasto no registrado, estado financiero no encontrado'});
+        if(dataEstadoFinanciero.montoActualDisponble < montoGasto) return res.status(206).send({status:'No fount', message:'Transaccion no realizada, monto disponible insuficiente'});
+
+        const stateCampoVericados = await Utils.verificacionCamposRequeridos([idNegocio, idTipoGastos, description, montoGasto, montoAsignadoA]) 
+        if(!stateCampoVericados) return res.status(206).send({status:'No fount', message:'Envie todos los campos resqueridos', datosRequeridos:[{name:"idNegocio",type:"string"},{name:"idTipoGastos",type:"String"}, {name:"description",type:"String"}, {name:"montoGasto",type:"Number"}, {name:"montoAsignadoA",type:"String"}]});
 
         const verifyUser = await validateUser(idUser);
         if (verifyUser.status == 'Not fount') return res.status(404).json(verifyUser)
         //verificamos y sacamos el id del tipo gastos para su registro con el id
         const verifiTipoGasto = await getNameTipoGastos(idTipoGastos);
-        if (verifiTipoGasto.status == 'Not fount') return res.status(404).json(verifiTipoGasto);
+        if (verifiTipoGasto.status == 'No fount') return res.status(404).json(verifiTipoGasto);
 
         const newUserGasto = new gastosUser({
             idTipoGastos: verifiTipoGasto.resp._id,
             description,
             montoGasto,
+            montoAsignadoA,
             idUser
         });
 
+
         try {
             const resp = await newUserGasto.save();
+            console.log(resp)
+            await updateEstadoFinancieroGasto(idNegocio, resp._id, "gasto");
+
             return res.status(200).json({
                 status: 'ok',
                 message: 'Se creo gasto del usuario',
@@ -145,6 +186,8 @@ class Gastos {
         }
 
     }
+
+
     static async listGastosUser(req, res) {
         const { idUser } = req.params;
         const verifyUser = await validateUser(idUser);
@@ -180,6 +223,7 @@ class Gastos {
             return res.status(400).json({ status: 'No fount', message: 'error 400', error })
         }
     }
+
     static async updateGastoUser(req,res) {
         const { idTipoGastos, description, montoGasto } = req.body;
         const {idGastoUser,idUser} = req.params;// esto es el id del que se quiere actualizar
@@ -233,24 +277,26 @@ async function validateIdTipoGasto(idTIpoGasto) {
 //validar si el tipo de gasto existe
 async function getNameTipoGastos(idTIpoGasto) {
     try {
-        const resp = await tipoGastos.findOne({ name: idTIpoGasto });
-        if (!resp) return { status: 'No fount', message: 'No se puede registrar por que ese tipo de gastos no fue registrado' }
+        const resp = await tipoGastos.findOne({ _id : idTIpoGasto });
+        if (!resp) return { status: 'No fount', message: 'Registro no realizado, tipo de gasto inexistente' }
         return { status: 'ok', message: 'existe', resp }
     } catch (error) {
         console.error(error);
-        return { status: 'No fount', message: 'erro 400' }
+        return { status: 'No fount', message: 'erro 400, el campo idTipoGasto es requerido' }
     }
 }
+
+
 //verificar si el usuario existe
 async function validateUser(idUSer) {
     //console.log(idUSer, ' sdfsdfsdf_______')
     try {
         const resp = await user.findOne({ _id: idUSer })
-        if (!resp) return { status: 'No fount', message: 'Ese usuario no existe' }
+        if (!resp) return { status: 'Not fount', message: 'Ese usuario no existe' }
         return { status: 'ok', message: 'usuario si existe', resp }
     } catch (error) {
         console.log(error);
-        return { status: 'No fount', message: 'Ese usuario no existe' }
+        return { status: 'Not fount', message: 'Ese usuario no existe' }
     }
 }
 //validar el id del gatos user para actulizar el usuario
@@ -262,6 +308,19 @@ async function validateIdGastoUser(idGastoUser){
     } catch (error) {
         console.error(error);
         return { status: 'No fount', message: 'erro 400' }
+    }
+}
+
+async function validateIdNeogocio(idNegocio){
+
+    try{
+        const resp = await negocio.findById({_id:idNegocio});
+        if(!resp) return {status:'No fount', message:'No existe ese negocio'}
+        return {status:'ok', message:'existe'}
+    }
+    catch(error){
+        console.log('error in validateIdNeogocio\n','idNegocio novalido');
+        return {status:'No fount', message:'erro 400'}
     }
 }
 

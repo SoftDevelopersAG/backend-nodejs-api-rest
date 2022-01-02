@@ -4,10 +4,15 @@ const { Schema } = mongoose;
 
 const Cliente = new Schema({
     idUser:String,
-name:String,
-lastName:String,
-ci:String,
-phoneNumber:Number,
+    idNegocio:String,   // No implementado
+    name:String,
+    lastName:String,
+    ci:String,
+    country:String,  //pais
+    city:String,    //ciudad
+    phoneNumber:Number,
+    callingCode:Number,  //codigo de pais (eg: +591)
+    homeAddress:String,  //direccion de casa
     description:String,
     dateCreate : { type : Date, default : Date.now },
     updateDate : { type : Date, default : Date.now },

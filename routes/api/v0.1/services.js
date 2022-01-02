@@ -111,6 +111,8 @@ route.get('/negocio/payment/control/show/idnegocio=:idnegocio', PaymentConrtol.c
 
 // :::::::::::::ESTADO FINANCIERO::::::::::::::::::::
 route.post('/financiero/state', EstadoFinanciero.createEstadoFinanciero);
+route.get('/financiero/ventas/:idNegocio', EstadoFinanciero.getListVentas);
+route.get('/financiero/gastos/:idNegocio', EstadoFinanciero.getListGastos);
 
 
 // ::::::::::::::::::::VENTAS:::::::::::::::::::::::::::::::
@@ -140,16 +142,17 @@ route.post('/image/product/:idmenu', uploadFileFotoProducto);
 
 
 /* =======================Clientes=============================== */
-route.post('/cliente/create/:idUser', Clientes.create);
+route.post('/cliente/create/:idUser/:idNegocio?', Clientes.create);
 route.get('/cliente/list', Clientes.list);
 route.put('/cliente/update/:idCliente', Clientes.update);
 route.post('/cliente/buscar',Clientes.searchCliente);
 
 /* gastos y tipo de gastos */
 route.post('/gastos/createTipoGastos', Gastos.createTipoGastos);
-route.get('/gastos/listTipoGastos', Gastos.listTipoGastos);
+route.get('/gastos/listTipoGastos/:idNegocio?', Gastos.listTipoGastos);
 route.get('/gastos/gastosTipos/:idTipoGastos', Gastos.listGastosTipo);
 route.put('/gastos/updateTipoGastos/:idTipoGasto',Gastos.updateTipoGasto);
+
 /* gastos user */
 route.post('/userGastos/createUserGastos/:idUser', Gastos.createGastosUser);
 route.get('/userGastos/listUserGastos/:idUser', Gastos.listGastosUser);

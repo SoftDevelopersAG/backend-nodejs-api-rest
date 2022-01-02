@@ -8,11 +8,14 @@ class Ventas {
 
     static async addNewVenta(req, res, next) {
 
-        const {idCliente, products, precioTotal, nombreCliente,pagoCliente,cambioCliente } = await req.body;
+        const {idCliente, products, precioTotal, nombreCliente, pagoCliente,cambioCliente } = await req.body;
+
         const { idUser, idNegocio } = req.params;
-        let cliente = ''
+        let cliente = '';
+        
 
         const verifyUser = await validateUser(idUser);
+
         if (verifyUser.status == 'No fount') return res.status(206).json(verifyUser);
         if (idCliente) {
             const verifyCliente = await validateCliente(idCliente);
@@ -27,13 +30,13 @@ class Ventas {
 
         if(products.length === 0 || products === undefined || products === null) return res.status(400).send({error:"error", message:"No se ha enviado ningun producto"});
         var verifyCamposReq = await verificacionCamposRequeridos([idNegocio]);
-        /* console.log('===================================================================');
-        console.log(verifyCamposReq, 'verifyCamposReq')
-        console.log('==================================================================='); */
+        //  console.log('===================================================================');
+        // console.log(verifyCamposReq, 'verifyCamposReq')
+        // console.log('===================================================================');
 
         if (!verifyCamposReq) return res.status(206).send({status: 'No fount', error: "venta no procesada", message: "Complete los campos requiridos" });
 
-        var stateVerify = await verifyListProducts(res, products);
+        var stateVerify = await verifyListProducts( products );
         if (stateVerify.status === 'No fount') return res.status(206).send({status: 'No fount', error: "venta no procesada", message: stateVerify });
 
         var stateExistProducts = await comprovacionDeProductosInDB(res, products);
@@ -50,7 +53,7 @@ class Ventas {
     static async getVentas(req, res, next) {
         try {
             const { idNegocio } = req.body;
-            const ventas = await VentaSchema.Venta.find({ idNegocio: idNegocio });
+            const ventas = await VentaSchema.Venta.find({ idNegocio: idNegocio }).populate('products');
             res.status(200).send({ status: "ok", message: "lista de ventas", result: ventas });
         }
         catch (err) {
