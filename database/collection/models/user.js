@@ -13,7 +13,7 @@ const User = new Schema({
     urlPhotoAvatar : String,
     password       : String,
     password1   : String,
-    idNegocio:String,
+    idNegocio:String, // con esto podemos ver a que negocio pertenece cada usuario
     interactionLogs: [{
         ref: 'InteractionLog',
         type: Schema.Types.ObjectId,

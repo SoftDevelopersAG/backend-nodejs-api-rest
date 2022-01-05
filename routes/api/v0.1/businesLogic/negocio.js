@@ -2,7 +2,7 @@
 
 const Negocio = require('../../../../database/collection/models/negocio');
 const UplaoFile = require('../../../../Utils/uploadFile');
-const {user} = require('../../../../database/collection/models/user')
+const { user } = require('../../../../database/collection/models/user')
 // const Owner = require('../../../database/collection/user')
 const UsageControl = require('./usageControl')
 
@@ -69,18 +69,18 @@ const createNegocio = async (req, res) => {
     if (nombre.length > 0) {
         console.log('nombre existente')
         const delUser = await deleteUser(req.body.idClient);
-        return res.status(206).send({ status: 'No fount', error: 'No se puede crear la tienda virtual', message: 'nombre de la tienda existente',delUser })
+        return res.status(206).send({ status: 'No fount', error: 'No se puede crear la tienda virtual', message: 'nombre de la tienda existente', delUser })
 
     }
     if (nit.length > 0 && req.body.nit != '') {
         console.log('nit registrado');
         const delUser = await deleteUser(req.body.idClient);
-        return res.status(206).send({ status: 'No fount', error: 'El Nit ya fue registrdo', message: 'El número de Nit ya fue resgistrado',delUser })
+        return res.status(206).send({ status: 'No fount', error: 'El Nit ya fue registrdo', message: 'El número de Nit ya fue resgistrado', delUser })
     }
     if (phone.length > 0) {
         console.log('Telefono registrado');
         const delUser = await deleteUser(req.body.idClient);
-        return res.status(206).send({ status: 'No fount', error: 'Telefono ya en uso por otra tienda', message: 'Telefono ya en uso por otra tienda',delUser })
+        return res.status(206).send({ status: 'No fount', error: 'Telefono ya en uso por otra tienda', message: 'Telefono ya en uso por otra tienda', delUser })
     }
 
     newNegocio.save(async (err, data) => {
@@ -88,27 +88,27 @@ const createNegocio = async (req, res) => {
 
         if (err) {
             const delUser = await deleteUser(req.body.idClient);
-            return res.status(206).send({ status: 'No fount', message: 'No se pudo guardar los datos', error: 'no se guardaron los datos',delUser })
+            return res.status(206).send({ status: 'No fount', message: 'No se pudo guardar los datos', error: 'no se guardaron los datos', delUser })
         }
         try {
             const state = await UsageControl.createUsageControl(data);
-            await Negocio.negocio.findByIdAndUpdate({ _id: data._id }, { state:state.state });
+            await Negocio.negocio.findByIdAndUpdate({ _id: data._id }, { state: state.state });
 
         } catch (error) {
             await delNegocio(data._id);
             await deleteUser(data.idClient);
             console.log({ error: 'error en usageControl', error })
-            return res.status(206).json({status: 'No fount', message: 'error en usageControl', error: 'error en usageControl' })
+            return res.status(206).json({ status: 'No fount', message: 'error en usageControl', error: 'error en usageControl' })
         }
-        
-        const updateDataAdminNegocio = await updateIdNegosioAdmin(data.idClient,data._id);
-        if(updateDataAdminNegocio.status == 'No fount') {
+
+        const updateDataAdminNegocio = await updateIdNegosioAdmin(data.idClient, data._id);
+        if (updateDataAdminNegocio.status == 'No fount') {
             const delN = await delNegocio(data._id);
             const delUser = await deleteUser(data.idClient);
             return res.status(206).json({
-                status: 'No fount', 
+                status: 'No fount',
                 message: 'Ocurrio un error al momento de registrar los datos del negocio',
-                result:{
+                result: {
                     delN,
                     delUser,
                     updateDataAdminNegocio
@@ -270,53 +270,76 @@ const detalNegocioClient = async (req, res) => {
     }
     res.status(404).send({ detail: "id business is require", message: "error 404, resource not found" })
 }
+//sacar datos de negocio atrabes del id del negocio 
+const getDataNegocio = async (req, res) => {
+    const { idNegocio } = req.params;
+    try {
+        const resp = await Negocio.negocio.findById({ _id: idNegocio });
+        if (!resp) return res.status(206).send({ status: 'No fount', message: "No existe ese negocio" });
+        return res.status(200).json({
+            status: 'ok',
+            message: 'datos del negocio',
+            result: {
+                nombre: resp.nombre,
+                direccion: resp.address,
+                ciudad: resp.city,
+                pais: resp.country
+            }
+        })
+    } catch (error) {
+        console.log(error);
+        return res.status(400).json({ status: "No fount", message: "error 400", error })
+    }
+}
 
 //actualizar el id del negocio del usuario que tiene una tienda nueva
-const updateIdNegosioAdmin =async(idUser,idNegocio)=>{
-    console.log( ' ddddddddddddddddddddddddddddddddddddddddd')
+const updateIdNegosioAdmin = async (idUser, idNegocio) => {
+    console.log(' ddddddddddddddddddddddddddddddddddddddddd')
 
-    console.log(idUser,idNegocio, ' ddddddddddddddddddddddddddddddddddddddddd')
-    console.log( ' ddddddddddddddddddddddddddddddddddddddddd')
+    console.log(idUser, idNegocio, ' ddddddddddddddddddddddddddddddddddddddddd')
+    console.log(' ddddddddddddddddddddddddddddddddddddddddd')
 
     const verifyUser = await validateUser(idUser);
-    if(verifyUser.status == 'No fount') return verifyUser
+    if (verifyUser.status == 'No fount') return verifyUser
     try {
-        await user.findOneAndUpdate({ _id: idUser }, {idNegocio});
-        const resp = await user.findOne({_id:idUser});
-        return {status:'ok',message:'Se actualizaron los datos',resp}
+        await user.findOneAndUpdate({ _id: idUser }, { idNegocio });
+        const resp = await user.findOne({ _id: idUser });
+        return { status: 'ok', message: 'Se actualizaron los datos', resp }
     } catch (error) {
         console.log(error);
-        return {status: 'No fount', message:'error 400', error}
+        return { status: 'No fount', message: 'error 400', error }
     }
 }
-const validateUser =async(idUser)=>{
+const validateUser = async (idUser) => {
     try {
-        const resp = await user.findOne({_id:idUser});
-        if(!resp) return {status:'No fount', message:"Ese usuario no existe"};
-        return {status:'ok', message:"existe", result:resp}
+        const resp = await user.findOne({ _id: idUser });
+        if (!resp) return { status: 'No fount', message: "Ese usuario no existe" };
+        return { status: 'ok', message: "existe", result: resp }
     } catch (error) {
         console.log(error);
-        return {status: 'No fount', message:'Ese usuario no existe', error}
+        return { status: 'No fount', message: 'Ese usuario no existe', error }
     }
 }
-const delNegocio = async(idNegocio)=>{
+const delNegocio = async (idNegocio) => {
     try {
-        await Negocio.negocio.deleteOne( { _id: idNegocio } )
-        return {status:'ok', message:'Se elimino los datos'};
+        await Negocio.negocio.deleteOne({ _id: idNegocio })
+        return { status: 'ok', message: 'Se elimino los datos' };
     } catch (error) {
         console.log(error);
-        return {status: 'No fount', message:'no se pudo eliminar los datos', error}
+        return { status: 'No fount', message: 'no se pudo eliminar los datos', error }
     }
 }
-const deleteUser = async(idUser)=>{
+const deleteUser = async (idUser) => {
     try {
-        await user.deleteOne( { _id: idUser } )
-        return {status:'ok', message:'Se elimino los datos'};
+        await user.deleteOne({ _id: idUser })
+        return { status: 'ok', message: 'Se elimino los datos' };
     } catch (error) {
         console.log(error);
-        return {status: 'No fount', message:'no se pudo eliminar los datos', error}
+        return { status: 'No fount', message: 'no se pudo eliminar los datos', error }
     }
 }
+
+
 
 module.exports = {
     createNegocio,
@@ -328,5 +351,6 @@ module.exports = {
     deleteNegocio,
     updateDataNegocio,
     detailNegocio,
-    detalNegocioClient
+    detalNegocioClient,
+    getDataNegocio
 }

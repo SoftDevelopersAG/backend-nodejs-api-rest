@@ -117,7 +117,7 @@ class Gastos {
     static async createGastosUser(req, res) {
         
         const { idTipoGastos, description, montoGasto } = req.body;
-        const { idUser } = req.params;
+        const { idUser,idNegocio } = req.params;
 
         const verifyUser = await validateUser(idUser);
         if (verifyUser.status == 'Not fount') return res.status(404).json(verifyUser)

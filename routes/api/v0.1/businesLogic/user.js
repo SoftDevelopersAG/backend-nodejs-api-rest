@@ -6,6 +6,18 @@ const User = require('../../../../database/collection/models/user')
 const Token = require('../../../../middleware/token/token')
 const Roles = require('../../../../database/collection/models/Roles')
 const Role = require('../../../../database/collection/models/Roles')
+const {negocio} = require('../../../../database/collection/models/negocio'); 
+
+const validateNegocio = async(idNegocio)=>{
+    try {
+        const resp = await negocio.findById({_id:idNegocio});
+        if(!resp) return {status:'No fount', message: 'Ese negocio no existe'};
+        return {status:'ok', message:'Existe',result:resp}
+    } catch (error) {
+        console.log(error);
+        return {status:'No fount', message:"error 400"}
+    }
+}
 
 //register user admin
 const registerAdmin = async (req, res) => {
@@ -121,6 +133,11 @@ const verifiDatasUser=async (req,res)=>{
 // funccion que permite crear un nuevo usuario
 const signUp = async (req, res, next) => {
     const { name, lastName, ci, email, phoneNumber, direction, urlPhotoAvatar, password, password1, role } = req.body;
+    const {idNegocio} = req.params;
+    console.log(idNegocio, ' =============================================================================')
+    const verifyNegocio = await validateNegocio(idNegocio);
+    if(verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio);
+    
     if (
         name == '' || name == undefined ||
         lastName == '' || lastName == undefined ||
@@ -154,6 +171,7 @@ const signUp = async (req, res, next) => {
         urlPhotoAvatar: urlPhotoAvatar,
         password: sha1(req.body.password),
         password1: password,
+        idNegocio:idNegocio
     })
 
     newUser.role = await Roles.find({ name: role === '' || role === undefined ? 'user' : role })
@@ -247,6 +265,7 @@ const signIn = async (req, res, next) => {
 const showListUser = async (req, res, next) => {
 
     const stateUser = await req?.params?.state;
+    const {idNegocio} = req.params;
     // try{
     switch (stateUser) {
         case "active":
@@ -259,7 +278,7 @@ const showListUser = async (req, res, next) => {
 
         case "all":
 
-            var listUser = await User.user.find({}).populate("role")
+            var listUser = await User.user.find({idNegocio}).populate("role")
             // return res.status(200).send({status:'ok', result:listUser});
 
 

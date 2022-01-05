@@ -55,8 +55,8 @@ class Clientes {
         }
 
         try {
-            if(!phoneNumber && !ci) return res.status(206).json({ status: 'No fount', message:'No se pudo actualizar por que los datos de C.I o telefono estan vacios, inserte porlomenos 1'})
-           
+            if (!phoneNumber && !ci) return res.status(206).json({ status: 'No fount', message: 'No se pudo actualizar por que los datos de C.I o telefono estan vacios, inserte porlomenos 1' })
+
             if (updateDatas.ci == verifyCLiente.resp.ci && updateDatas.phoneNumber == verifyCLiente.resp.phoneNumber) {
                 await cliente.findOneAndUpdate({ _id: idCliente }, updateDatas);
                 const newMenu = await cliente.findOne({ _id: idCliente });
@@ -78,10 +78,10 @@ class Clientes {
                     message: 'Se actulizo los datos del cliente',
                     result: newMenu
                 });
-            }          
-            if (updateDatas.phoneNumber != verifyCLiente.resp.phoneNumber) {                
+            }
+            if (updateDatas.phoneNumber != verifyCLiente.resp.phoneNumber) {
                 if (phoneNumber) {
-                    const verifyPhone = await cliente.findOne({ phoneNumber })                  
+                    const verifyPhone = await cliente.findOne({ phoneNumber })
                     if (verifyPhone) return res.status(206).json({ status: 'No fount', message: 'Telefono ya en uso' })
                 }
                 await cliente.findOneAndUpdate({ _id: idCliente }, updateDatas);
@@ -92,7 +92,7 @@ class Clientes {
                     result: newMenu
                 });
             }
-            
+
             await cliente.findOneAndUpdate({ _id: idCliente }, updateDatas);
             const newMenu = await cliente.findOne({ _id: idCliente });
             return res.status(200).send({
@@ -107,21 +107,43 @@ class Clientes {
         }
     }
 
-    static async searchCliente (req,res){
-        const {buscador} = req.body;
+    static async searchCliente(req, res) {
+        const { buscador } = req.body;
         const cliente = await filterCliente(buscador);
-        if(cliente.status === 'No fount') return res.status(206).json(cliente);
+        if (cliente.status === 'No fount') return res.status(206).json(cliente);
 
-        var pageNumber =  0;
+        var pageNumber = 0;
         var pageSize = 2;
-        let pag = cliente.result?.slice(pageNumber*pageSize, (pageNumber + 1) * pageSize);
-        
+        let pag = cliente.result?.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize);
+
         return res.status(200).json({
-            status:'ok',
-            message:'lista clientes',
-            result:pag
+            status: 'ok',
+            message: 'lista clientes',
+            result: pag
         })
-        
+
+    }
+    static async nameCLiente(req, res) {
+        const { idCliente } = req.params;
+        console.log(idCliente);
+        try {
+            const resp = await cliente.findById({ _id: idCliente })
+            if (!resp) return res.status(206).json({ status: 'No fount', message: 'Ese cliente no existe' });
+            return res.status(200).json({
+                status: 'ok',
+                message: 'Nombre del cliente',
+                result: {
+                    nombre: resp.name,
+                    lastName: resp.lastName,
+                    ci: resp.ci,
+                    phoneNumber: resp.phoneNumber
+                }
+            })
+        } catch (error) {
+            console.log(error);
+            return res.status(400).json({ status: 'No fount', message: 'error 400', error})
+        }
+
     }
 }
 
@@ -152,19 +174,19 @@ async function validateIdCliente(idCliente) {
     }
 }
 
-async function filterCliente(buscador){
-    
+async function filterCliente(buscador) {
+
     try {
         const resp = await cliente.find();
-        const filter = await resp.filter((data)=>{
+        const filter = await resp.filter((data) => {
             return data.ci?.includes(buscador)
         })
-        
-        return {status: 'ok', message:'Clientes encontrados', result:filter}
-        
+
+        return { status: 'ok', message: 'Clientes encontrados', result: filter }
+
     } catch (error) {
         console.log(error);
-        return {status: 'No fount', message: 'No se puede mostrar la lista filtrada'}
+        return { status: 'No fount', message: 'No se puede mostrar la lista filtrada' }
     }
 }
 

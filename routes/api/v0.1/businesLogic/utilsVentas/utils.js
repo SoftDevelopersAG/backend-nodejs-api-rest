@@ -114,6 +114,7 @@ const createPventas = async (ArrayListProducts) => {
         const DATA_RESULT = { precioTotalBackend: 0, listPventas: [] };
         var subTotal = 0;
         for (var i = 0; i < ArrayListProducts.length; i++) {
+            console.log(ArrayListProducts[i], ' esto es')
             const dataProduct = await productSchema.producto.findById({ _id: ArrayListProducts[i].idProduct });
             subTotal = subTotal + dataProduct.precioUnitario;
             var newPvendido = new VentaSchema.pvendido({
@@ -123,10 +124,10 @@ const createPventas = async (ArrayListProducts) => {
                 category: dataProduct.category ? dataProduct.category : 'no asignado',
                 subcategory: dataProduct.subcategory ? dataProduct.subcategory : 'no asignado',
 
-                unidadesVendidos: 0,
+                unidadesVendidos: ArrayListProducts[i].unidadesVendidos ? ArrayListProducts[i].unidadesVendidos : 1,
                 precioUnitario: dataProduct.precioUnitario ? dataProduct.precioUnitario : 0,
                 precioCosto: dataProduct.precioCosto ? dataProduct.precioCosto : 0,
-
+                total:dataProduct.precioUnitario * 1 ,
                 envioDesde: dataProduct.envioDesde ? dataProduct.envioDesde : 'no asignado',
                 costoEnvio: dataProduct.costoEnvio ? dataProduct.costoEnvio : 0,
                 estadoProduct: dataProduct.estadoProduct ? dataProduct.estadoProduct : 'no asignado',

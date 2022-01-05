@@ -70,10 +70,10 @@ route.post('/user/validateDatasUser', User.verifiDatasUser );
 
 
 /* // ::::::::::user::::::::::::::::: */
-route.post('/user/signup', User.signUp)
+route.post('/user/signup/:idNegocio', User.signUp)
 route.post('/user/signin', User.signIn)
   //muestra la lista de usuarios de acuerdo al parametro state que puede ser active, inactive, all 
-route.get('/user/list/state=:state',[Auth, /* AccessRoleControl.isAdmin, */ AccessRoleControl.isCajero], User.showListUser)
+route.get('/user/list/state=:state/:idNegocio',[Auth, /* AccessRoleControl.isAdmin, */ AccessRoleControl.isCajero], User.showListUser)
 route.put('/user/update', User.editDataUser );
    // agregar nuevo role un determanido usuario
 route.put('/user/add/newrole/:idUser', User.addNewRole);
@@ -99,6 +99,7 @@ route.post('/cliente/verify/licence', User.verifiLisence);
 
 // :::::::::::::::NEGOCIO:::::::::::::::::
 route.post('/negocio/create',/* [Auth, AccessRoleControl.isAdmin], */ Negocio.createNegocio );
+route.get('/negocio/dataNegocio/:idNegocio',Negocio.getDataNegocio);
 
 
 route.get('/negocio/detail/idnegocio=:idnegocio', Negocio.showNegocioId)
@@ -116,6 +117,10 @@ route.post('/financiero/state', EstadoFinanciero.createEstadoFinanciero);
 // ::::::::::::::::::::VENTAS:::::::::::::::::::::::::::::::
 route.post('/venta/create/:idNegocio/:idUser', Ventas.addNewVenta);
 route.post('/venta/list', Ventas.getVentas);
+route.get('/venta/listVentasUser/:idNegocio/:idUser', Ventas.getListVentasUser);
+route.get('/venta/listVentasRange/:idNegocio/:fechaInicio/:fechaFinal', Ventas.getListVentasRange);//ruta que mustra ventas en rangos de fecha
+
+
 
 // :::::::::::::::::::PRODUCTS:::::::::::::::::::::::::::::::
 route.post('/products/add/:idNegocio/:idUser', Products.addNewProduct);
@@ -144,6 +149,7 @@ route.post('/cliente/create/:idUser', Clientes.create);
 route.get('/cliente/list', Clientes.list);
 route.put('/cliente/update/:idCliente', Clientes.update);
 route.post('/cliente/buscar',Clientes.searchCliente);
+route.get('/cliente/dataCliente/:idCliente',Clientes.nameCLiente);
 
 /* gastos y tipo de gastos */
 route.post('/gastos/createTipoGastos', Gastos.createTipoGastos);

@@ -65,7 +65,7 @@ const pVenta= new Schema({
     unidadesVendidos:Number, 
     precioUnitario: Number,  //Precio de venta
     precioCosto:Number,
-    total:Number,
+    total:Number, // precio unitario * cantidad
 
     colorsAvailable:String, 
     envioDesde:String,
