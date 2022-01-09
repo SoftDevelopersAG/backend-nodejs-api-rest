@@ -125,6 +125,7 @@ route.get('/venta/listVentasRange/:idNegocio/:fechaInicio/:fechaFinal', Ventas.g
 
 //reporte de ventas y gastos por rango de fechas
 route.get('/reportGastosVentas/report1/:idNegocio/FechaInicio=:fechaInicio/FechaFinal=:fechaFinal',Ventas.reportGastosVentas);
+route.get('/ventas/show/list/:idNegocio', Ventas.showListVentas);
 
 
 // :::::::::::::::::::PRODUCTS:::::::::::::::::::::::::::::::

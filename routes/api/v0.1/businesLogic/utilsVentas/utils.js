@@ -124,6 +124,13 @@ const createPventas = async (ArrayListProducts) => {
         for (var i = 0; i < ArrayListProducts.length; i++) {
             console.log(ArrayListProducts[i], ' esto es')
             const dataProduct = await productSchema.producto.findById({ _id: ArrayListProducts[i].idProduct });
+            var cantidadProducto = await dataProduct.unidadesDisponibles;
+            
+            if(cantidadProducto!=undefined && cantidadProducto!="" && cantidadProducto>0){
+                cantidadProducto = cantidadProducto - 1;
+                await productSchema.producto.updateOne({ _id: dataProduct._id }, { unidadesDisponibles: cantidadProducto });
+            }
+
             subTotal = subTotal + dataProduct.precioUnitario;
             var newPvendido = new VentaSchema.pvendido({
                 idNegocio: dataProduct.idNegocio ? dataProduct.idNegocio : 'no asingando',
