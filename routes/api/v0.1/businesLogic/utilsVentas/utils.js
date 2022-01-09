@@ -9,7 +9,7 @@ const { updateEstadoFinanciero } = require('../estadoFinanciero');
 class UtilsVentas {
 
     // verifica los campos requeridos de cada producto vendido
-    static async verifyListProducts(res, ArrayListProducts) {
+    static async verifyListProducts(ArrayListProducts) {
         /* console.log('================================================================')
         console.log(ArrayListProducts)
         console.log('================================================================')
@@ -18,8 +18,8 @@ class UtilsVentas {
 
             for (var i = 0; i < ArrayListProducts.length; i++) {
                 if (ArrayListProducts[i].idProduct === undefined || ArrayListProducts[i].idProduct === null || ArrayListProducts[i].idProduct === '') return { status: 'No fount', error: "error", message: "Comple los campos requeridos, idProduct" };
-                if (ArrayListProducts[i].precio === undefined || ArrayListProducts[i].precio === null || ArrayListProducts[i].precio === '') return { status: 'No fount', error: "error", message: "Comple los campos requeridos" };
-                if (ArrayListProducts[i].nombre === undefined || ArrayListProducts[i].nombre === null || ArrayListProducts[i].nombre === '') return { status: 'No fount', error: "error", message: "Comple los campos requeridos" };
+                if (ArrayListProducts[i].precio === undefined || ArrayListProducts[i].precio === null || ArrayListProducts[i].precio === '') return { status: 'No fount', error: "error", message: "Comple los campos requeridos, precio" };
+                if (ArrayListProducts[i].nombre === undefined || ArrayListProducts[i].nombre === null || ArrayListProducts[i].nombre === '') return { status: 'No fount', error: "error", message: "Comple los campos requeridos, nombre " };
                 if (parseInt(ArrayListProducts[i].precio) <= 0) return { status: 'No fount', error: "error", message: `Para realizar la venta el precio del prodcuto ${ArrayListProducts[i].idProduct} debe ser mayor a 0` };
             }
             return { status: 'ok' };
@@ -74,15 +74,22 @@ class UtilsVentas {
             })
 
             var resultVenta = await newVenta.save();
+    
+            // updateEstadoFinanciero(idNegocio, resultVenta._id,resultVenta.precioTotalBackend, "venta" );
+
+            // var nVenta = await  VentaSchema.Venta.findOne({_id: resultVenta._id}).populate('products');
+            // res.status(200).send({status:"ok", message:`Venta creada con exito`, data:nVenta})
 
             await updateEstadoFinanciero(idNegocio, resultVenta._id, resultVenta.precioTotalBackend, "venta");//el backend falla si esta funcion tiene error
             var nVenta = await VentaSchema.Venta.findOne({ _id: resultVenta._id }).populate('products');
             return res.status(200).send({ status: "ok", message: `Venta creada con exito`, result: nVenta })
+            
         } catch (error) {
             console.log('error en utilsVentas\n', error);
             return res.status(400).send({ status: 'No fount', error: "error", message: `Error al crear la venta` })
         }
     }
+
     //verficamos si el usuario existe
     static async validateUser(idUser) {
         try {
@@ -94,6 +101,7 @@ class UtilsVentas {
             return { status: 'No fount', message: 'Ese usuario no existe' }
         }
     }
+    
     //verificamos si el cliente existe
     static async validateCliente(idCliente) {
         try {
@@ -146,6 +154,8 @@ const createPventas = async (ArrayListProducts) => {
         return false;
     }
 }
+
+
 
 
 module.exports = UtilsVentas;

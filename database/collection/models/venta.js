@@ -14,8 +14,8 @@ const VentaSchema = new Schema({
     venta: Number,
     precioTotal: Number,
     precioTotalBackend: Number,
-    pagoCliente:String,
-    cambioCliente:String,
+    pagoCliente:Number,
+    cambioCliente:Number,
     products:[{
         ref: 'pvendido',
         type: Schema.Types.ObjectId

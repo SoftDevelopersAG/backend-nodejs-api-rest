@@ -11,23 +11,30 @@ const estadoFinaciero = new Schema({
     montoActualDisponble: Number,
     montoTotal:Number,
     montoActualUtilizado: Number,
-    dateCreated:{ type: Date, default: Date.now },
     cierreDeCaja:{
         detalle:String,
-        conformiadCajero:Boolean,
-        conformidadAdministrador:Boolean,
+        conformiadCajero:{ type : Boolean, default : false},
+        conformidadAdministrador:{ type : Boolean, default : false},
         fechaInicio: {
             type: Date,
             default: Date.now
         },
         fechaCierre:Date,
-
+        idAdmin:String,
+        idCajero:String
+        
     },
     listVentas:[{
         ref: 'Venta',
         type: Schema.Types.ObjectId
     }],
-    state:{type:Boolean, default:true}
+    listGastos:[{
+        ref: 'gastosUser',
+        type: Schema.Types.ObjectId
+    }],
+    state:{type:Boolean, default:true},
+    dateCreated:{ type: Date, default: Date.now },
+    updateDate:{ type: Date, default: Date.now }
 
 });
 

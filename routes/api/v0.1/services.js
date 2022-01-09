@@ -112,6 +112,9 @@ route.get('/negocio/payment/control/show/idnegocio=:idnegocio', PaymentConrtol.c
 
 // :::::::::::::ESTADO FINANCIERO::::::::::::::::::::
 route.post('/financiero/state', EstadoFinanciero.createEstadoFinanciero);
+route.get('/financiero/ventas/:idNegocio', EstadoFinanciero.getListVentas);
+route.get('/financiero/gastos/:idNegocio', EstadoFinanciero.getListGastos);
+route.put('/financiero/cierreCaja/:idNegocio/:idUser', EstadoFinanciero.cierreCaja);
 
 
 // ::::::::::::::::::::VENTAS:::::::::::::::::::::::::::::::
@@ -120,6 +123,8 @@ route.post('/venta/list', Ventas.getVentas);
 route.get('/venta/listVentasUser/:idNegocio/:idUser', Ventas.getListVentasUser);
 route.get('/venta/listVentasRange/:idNegocio/:fechaInicio/:fechaFinal', Ventas.getListVentasRange);//ruta que mustra ventas en rangos de fecha
 
+//reporte de ventas y gastos por rango de fechas
+route.get('/reportGastosVentas/report1/:idNegocio/FechaInicio=:fechaInicio/FechaFinal=:fechaFinal',Ventas.reportGastosVentas);
 
 
 // :::::::::::::::::::PRODUCTS:::::::::::::::::::::::::::::::
@@ -145,24 +150,24 @@ route.post('/image/product/:idmenu', uploadFileFotoProducto);
 
 
 /* =======================Clientes=============================== */
-route.post('/cliente/create/:idUser', Clientes.create);
+route.post('/cliente/create/:idUser/:idNegocio?', Clientes.create);
 route.get('/cliente/list', Clientes.list);
 route.put('/cliente/update/:idCliente', Clientes.update);
 route.post('/cliente/buscar',Clientes.searchCliente);
 route.get('/cliente/dataCliente/:idCliente',Clientes.nameCLiente);
 
 /* gastos y tipo de gastos */
-route.post('/gastos/createTipoGastos', Gastos.createTipoGastos);
-route.get('/gastos/listTipoGastos', Gastos.listTipoGastos);
+route.post('/gastos/createTipoGastos/:idNegocio', Gastos.createTipoGastos);
+route.get('/gastos/listTipoGastos/:idNegocio?', Gastos.listTipoGastos);
 route.get('/gastos/gastosTipos/:idTipoGastos', Gastos.listGastosTipo);
 route.put('/gastos/updateTipoGastos/:idTipoGasto',Gastos.updateTipoGasto);
+
 /* gastos user */
-route.post('/userGastos/createUserGastos/:idUser', Gastos.createGastosUser);
-route.get('/userGastos/listUserGastos/:idUser', Gastos.listGastosUser);
+route.post('/userGastos/createUserGastos/:idUser/:idNegocio', Gastos.createGastosUser);
+route.get('/userGastos/listUserGastos/:idUser/:fechaInicio/:fechaFinal', Gastos.listGastosUser);
+//lista de gastos del negocio por dia
+route.get('/gastos/listGastosNegocioDia/:idNegocio/:fechaInicio/:fechaFinal',Gastos.listaGastosNegocio);
 route.put('/userGastos/updateGastosUser/:idGastoUser/:idUser', Gastos.updateGastoUser);
-
-
-
 
 
 
