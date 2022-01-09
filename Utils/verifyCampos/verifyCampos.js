@@ -11,6 +11,7 @@ class Verify{
                 camposRequired.push(ArrayCampos[i]);
             }
         }
+        
         if(camposRequired.length > 0){
             return false
         }

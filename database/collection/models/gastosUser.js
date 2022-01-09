@@ -8,6 +8,7 @@ const GastosUser = new Schema({
     description:String,
     idUser:String,
     montoAsignadoA:String,   //nombre de la persona que se le asigna el gasto
+    // ci:String,      
     montoGasto:Number,
     responsableUpdate:{
         type:String,
