@@ -8,6 +8,7 @@ const TipoGastos = new Schema({
     description:String,
     dateCreate : { type : Date, default : Date.now },
     updateDate : { type : Date, default : Date.now },
+    
 });
 
 var tipoGastos = mongoose.model('tipoGastos', TipoGastos);

@@ -134,14 +134,41 @@ class Ventas {
             return res.status(400).send({ status: 'No fount', error: "error en el servidor", err });
         }
     }
+
+    // solo para test - muestra las fechas de las ventas
+    static async showListVentas(req, res){
+        console.log(req.params.idNegocio)
+        try {
+            const { idNegocio } = req.params;
+            const ventas = await VentaSchema.Venta.find({ idNegocio });
+            var newData = await ventas.map(data => {
+                return {
+                    _id: data._id,
+                    dateCreate: data.dateCreate,
+                    dataCreate2: `${new Date(data.dateCreate).toLocaleDateString()} ${data.dateCreate.toLocaleTimeString()}`
+                }
+            })
+            res.status(200).send({ status: "ok", message: "lista de ventas", result: newData });
+        }
+        catch (err) {
+            console.log('error en utilsVentas', err);
+            res.status(400).send({ status: 'No fount', error: "error en el servidor", err });
+        }
+    }
+
     //lista de todas las ventas por rangos
     static async getListVentasRange(req, res) {
         const { idNegocio, fechaInicio, fechaFinal } = req.params;
+        console.log(new Date(`${fechaInicio.replace(/-/g,'/')} 00:00:00`)  , new Date(`${fechaFinal.replace(/-/g,'/')} 00:02:58`) );
+
         try {
             const ventas = await VentaSchema.Venta.find({
                 idNegocio, $and: [
-                    { dateCreate: { $gte: new Date(`${fechaInicio}T00:00:14.000Z`) } },
-                    { dateCreate: { $lte: new Date(`${fechaFinal}T23:59:59.999Z`) } }
+                    // { dateCreate: { $gte: new Date(`${fechaInicio}T00:00:14.000Z`) } },
+                    // { dateCreate: { $lte: new Date(`${fechaFinal}T23:59:59.999Z`) } }
+
+                    { dateCreate: { $gte: new Date(`${fechaInicio.replace(/-/g,'/')} 00:00:00`) } },
+                    { dateCreate: { $lte: new Date(`${fechaFinal.replace(/-/g,'/')} 23:59:59`) } }
                 ]
             }, {
                 _id: 1,
