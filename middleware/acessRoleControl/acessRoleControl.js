@@ -17,6 +17,10 @@ const isCajero = async (req, res, next) => {
     console.log('acces role control')
     findAccesRole('caja', req, res, next)
 }
+const isCocinero = async (req, res, next) => {
+    console.log('acces role control')
+    findAccesRole('cocinero', req, res, next)
+}
 
 
 
@@ -54,6 +58,7 @@ const findAccesRole = async (ROLE, req, res, next)=>{
 module.exports={
     isAdmin,
     isUser,
-    isCajero
+    isCajero,
+    isCocinero
 }
 

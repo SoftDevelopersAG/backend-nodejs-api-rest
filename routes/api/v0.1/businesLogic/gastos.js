@@ -107,8 +107,16 @@ class Gastos {
             let arr = [];
             for (var i = 0; i < resp.length; i++) {
                 const user = await validateUser(resp[i].idUser)
-                const responsable = await validateUser(resp[i].responsableUpdate)
+                if(user.status == 'No fount') return res.status(206).json(user)                
+                let nameR = ''
+                if(resp[i].responsableUpdate != 'none'){
+                    const responsable = await validateUser(resp[i].responsableUpdate)
+                    console.log(responsable, resp[i].responsableUpdate,' 3===================================================================');
+                    if(responsable.status == 'No fount') return res.status(206).json(responsable);
+                    nameR= `${responsable.resp.name} ${responsable.resp.lastName}`
+                }         
                 const nameTipoGasto = await validateIdTipoGasto(resp[i].idTipoGastos)
+                if(nameTipoGasto.status == 'No fount') return res.status(206).json(nameTipoGasto)
                 //console.log(nameTipoGasto)
                 arr.push({
                     _id: resp[i]._id,
@@ -116,12 +124,12 @@ class Gastos {
                     description: resp[i].description,
                     idUser: `${user.resp.name} ${user.resp.lastName}`,
                     montoGasto: resp[i].montoGasto,
-                    responsableUpdate: `${responsable.resp.name} ${responsable.resp.lastName}`,
-                    // isUpdate: resp[i].isUpdate, 
-                    // dateCreate: resp[i].dateCreate,
-                    // hora: resp[i].dateCreate?.toString().split(' ')[4],                 
-                    // updateDate: resp[i].updateDate,
-                    // horaUpdate: resp[i].updateDate?.toString().split(' ')[4],
+                    responsableUpdate: nameR,
+                    isUpdate: resp[i].isUpdate, 
+                    dateCreate: resp[i].dateCreate,
+                    hora: resp[i].dateCreate?.toString().split(' ')[4],                 
+                    updateDate: resp[i].updateDate,
+                    horaUpdate: resp[i].updateDate?.toString().split(' ')[4],
 
                 })
             }
@@ -204,8 +212,9 @@ class Gastos {
                     { dateCreate: { $lte: new Date(`${fechaFinal}T23:59:59.999Z`) } }
                 ]
             });
-            let arr = [];
+            let arr = [], gastoTotal=0;
             for (var i = 0; i < resp.length; i++) {
+                gastoTotal = resp[i].montoGasto + gastoTotal;
                 const user = await validateUser(resp[i].idUser)
                 const nameTipoGasto = await validateIdTipoGasto(resp[i].idTipoGastos)
                 //console.log(nameTipoGasto)
@@ -223,6 +232,7 @@ class Gastos {
             return res.status(200).json({
                 status: 'ok',
                 message: 'Lista gastos del usuario',
+                gastoTotal,
                 result: arr
             })
         } catch (error) {

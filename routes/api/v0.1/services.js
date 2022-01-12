@@ -70,7 +70,7 @@ route.post('/user/validateDatasUser', User.verifiDatasUser );
 
 
 /* // ::::::::::user::::::::::::::::: */
-route.post('/user/signup/:idNegocio', User.signUp)
+route.post('/user/signup/:idNegocio',[Auth, AccessRoleControl.isAdmin], User.signUp)
 route.post('/user/signin', User.signIn)
   //muestra la lista de usuarios de acuerdo al parametro state que puede ser active, inactive, all 
 route.get('/user/list/state=:state/:idNegocio',[Auth, /* AccessRoleControl.isAdmin, */ AccessRoleControl.isCajero], User.showListUser)
@@ -84,13 +84,18 @@ route.put('/user/remove/role', User.removeRoleUser);
 route.get('/api/verifyToken/:idUser', Auth, User.simpleRute);
 
 //udpate user datas
-route.put('/user/updateUser/:idUser', User.editPersonalData);
+route.put('/user/updateUser/:idUser',[Auth, AccessRoleControl.isAdmin], User.editPersonalData);
 //lista de roles del usuario
 // a esta ruta tienen que poder entrar todos los roles ya que esto es verificado para las rutas en el cliente
 // con esta ruta podemos ver quien tiene que rol para ver a donde hay acceso en el cliente
 route.get('/user/roleList/:idUser', User.userRoleList);
 //update state user
 route.patch('/user/update/state/:idUser', User.updateStateUser);
+//lista de usuarios de caja activos
+route.get('/user/getlistUserActivos/:idNegocio',User.getlistUserActivos);
+
+//get datos del negocio y datos del usurio
+route.get('/user/getDataNegocioUser/:idUser/:idNegocio',User.dataNegocioUser)
 
 
 //generate license
@@ -114,7 +119,9 @@ route.get('/negocio/payment/control/show/idnegocio=:idnegocio', PaymentConrtol.c
 route.post('/financiero/state', EstadoFinanciero.createEstadoFinanciero);
 route.get('/financiero/ventas/:idNegocio', EstadoFinanciero.getListVentas);
 route.get('/financiero/gastos/:idNegocio', EstadoFinanciero.getListGastos);
-route.put('/financiero/cierreCaja/:idNegocio/:idUser', EstadoFinanciero.cierreCaja);
+route.put('/financiero/cierreCaja/:idNegocio/:idUser',[Auth, AccessRoleControl.isAdmin], EstadoFinanciero.cierreCaja);
+route.get('/financiero/listProductDetalle/:idNegocio',EstadoFinanciero.listaProductoGastos);
+route.put('/financiero/updateMontoIncial/:idNegocio/:idUser',[Auth, AccessRoleControl.isAdmin], EstadoFinanciero.upateMontoInicialEstadoFinanciero);
 
 
 // ::::::::::::::::::::VENTAS:::::::::::::::::::::::::::::::
@@ -128,16 +135,16 @@ route.get('/reportGastosVentas/report1/:idNegocio/FechaInicio=:fechaInicio/Fecha
 
 
 // :::::::::::::::::::PRODUCTS:::::::::::::::::::::::::::::::
-route.post('/products/add/:idNegocio/:idUser', Products.addNewProduct);
+route.post('/products/add/:idNegocio/:idUser',[Auth, AccessRoleControl.isCocinero], Products.addNewProduct);
 route.get('/products/get/list/:idNegocio', Products.getAllProducts);
-route.put('/products/update/:idProducto', Products.updateProducto);
+route.put('/products/update/:idProducto',[Auth, AccessRoleControl.isCocinero], Products.updateProducto);
 
 /* =======================salas=============================== */
-route.post('/salas/create/:idUser', SalasRoutes.create);
-route.get('/salas/list', SalasRoutes.list);
+route.post('/salas/create/:idUser/:idNegocio',[Auth, AccessRoleControl.isAdmin], SalasRoutes.create); // solo admin
+route.get('/salas/list/:idNegocio', SalasRoutes.list);
 
 /* =======================Mesas=============================== */
-route.post('/mesas/create/:idSala', Mesa.create);
+route.post('/mesas/create/:idSala',[Auth, AccessRoleControl.isAdmin], Mesa.create);
 route.get('/mesas/list/:idSala', Mesa.list);
 
 /* =======================Producto=============================== */
@@ -146,13 +153,13 @@ route.get('/menu/list', Menu.list);
 route.put('/menu/update/:idMenu', Menu.updateMenuDatas);
 
 //registrar las imagenes
-route.post('/image/product/:idmenu', uploadFileFotoProducto);
+route.post('/image/product/:idmenu',[Auth, AccessRoleControl.isCocinero], uploadFileFotoProducto);
 
 
 /* =======================Clientes=============================== */
-route.post('/cliente/create/:idUser/:idNegocio?', Clientes.create);
-route.get('/cliente/list', Clientes.list);
-route.put('/cliente/update/:idCliente', Clientes.update);
+route.post('/cliente/create/:idUser/:idNegocio?',[Auth, AccessRoleControl.isCajero], Clientes.create);
+route.get('/cliente/list/:idNegocio', Clientes.list);
+route.put('/cliente/update/:idCliente',[Auth, AccessRoleControl.isCajero], Clientes.update);
 route.post('/cliente/buscar',Clientes.searchCliente);
 route.get('/cliente/dataCliente/:idCliente',Clientes.nameCLiente);
 
@@ -163,8 +170,8 @@ route.get('/gastos/gastosTipos/:idTipoGastos', Gastos.listGastosTipo);
 route.put('/gastos/updateTipoGastos/:idTipoGasto',Gastos.updateTipoGasto);
 
 /* gastos user */
-route.post('/userGastos/createUserGastos/:idUser/:idNegocio', Gastos.createGastosUser);
-route.get('/userGastos/listUserGastos/:idUser/:fechaInicio/:fechaFinal', Gastos.listGastosUser);
+route.post('/userGastos/createUserGastos/:idUser/:idNegocio', [Auth, AccessRoleControl.isCajero], Gastos.createGastosUser);
+route.get('/userGastos/listUserGastos/:idUser/:fechaInicio/:fechaFinal',[Auth, AccessRoleControl.isCajero], Gastos.listGastosUser);
 //lista de gastos del negocio por dia
 route.get('/gastos/listGastosNegocioDia/:idNegocio/:fechaInicio/:fechaFinal',Gastos.listaGastosNegocio);
 route.put('/userGastos/updateGastosUser/:idGastoUser/:idUser', Gastos.updateGastoUser);

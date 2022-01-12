@@ -6,8 +6,9 @@ const { verifyListProducts, comprovacionDeProductosInDB, createVenta, validateUs
 const { user } = require('../../../../database/collection/models/user')
 const { cliente } = require('../../../../database/collection/models/clientes');
 const { negocio } = require('../../../../database/collection/models/negocio');
-const {gastosUser} = require('../../../../database/collection/models/gastosUser');
-const {estadoFinanciero} = require('../../../../database/collection/models/estadoFinanciero');
+const { gastosUser } = require('../../../../database/collection/models/gastosUser');
+const { estadoFinanciero } = require('../../../../database/collection/models/estadoFinanciero');
+const {tipoGastos} = require('../../../../database/collection/models/tipoGasto')
 class Ventas {
 
     static async addNewVenta(req, res, next) {
@@ -32,7 +33,7 @@ class Ventas {
         }
 
         if (products.length === 0 || products === undefined || products === null) return res.status(400).send({ error: "error", message: "No se ha enviado ningun producto" });
-        var verifyCamposReq = await verificacionCamposRequeridos([idNegocio]);        
+        var verifyCamposReq = await verificacionCamposRequeridos([idNegocio]);
 
         if (!verifyCamposReq) return res.status(206).send({ status: 'No fount', error: "venta no procesada", message: "Complete los campos requiridos" });
 
@@ -40,7 +41,7 @@ class Ventas {
         if (stateVerify.status === 'No fount') return res.status(206).send({ status: 'No fount', error: "venta no procesada", message: stateVerify });
 
         var stateExistProducts = await comprovacionDeProductosInDB(res, products);
-        
+
         if (!stateExistProducts) return res.status(206).send({ status: 'No fount', error: "venta no procesada", message: "el id de uno de los productos es incorrecto" });
 
         createVenta(res, products, idNegocio, precioTotal, cliente, idUser, pagoCliente, cambioCliente);
@@ -180,6 +181,7 @@ class Ventas {
                     hora: ventas[i].dateCreate?.toString().split(' ')[4],
                 })
             }
+            if (err == true) return res.status(206).json({ status: "No fount", message: "No se puede mostrar los datos" })
 
             return res.status(200).json({
                 status: 'ok',
@@ -205,37 +207,33 @@ class Ventas {
         var date1 = new Date(fechaInicio);
         var date2 = new Date(fechaFinal);
 
-        if (date1 > date2) return res.status(206).json({ 
-            status: 'No fount', 
-            message: 'rango de fenchas incorecto la fecha de inicio tiene que ser menor a la fecha final' 
+        if (date1 > date2) return res.status(206).json({
+            status: 'No fount',
+            message: 'rango de fenchas incorecto la fecha de inicio tiene que ser menor a la fecha final'
         })
 
         const getVentaNegocio = await getVentasRange({ idNegocio, fechaInicio, fechaFinal });
-        const getGastosNegocio = await getGastosRange({idNegocio, fechaInicio, fechaFinal});
-        
+        const getGastosNegocio = await getGastosRange({ idNegocio, fechaInicio, fechaFinal });
+
         if (getVentaNegocio.status == 'No fount') return res.status(206).json(getVentaNegocio);
         if (getGastosNegocio.status == 'No fount') return res.status(206).json(getGastosNegocio);
 
-        console.log(getVentaNegocio, ' =================================================================')
-        let primeraVenta = 0;
-        if(getVentaNegocio.primeraVenta){
-            const getEstadoFinanciero = await getDataEstadoFinanciero(getVentaNegocio.primeraVenta._id);
-            console.log(getEstadoFinanciero);
-            if(getEstadoFinanciero.status == 'No fount') return res.status(206).json(getEstadoFinanciero)
-            primeraVenta = getEstadoFinanciero.estadoFinanciero?.montoInicial
-        }
-        
-        
+        const montoInicial = await getDataEstadoFinanciero(idNegocio);
+        if (montoInicial.status == 'No fount') return res.status(206).json(montoInicial);
+
 
         return res.status(200).json({
             status: 'ok',
             message: 'Reporte de ventas y gastos',
-            Fecha:`del ${fechaInicio} hasta ${fechaFinal}`,
-            montoInicial:primeraVenta,
-            totalVentas:getVentaNegocio.totalVentas,
-            gasatoTotal:getGastosNegocio.totalGastos,
-            total:(getVentaNegocio.totalVentas - getGastosNegocio.totalGastos) + primeraVenta,
-            cantidadVendido:getVentaNegocio.cantidadVendido,
+            Fecha: `del ${fechaInicio} hasta ${fechaFinal}`,
+            montoInicial: montoInicial.montoInicial,
+            totalVentas: getVentaNegocio.totalVentas,
+            gasatoTotal: getGastosNegocio.totalGastos,
+            total: (getVentaNegocio.totalVentas - getGastosNegocio.totalGastos) + montoInicial.montoInicial,
+            cantidadVendido: getVentaNegocio.cantidadVendido,
+            gastosLength: getGastosNegocio.gastosLength,
+            productVendido: getVentaNegocio.product,
+            gastosRealizados: getGastosNegocio.gastos
         })
 
 
@@ -253,22 +251,40 @@ async function getVentasRange({ idNegocio, fechaInicio, fechaFinal }) {
                 { dateCreate: { $lte: new Date(`${fechaFinal}T23:59:59.999Z`) } }
             ]
         });
-        let totalVentas = 0, sumEfectivoCLiente = 0, sumCambio = 0;
+        let arrVentas = [], err = false; let totalVentas = 0, sumEfectivoCLiente = 0, sumCambio = 0;
         for (let i = 0; i < ventasRange.length; i++) {
             totalVentas = ventasRange[i].precioTotal + totalVentas;
             sumEfectivoCLiente = ventasRange[i].pagoCliente + sumEfectivoCLiente;
             sumCambio = ventasRange[i].cambioCliente + sumCambio;
 
+            const user = await getNameUser(ventasRange[i].idUser);
+            if (user.status == 'No fount') return err = true;
+            const cliente = await getNameCliente(ventasRange[i].idCLiente);
+            if (cliente.status == 'No fount') return err = true
+            arrVentas.push({
+                _id: ventasRange[i]._id,
+                idUser: `${user.resp.name} ${user.resp.lastName}`,
+                idCLiente: cliente.status == 'No' ? ventasRange[i].idCLiente : `${cliente.resp.name} ${cliente.resp.lastName}`,
+                venta: ventasRange[i].venta,
+                precioTotal: ventasRange[i].precioTotal,
+                pagoCliente: ventasRange[i].pagoCliente,
+                cambioCliente: ventasRange[i].cambioCliente,
+                products: ventasRange[i].products,
+                state: ventasRange[i].state,
+                dateCreate: ventasRange[i].dateCreate,
+                hora: ventasRange[i].dateCreate?.toString().split(' ')[4],
+            })
+
         }
-        
+        if (err) return { status: 'No fount', message: 'No se puede mostra los datos' }
         return {
             status: 'ok',
             message: 'Ventas',
             totalVentas,
-            cantidadVendido:ventasRange.length,
+            cantidadVendido: ventasRange.length,
             sumEfectivoCLiente,
             sumCambio,
-            primeraVenta:ventasRange[0]
+            product: arrVentas
         }
 
     } catch (error) {
@@ -277,7 +293,7 @@ async function getVentasRange({ idNegocio, fechaInicio, fechaFinal }) {
     }
 }
 //lista de gastos por rango 
-async function getGastosRange({ idNegocio, fechaInicio, fechaFinal }) {   
+async function getGastosRange({ idNegocio, fechaInicio, fechaFinal }) {
     try {
         const gastosRange = await gastosUser.find({
             idNegocio, $and: [
@@ -286,14 +302,45 @@ async function getGastosRange({ idNegocio, fechaInicio, fechaFinal }) {
             ]
         });
         let totalGastos = 0;
+        let arr = [];
         for (let i = 0; i < gastosRange.length; i++) {
-            totalGastos = gastosRange[i].montoGasto + totalGastos;           
+            totalGastos = gastosRange[i].montoGasto + totalGastos;
+
+            const user = await getNameUser(gastosRange[i].idUser);
+            if (user.status == 'No fount') return res.status(206).json(user)
+            let nameR = ''
+            if (gastosRange[i].responsableUpdate != 'none') {
+                const responsable = await getNameUser(gastosRange[i].responsableUpdate);
+                if (responsable.status == 'No fount') return res.status(206).json(responsable)
+                nameR = `${responsable.resp.name} ${responsable.resp.lastName}`
+            }
+
+            const nameTipoGasto = await validateIdTipoGasto(gastosRange[i].idTipoGastos)
+            if (nameTipoGasto.status == 'No fount') return res.status(206).json(nameTipoGasto)
+
+            arr.push({
+                _id: gastosRange[i]._id,
+                idTipoGastos: nameTipoGasto.resp.name,
+                description: gastosRange[i].description,
+                idUser: `${user.resp.name} ${user.resp.lastName}`,
+                montoGasto: gastosRange[i].montoGasto,
+                isUpdate: gastosRange[i].isUpdate,
+                responsableUpdate: nameR,
+                montoAsignadoA: gastosRange[i].montoAsignadoA,
+                dateCreate: gastosRange[i].dateCreate,
+                hora: gastosRange[i].dateCreate?.toString().split(' ')[4],
+                updateDate: gastosRange[i].updateDate,
+                horaUpdate: gastosRange[i].updateDate?.toString().split(' ')[4],
+
+            })
         }
         return {
             status: 'ok',
             message: 'gastos',
             totalGastos,
-            
+            gastosLength: gastosRange.length,
+            gastos: arr
+
         }
 
     } catch (error) {
@@ -302,20 +349,15 @@ async function getGastosRange({ idNegocio, fechaInicio, fechaFinal }) {
     }
 }
 //sacar monto inicial de estado financiero
-async function getDataEstadoFinanciero (idVentaPosition0){
+async function getDataEstadoFinanciero(idNegocio) {
+    console.log(idNegocio, 'esto es -0-0-')
     try {
-        const resp = await estadoFinanciero.find();
-        
-        const product =  await resp.map((data)=>{            
-            for(var i=0; i<data.listVentas.length; i++){                
-                if(data.listVentas[i]._id.toString() == idVentaPosition0.toString()){                  
-                    return data;
-                }
-            }
-        })
-        if(product.length === 0) return {status: 'No fount', message: 'No existe estado financiero de ese producto'};
-        return {status: 'ok', message: 'continuar', estadoFinanciero:product[0]}
-        
+        const resp = await estadoFinanciero.findOne({ idNegocio, state: true });
+
+        if (!resp) return { status: 'No fount', message: 'No hay estado financiero activo' }
+
+        return { status: 'ok', message: 'continuar', montoInicial: resp.montoInicial }
+
     } catch (error) {
         console.log(error);
         return { status: 'No fount', message: 'error 400', error }
@@ -351,6 +393,16 @@ async function validateNegocio(idNegocio) {
     } catch (error) {
         console.log(error);
         return { status: 'No fount', message: 'Error 400', error }
+    }
+}
+async function validateIdTipoGasto(idTIpoGasto) {
+    try {
+        const resp = await tipoGastos.findOne({ _id: idTIpoGasto });
+        if (!resp) return { status: 'No fount', message: 'No se puede mostrar por que ese tipo de gastos no fue registrado' }
+        return { status: 'ok', message: 'existe', resp }
+    } catch (error) {
+        console.error(error);
+        return { status: 'No fount', message: 'erro 400' }
     }
 }
 

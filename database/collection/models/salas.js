@@ -7,6 +7,7 @@ const Salas = new Schema({
     numberMesas    : Number,
     numberClientes : Number,
     idUser         : String,
+    idNegocio         : String,
     dateCreate : { type : Date, default : Date.now },
     updateDate : { type : Date, default : Date.now },
 });

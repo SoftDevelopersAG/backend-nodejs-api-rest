@@ -1,4 +1,6 @@
 const { cliente } = require('../../../../database/collection/models/clientes');
+const { negocio } = require('../../../../database/collection/models/negocio')
+const { user } = require('../../../../database/collection/models/user')
 
 class Clientes {
 
@@ -7,32 +9,38 @@ class Clientes {
             name,
             lastName,
             ci,
-            country,  
-            city,    
+            country,
+            city,
             phoneNumber,
-            callingCode, 
-            homeAddress,  
+            callingCode,
+            homeAddress,
             description,
-             } = req.body;
+        } = req.body;
 
-        const { idUser } = req.params;
-        const {idNegocio} = req.params;  
+        const { idUser,idNegocio } = req.params;
+        //validamos si el negocio existe
+        const verifyNegocio = await validateNegocio(idNegocio);
+        if (verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio)
+
+        //validamos si el usuario existe
+        const user = await validateUser(idUser)
+        if (user.status == 'No fount') return res.status(206).json(user)
 
         const verifyDatas = await validateDatas(name, lastName, ci, phoneNumber)
         if (verifyDatas.status == 'No fount') return res.status(206).json(verifyDatas)
-        
+
         const newCliente = new cliente({
             idUser,
             name,
             lastName,
             ci,
-            country,  
-            city,    
+            country,
+            city,
             phoneNumber,
-            callingCode, 
-            homeAddress,  
+            callingCode,
+            homeAddress,
             description,
-            idNegocio:idNegocio?idNegocio:'',
+            idNegocio,
         });
         try {
             const resp = await newCliente.save();
@@ -47,8 +55,12 @@ class Clientes {
         }
     }
     static async list(req, res) {
+        const {idNegocio} = req.params;
+         //validamos si el negocio existe
+         const verifyNegocio = await validateNegocio(idNegocio);
+         if (verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio)
         try {
-            const resp = await cliente.find();
+            const resp = await cliente.find({idNegocio});
             res.status(200).json({
                 status: 'ok',
                 message: 'Lista de clientes',
@@ -161,7 +173,7 @@ class Clientes {
             })
         } catch (error) {
             console.log(error);
-            return res.status(400).json({ status: 'No fount', message: 'error 400', error})
+            return res.status(400).json({ status: 'No fount', message: 'error 400', error })
         }
 
     }
@@ -207,6 +219,30 @@ async function filterCliente(buscador) {
     } catch (error) {
         console.log(error);
         return { status: 'No fount', message: 'No se puede mostrar la lista filtrada' }
+    }
+}
+
+//validacion del negocioF
+async function validateNegocio(idNegocio) {
+    try {
+        const resp = await negocio.findById({ _id: idNegocio });
+        if (!resp) return { status: 'No fount', message: 'NO existe ese negocio' };
+        return { status: 'ok', message: 'Existe', result: resp }
+    } catch (error) {
+        console.log(error);
+        return { status: 'No fount', message: 'Error 400', error }
+    }
+}
+//verificar si el usuario existe
+async function validateUser(idUSer) {
+    //console.log(idUSer, ' sdfsdfsdf_______')
+    try {
+        const resp = await user.findOne({ _id: idUSer })
+        if (!resp) return { status: 'Not fount', message: 'Ese usuario no existe' }
+        return { status: 'ok', message: 'usuario si existe', resp }
+    } catch (error) {
+        console.log(error);
+        return { status: 'Not fount', message: 'Ese usuario no existe' }
     }
 }
 
