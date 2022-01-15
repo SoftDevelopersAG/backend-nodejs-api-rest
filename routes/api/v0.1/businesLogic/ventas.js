@@ -6,20 +6,28 @@ const { verifyListProducts, comprovacionDeProductosInDB, createVenta, validateUs
 const { user } = require('../../../../database/collection/models/user')
 const { cliente } = require('../../../../database/collection/models/clientes');
 const { negocio } = require('../../../../database/collection/models/negocio');
-const {gastosUser} = require('../../../../database/collection/models/gastosUser');
-const {estadoFinanciero} = require('../../../../database/collection/models/estadoFinanciero');
+const { gastosUser } = require('../../../../database/collection/models/gastosUser');
+const { estadoFinanciero } = require('../../../../database/collection/models/estadoFinanciero');
+const { tipoGastos } = require('../../../../database/collection/models/tipoGasto')
+const moment = require('moment');
 class Ventas {
 
     static async addNewVenta(req, res, next) {
 
         const { idCliente, products, precioTotal, nombreCliente, pagoCliente, cambioCliente } = await req.body;
         const { idUser, idNegocio } = req.params;
-        let cliente = '';
 
+        if(!nombreCliente && !idCliente) return res.status(206).json({status:'No fount', message: "Error es requerido id cliente o nombre cliente" })
 
+        if (products.length === 0 || products === undefined || products === null) return res.status(206).send({ status:'No fount', message: "No se ha enviado ningun producto" });
+        var verifyCamposReq = await verificacionCamposRequeridos([idNegocio,precioTotal,pagoCliente, cambioCliente]);
+
+        if (!verifyCamposReq) return res.status(206).send({ status: 'No fount', error: "venta no procesada", message: "Complete los campos requiridos" });
+
+        let cliente = '';       
         const verifyUser = await validateUser(idUser);
-
         if (verifyUser.status == 'No fount') return res.status(206).json(verifyUser);
+
         if (idCliente) {
             const verifyCliente = await validateCliente(idCliente);
             if (verifyCliente.status == 'No fount') return res.status(206).json(verifyCliente);
@@ -31,16 +39,13 @@ class Ventas {
             return res.status(206).json({ status: 'No fount', message: 'El pago del cliente es menor al cambio' })
         }
 
-        if (products.length === 0 || products === undefined || products === null) return res.status(400).send({ error: "error", message: "No se ha enviado ningun producto" });
-        var verifyCamposReq = await verificacionCamposRequeridos([idNegocio]);        
-
-        if (!verifyCamposReq) return res.status(206).send({ status: 'No fount', error: "venta no procesada", message: "Complete los campos requiridos" });
+        
 
         var stateVerify = await verifyListProducts(products);
         if (stateVerify.status === 'No fount') return res.status(206).send({ status: 'No fount', error: "venta no procesada", message: stateVerify });
 
         var stateExistProducts = await comprovacionDeProductosInDB(res, products);
-        
+
         if (!stateExistProducts) return res.status(206).send({ status: 'No fount', error: "venta no procesada", message: "el id de uno de los productos es incorrecto" });
 
         createVenta(res, products, idNegocio, precioTotal, cliente, idUser, pagoCliente, cambioCliente);
@@ -135,7 +140,7 @@ class Ventas {
     }
 
     // solo para test - muestra las fechas de las ventas
-    static async showListVentas(req, res){
+    static async showListVentas(req, res) {
         console.log(req.params.idNegocio)
         try {
             const { idNegocio } = req.params;
@@ -158,7 +163,7 @@ class Ventas {
     //lista de todas las ventas por rangos
     static async getListVentasRange(req, res) {
         const { idNegocio, fechaInicio, fechaFinal } = req.params;
-        console.log(new Date(`${fechaInicio.replace(/-/g,'/')} 00:00:00`)  , new Date(`${fechaFinal.replace(/-/g,'/')} 00:02:58`) );
+        console.log(new Date(`${fechaInicio.replace(/-/g, '/')} 00:00:00`), new Date(`${fechaFinal.replace(/-/g, '/')} 00:02:58`));
 
         try {
             const ventas = await VentaSchema.Venta.find({
@@ -166,8 +171,8 @@ class Ventas {
                     // { dateCreate: { $gte: new Date(`${fechaInicio}T00:00:14.000Z`) } },
                     // { dateCreate: { $lte: new Date(`${fechaFinal}T23:59:59.999Z`) } }
 
-                    { dateCreate: { $gte: new Date(`${fechaInicio.replace(/-/g,'/')} 00:00:00`) } },
-                    { dateCreate: { $lte: new Date(`${fechaFinal.replace(/-/g,'/')} 23:59:59`) } }
+                    { dateCreate: { $gte: new Date(`${fechaInicio.replace(/-/g, '/')} 00:00:00`) } },
+                    { dateCreate: { $lte: new Date(`${fechaFinal.replace(/-/g, '/')} 23:59:59`) } }
                 ]
             }, {
                 _id: 1,
@@ -207,6 +212,7 @@ class Ventas {
                     hora: ventas[i].dateCreate?.toString().split(' ')[4],
                 })
             }
+            if (err == true) return res.status(206).json({ status: "No fount", message: "No se puede mostrar los datos" })
 
             return res.status(200).json({
                 status: 'ok',
@@ -232,37 +238,33 @@ class Ventas {
         var date1 = new Date(fechaInicio);
         var date2 = new Date(fechaFinal);
 
-        if (date1 > date2) return res.status(206).json({ 
-            status: 'No fount', 
-            message: 'rango de fenchas incorecto la fecha de inicio tiene que ser menor a la fecha final' 
+        if (date1 > date2) return res.status(206).json({
+            status: 'No fount',
+            message: 'rango de fenchas incorecto la fecha de inicio tiene que ser menor a la fecha final'
         })
 
         const getVentaNegocio = await getVentasRange({ idNegocio, fechaInicio, fechaFinal });
-        const getGastosNegocio = await getGastosRange({idNegocio, fechaInicio, fechaFinal});
-        
+        const getGastosNegocio = await getGastosRange({ idNegocio, fechaInicio, fechaFinal });
+
         if (getVentaNegocio.status == 'No fount') return res.status(206).json(getVentaNegocio);
         if (getGastosNegocio.status == 'No fount') return res.status(206).json(getGastosNegocio);
 
-        console.log(getVentaNegocio, ' =================================================================')
-        let primeraVenta = 0;
-        if(getVentaNegocio.primeraVenta){
-            const getEstadoFinanciero = await getDataEstadoFinanciero(getVentaNegocio.primeraVenta._id);
-            console.log(getEstadoFinanciero);
-            if(getEstadoFinanciero.status == 'No fount') return res.status(206).json(getEstadoFinanciero)
-            primeraVenta = getEstadoFinanciero.estadoFinanciero?.montoInicial
-        }
-        
-        
+        const montoInicial = await getDataEstadoFinanciero(idNegocio);
+        if (montoInicial.status == 'No fount') return res.status(206).json(montoInicial);
+
 
         return res.status(200).json({
             status: 'ok',
             message: 'Reporte de ventas y gastos',
-            Fecha:`del ${fechaInicio} hasta ${fechaFinal}`,
-            montoInicial:primeraVenta,
-            totalVentas:getVentaNegocio.totalVentas,
-            gasatoTotal:getGastosNegocio.totalGastos,
-            total:(getVentaNegocio.totalVentas - getGastosNegocio.totalGastos) + primeraVenta,
-            cantidadVendido:getVentaNegocio.cantidadVendido,
+            Fecha: `del ${fechaInicio} hasta ${fechaFinal}`,
+            montoInicial: montoInicial.montoInicial,
+            totalVentas: getVentaNegocio.totalVentas,
+            gasatoTotal: getGastosNegocio.totalGastos,
+            total: (getVentaNegocio.totalVentas - getGastosNegocio.totalGastos) + montoInicial.montoInicial,
+            cantidadVendido: getVentaNegocio.cantidadVendido,
+            gastosLength: getGastosNegocio.gastosLength,
+            productVendido: getVentaNegocio.product,
+            gastosRealizados: getGastosNegocio.gastos
         })
 
 
@@ -271,31 +273,76 @@ class Ventas {
     }
 
 }
+var getDaysArray = function (start, end) {
+    for (var arr = [], dt = new Date(start); dt <= end; dt.setDate(dt.getDate() + 1)) {
+        arr.push(new Date(dt));
+    }
+    return arr;
+};
 //sacar las ventas en cualquier rangos
 async function getVentasRange({ idNegocio, fechaInicio, fechaFinal }) {
     try {
         const ventasRange = await VentaSchema.Venta.find({
             idNegocio, $and: [
-                { dateCreate: { $gte: new Date(`${fechaInicio}T00:00:14.000Z`) } },
-                { dateCreate: { $lte: new Date(`${fechaFinal}T23:59:59.999Z`) } }
+                { dateCreate: { $gte: new Date(`${fechaInicio.replace(/-/g, '/')} 00:00:00`) } },
+                { dateCreate: { $lte: new Date(`${fechaFinal.replace(/-/g, '/')} 23:59:59`) } }
             ]
         });
-        let totalVentas = 0, sumEfectivoCLiente = 0, sumCambio = 0;
+
+        /* const daylist = getDaysArray(new Date(`${fechaInicio}T04:00:00.000Z`), new Date(`${fechaFinal}T04:00:00.000Z`));
+        daylist.map((v) => v.toISOString().slice(0, 10)).join("");        
+
+        let arrPrueba = []
+        for (var i = 0; i < ventasRange.length; i++) {
+
+            for (var j = 0; j < daylist.length; j++) {
+                let d = new Date(ventasRange[i].dateCreate)
+                
+                if (d.toDateString() == daylist[j].toDateString()) {
+                    arrPrueba.push(ventasRange[i])
+                }
+            }
+
+        } */
+        //console.log(ventasRange.length, ' ================================================================= arrPrueba rrr')
+
+        let arrVentas = [], err = false; let totalVentas = 0, sumEfectivoCLiente = 0, sumCambio = 0;
         for (let i = 0; i < ventasRange.length; i++) {
             totalVentas = ventasRange[i].precioTotal + totalVentas;
             sumEfectivoCLiente = ventasRange[i].pagoCliente + sumEfectivoCLiente;
             sumCambio = ventasRange[i].cambioCliente + sumCambio;
 
+            const user = await getNameUser(ventasRange[i].idUser);
+            if (user.status == 'No fount') return err = true;
+            const cliente = await getNameCliente(ventasRange[i].idCLiente);
+            if (cliente.status == 'No fount') return err = true
+
+            const dateLocal = await converterDate(ventasRange[i].dateCreate);           
+            if(dateLocal.status === 'No fount') return res.status(206).json(dateLocal);
+            arrVentas.push({
+                _id: ventasRange[i]._id,
+                idUser: `${user.resp.name} ${user.resp.lastName}`,
+                idCLiente: cliente.status == 'No' ? ventasRange[i].idCLiente : `${cliente.resp.name} ${cliente.resp.lastName}`,
+                venta: ventasRange[i].venta,
+                precioTotal: ventasRange[i].precioTotal,
+                pagoCliente: ventasRange[i].pagoCliente,
+                cambioCliente: ventasRange[i].cambioCliente,
+                products: ventasRange[i].products,
+                state: ventasRange[i].state,
+                dateCreate: dateLocal.result?.dateLocal,
+                hora: ventasRange[i].dateCreate?.toString().split(' ')[4],
+            })
+
         }
-        
+        if (err) return { status: 'No fount', message: 'No se puede mostra los datos' }
         return {
             status: 'ok',
             message: 'Ventas',
             totalVentas,
-            cantidadVendido:ventasRange.length,
+            cantidadVendido: ventasRange.length,
             sumEfectivoCLiente,
             sumCambio,
-            primeraVenta:ventasRange[0]
+            product: arrVentas
         }
 
     } catch (error) {
@@ -304,23 +351,79 @@ async function getVentasRange({ idNegocio, fechaInicio, fechaFinal }) {
     }
 }
 //lista de gastos por rango 
-async function getGastosRange({ idNegocio, fechaInicio, fechaFinal }) {   
+async function getGastosRange({ idNegocio, fechaInicio, fechaFinal }) {
     try {
         const gastosRange = await gastosUser.find({
             idNegocio, $and: [
-                { dateCreate: { $gte: new Date(`${fechaInicio}T00:00:14.000Z`) } },
-                { dateCreate: { $lte: new Date(`${fechaFinal}T23:59:59.999Z`) } }
+                { dateCreate: { $gte: new Date(`${fechaInicio.replace(/-/g, '/')} 00:00:00`) } },
+                { dateCreate: { $lte: new Date(`${fechaFinal.replace(/-/g, '/')} 23:59:59`) } }
             ]
         });
+        /* //lista de rangos para verificar
+        const daylist = getDaysArray(new Date(`${fechaInicio}T04:00:00.000Z`), new Date(`${fechaFinal}T04:00:00.000Z`));
+        daylist.map((v) => v.toISOString().slice(0, 10)).join("");  
+
+        console.log(daylist, ' ================================================================= daylist',gastosRange);
+        //filtramos por rango por fecha local
+        let arrPrueba = []
+        for (var i = 0; i < gastosRange.length; i++) {
+
+            for (var j = 0; j < daylist.length; j++) {
+                let d = new Date(gastosRange[i].dateCreate)
+                console.log(d.toDateString(), '==', daylist[j].toDateString())
+                if (d.toDateString() == daylist[j].toDateString()) {
+                    arrPrueba.push(gastosRange[i])
+                }
+            }
+
+        } */
+       
         let totalGastos = 0;
+        let arr = [];
         for (let i = 0; i < gastosRange.length; i++) {
-            totalGastos = gastosRange[i].montoGasto + totalGastos;           
+            totalGastos = gastosRange[i].montoGasto + totalGastos;
+
+            const user = await getNameUser(gastosRange[i].idUser);
+            if (user.status == 'No fount') return res.status(206).json(user)
+            let nameR = ''
+            if (gastosRange[i].responsableUpdate != 'none') {
+                const responsable = await getNameUser(gastosRange[i].responsableUpdate);
+                if (responsable.status == 'No fount') return res.status(206).json(responsable)
+                nameR = `${responsable.resp.name} ${responsable.resp.lastName}`
+            }
+
+            const nameTipoGasto = await validateIdTipoGasto(gastosRange[i].idTipoGastos)
+            if (nameTipoGasto.status == 'No fount') return res.status(206).json(nameTipoGasto)
+
+            const dateLocal = await converterDate(gastosRange[i].dateCreate);
+            const dateUpdateLocal = await converterDate(gastosRange[i].updateDate)
+            if(dateLocal.status === 'No fount') return res.status(206).json(dateLocal);
+            if(dateUpdateLocal.status === 'No fount') return res.status(206).json(dateUpdateLocal);
+            
+            console.log()
+            arr.push({
+                _id: gastosRange[i]._id,
+                idTipoGastos: nameTipoGasto.resp.name,
+                description: gastosRange[i].description,
+                idUser: `${user.resp.name} ${user.resp.lastName}`,
+                montoGasto: gastosRange[i].montoGasto,
+                isUpdate: gastosRange[i].isUpdate,
+                responsableUpdate: nameR,
+                montoAsignadoA: gastosRange[i].montoAsignadoA,
+                dateCreate: dateLocal.result?.dateLocal,
+                hora: gastosRange[i].dateCreate?.toString().split(' ')[4],
+                updateDate: dateUpdateLocal.result?.dateLocal,
+                horaUpdate: gastosRange[i].updateDate?.toString().split(' ')[4],
+
+            })
         }
         return {
             status: 'ok',
             message: 'gastos',
             totalGastos,
-            
+            gastosLength: gastosRange.length,
+            gastos: arr
+
         }
 
     } catch (error) {
@@ -329,20 +432,15 @@ async function getGastosRange({ idNegocio, fechaInicio, fechaFinal }) {
     }
 }
 //sacar monto inicial de estado financiero
-async function getDataEstadoFinanciero (idVentaPosition0){
+async function getDataEstadoFinanciero(idNegocio) {
+    console.log(idNegocio, 'esto es -0-0-')
     try {
-        const resp = await estadoFinanciero.find();
-        
-        const product =  await resp.map((data)=>{            
-            for(var i=0; i<data.listVentas.length; i++){                
-                if(data.listVentas[i]._id.toString() == idVentaPosition0.toString()){                  
-                    return data;
-                }
-            }
-        })
-        if(product.length === 0) return {status: 'No fount', message: 'No existe estado financiero de ese producto'};
-        return {status: 'ok', message: 'continuar', estadoFinanciero:product[0]}
-        
+        const resp = await estadoFinanciero.findOne({ idNegocio, state: true });
+
+        if (!resp) return { status: 'No fount', message: 'No hay estado financiero activo' }
+
+        return { status: 'ok', message: 'continuar', montoInicial: resp.montoInicial }
+
     } catch (error) {
         console.log(error);
         return { status: 'No fount', message: 'error 400', error }
@@ -378,6 +476,33 @@ async function validateNegocio(idNegocio) {
     } catch (error) {
         console.log(error);
         return { status: 'No fount', message: 'Error 400', error }
+    }
+}
+async function validateIdTipoGasto(idTIpoGasto) {
+    try {
+        const resp = await tipoGastos.findOne({ _id: idTIpoGasto });
+        if (!resp) return { status: 'No fount', message: 'No se puede mostrar por que ese tipo de gastos no fue registrado' }
+        return { status: 'ok', message: 'existe', resp }
+    } catch (error) {
+        console.error(error);
+        return { status: 'No fount', message: 'erro 400' }
+    }
+}
+
+async function converterDate(date) {   
+    try {
+        let dateLocal = new Date(date).toLocaleString().split(' ')[0]
+        let timeLocal = new Date(date).toLocaleString().split(' ')[1]        
+        return {
+            status:'ok',
+            result:{
+                dateLocal,
+                timeLocal
+            }
+        }
+    } catch (error) {
+        console.log(error);
+        return { status: 'No fount', message: 'Error al canvertir las fechas a la hora local' }
     }
 }
 

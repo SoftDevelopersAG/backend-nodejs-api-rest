@@ -250,7 +250,7 @@ const signIn = async (req, res, next) => {
 
     if (dataUser.length === 1 && dataUser[0].email === req.body.email && dataUser[0].password1 === req.body.password && dataUser[0].state === false) {
         return res.status(206).send({
-            status: 'error',
+            status: 'No fount',
             message: 'Usuario inactivo'
         })
 
@@ -465,6 +465,67 @@ const removeRoleUser = async (req, res, next) => {
         return res.status(404).send({ status: 404, error: 'error no se puede remover el rol, revise el id que introdujo' })
     }
 }
+//lista de usuarios cajeros activos 
+
+const getlistUserActivos = async(req,res)=>{
+    const {idNegocio} = req.params;
+    const verifyNegocio = await validateNegocio(idNegocio);
+    if(verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio);
+    try {
+        const resp = await User.user.find({state:true}).populate('role');
+        if(!resp) return res.status(206).json({status: 'Not Found',message: 'Ese usuario no existe'});
+        
+        let arr = []
+        await resp.map((data)=>{            
+            for(let i = 0; i < data.role.length; i++){
+                console.log(data.role[i].name)
+                if(data.role[i].name == 'caja'){
+                    arr.push(data)
+                }
+            }
+           
+        })
+        return res.status(200).send({ status: 'ok', message: 'Usuario de caja', result:arr });      
+        
+    } catch (error) {
+        console.log(error);
+        return res.status(404).send({ status: 'No fount', message: 'No se puede mostra los datos', error });
+    }
+}
+const dataNegocioUser = async(req,res)=>{
+    const {idUser,idNegocio} = req.params;
+
+    const verifyNegocio = await validateNegocio(idNegocio);
+    if(verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio);
+
+    const verifyUser = await verifyIdUser(idUser);
+    if (verifyUser.success == false) return res.status(206).json({ status: 'No fount', error: 'Id incorrecto' });
+    
+    try {
+        const dataNegocio = await {
+            nombre:verifyNegocio.result?.nombre,
+            propietario:verifyNegocio.result?.propietario,
+            phoneNumber:verifyNegocio.result?.phoneNumber,
+        }
+        const dataUser = await {
+            name: verifyUser.dataUser?.name,
+            lastname: verifyUser.dataUser?.lastName,
+            ci:verifyUser.dataUser?.ci,
+            role:verifyUser.dataUser?.role,
+        }
+        return res.status(200).json({
+            status: 'ok',
+            message: 'Datos del usuario y del negocio',
+            result:{
+                negocio:dataNegocio,
+                usuario:dataUser
+            }
+        })
+    } catch (error) {
+        console.log(error);
+        return res.status(400).json({ status: 'No fount', error })
+    }
+}
 //esta ruto se esta usando mucho y lo necesitan todos los roles
 //lista de roles del usuario
 const userRoleList = async (req, res) => {
@@ -596,6 +657,21 @@ const verifiLisence = async (req, res) => {
     }
 }
 
+//verficamos si existe algun usuario 
+const userLength = async(req,res) =>{
+    try {
+        const resp = await User.user.find();
+        if(resp.length === 0) return res.status(200).json({ status: 'ok', message: 'No hay usuario registrados', userLength:0});
+        return res.status(200).json({ status: 'ok', message:'hay usuario registrados', userLength:resp.length})
+    } catch (error) {
+        console.error(error);
+        return res.status(400).json({
+            status: 'No fount',
+            message: 'No se puede mostrar los datos'
+        })
+    }
+}
+
 ///funciones de validacion
 //valida los datos segun se les envie
 const validateDatas = async (ci, email, phoneNumber, role, password, password1, idUser) => {
@@ -650,7 +726,7 @@ const validateDatas = async (ci, email, phoneNumber, role, password, password1, 
 const verifyIdUser = async (id_user) => {
     if (!id_user) return { success: false, message: 'No estas mandando el id de la tabla para actualizar los datos' }
     try {
-        const dataUser = await User.user.findById({ _id: id_user });
+        const dataUser = await User.user.findById({ _id: id_user }).populate('role');
         return { success: true, dataUser }
     } catch (error) {
         console.log(error);
@@ -674,5 +750,8 @@ module.exports = {
     generateLicence,
     verifiLisence,
     registerAdmin,
-    verifiDatasUser
+    verifiDatasUser,
+    getlistUserActivos,
+    dataNegocioUser,
+    userLength
 }
