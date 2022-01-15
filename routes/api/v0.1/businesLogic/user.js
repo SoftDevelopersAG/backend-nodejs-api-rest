@@ -250,7 +250,7 @@ const signIn = async (req, res, next) => {
 
     if (dataUser.length === 1 && dataUser[0].email === req.body.email && dataUser[0].password1 === req.body.password && dataUser[0].state === false) {
         return res.status(206).send({
-            status: 'error',
+            status: 'No fount',
             message: 'Usuario inactivo'
         })
 
@@ -657,6 +657,21 @@ const verifiLisence = async (req, res) => {
     }
 }
 
+//verficamos si existe algun usuario 
+const userLength = async(req,res) =>{
+    try {
+        const resp = await User.user.find();
+        if(resp.length === 0) return res.status(200).json({ status: 'ok', message: 'No hay usuario registrados', userLength:0});
+        return res.status(200).json({ status: 'ok', message:'hay usuario registrados', userLength:resp.length})
+    } catch (error) {
+        console.error(error);
+        return res.status(400).json({
+            status: 'No fount',
+            message: 'No se puede mostrar los datos'
+        })
+    }
+}
+
 ///funciones de validacion
 //valida los datos segun se les envie
 const validateDatas = async (ci, email, phoneNumber, role, password, password1, idUser) => {
@@ -737,5 +752,6 @@ module.exports = {
     registerAdmin,
     verifiDatasUser,
     getlistUserActivos,
-    dataNegocioUser
+    dataNegocioUser,
+    userLength
 }

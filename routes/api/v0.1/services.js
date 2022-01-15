@@ -97,6 +97,8 @@ route.get('/user/getlistUserActivos/:idNegocio',User.getlistUserActivos);
 //get datos del negocio y datos del usurio
 route.get('/user/getDataNegocioUser/:idUser/:idNegocio',User.dataNegocioUser)
 
+//verificar si existe usuarios registrados
+route.get('/user/verifyUserLength', User.userLength)
 
 //generate license
 route.get('/cliente/generate/licence', User.generateLicence);
@@ -176,6 +178,8 @@ route.get('/userGastos/listUserGastos/:idUser/:fechaInicio/:fechaFinal',[Auth, A
 //lista de gastos del negocio por dia
 route.get('/gastos/listGastosNegocioDia/:idNegocio/:fechaInicio/:fechaFinal',Gastos.listaGastosNegocio);
 route.put('/userGastos/updateGastosUser/:idGastoUser/:idUser', Gastos.updateGastoUser);
+
+
 
 
 

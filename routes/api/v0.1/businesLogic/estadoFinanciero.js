@@ -6,9 +6,9 @@ const utilsEstadoFinanciero = require('./utilsEstadFinanciero/utilsEstadoFinanci
 const gastoUsuarioSchema = require('../../../../database/collection/models/gastosUser')
 const { user } = require('../../../../database/collection/models/user');
 const { negocio } = require('../../../../database/collection/models/negocio');
-const {tipoGastos} = require('../../../../database/collection/models/tipoGasto')
-const {cliente} = require('../../../../database/collection/models/clientes');
-
+const { tipoGastos } = require('../../../../database/collection/models/tipoGasto')
+const { cliente } = require('../../../../database/collection/models/clientes');
+const {pvendido} = require('../../../../database/collection/models/venta');
 class EstadoFinanciero {
 
     static async createEstadoFinanciero(req, res, next) {
@@ -33,12 +33,6 @@ class EstadoFinanciero {
                 await utilsEstadoFinanciero.buscarEstadoFinancieroVigente(idNegocio);
 
                 var dataEstadoFinanciero = await estadoFinancieroSchema.estadoFinanciero.findOne({ idNegocio: idNegocio, state: true });
-                /*  console.log('===================================================');
-                 console.log(dataEstadoFinanciero);
-                 console.log(dataVenta, ' dataVenta *****');
- 
-                 console.log('==================================================='); */
-
                 var auxSuma = await dataEstadoFinanciero.montoActualDisponble + dataVenta.precioTotalBackend;
                 var listVentas = await [...dataEstadoFinanciero.listVentas, dataVenta._id];
                 await estadoFinancieroSchema.estadoFinanciero.findByIdAndUpdate({ _id: dataEstadoFinanciero._id }, { montoActualDisponble: auxSuma, listVentas });
@@ -159,22 +153,38 @@ class EstadoFinanciero {
         }
     }
     static async listaProductoGastos(req, res) {
+        //console.log(' esto es =============================================================')
         const { idNegocio } = req.params;
         const verifyNegocio = await validateNegocio(idNegocio);
+        //console.log(verifyNegocio, '===== esto es verifiNegocio')
         if (verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio);
 
         const getListVentas = await getListVentasTfinaciero(idNegocio);
+        //console.log(getListVentas, ' =========== getListVentas')
         if (getListVentas.status == 'Not fount') return res.status(206).json(getListVentas);
-        let arrVentas = [], err = false, total = 0, sumEfectivoTotal = 0, sumCambio = 0;
-        for (let i = 0; i <  getListVentas.result.listVentas.length; i++) {
+
+        let arrVentas = [], total = 0, sumEfectivoTotal = 0, sumCambio = 0;
+        for (let i = 0; i < getListVentas.result.listVentas.length; i++) {
             total = getListVentas.result.listVentas[i].precioTotal + total;
             sumEfectivoTotal = (getListVentas.result.listVentas[i].pagoCliente * 1) + sumEfectivoTotal;
             sumCambio = (getListVentas.result.listVentas[i].cambioCliente * 1) + sumCambio;
 
             const user = await getNameUser(getListVentas.result.listVentas[i].idUser);
-            if (user.status == 'No fount') return err = true;
+            if (user.status == 'No fount') return res.status(206).json(user)
+
             const cliente = await getNameCliente(getListVentas.result.listVentas[i].idCLiente);
-            if (cliente.status == 'No fount') return err = true
+            if (cliente.status == 'No fount') return res.status(206).json(cliente)
+
+            const dateLocal = await converterDate(getListVentas.result.listVentas[i].dateCreate,);           
+            if(dateLocal.status === 'No fount') return res.status(206).json(dateLocal);
+
+            let productoArr = [];
+            for(let j = 0; j< getListVentas.result.listVentas[i].products.length; j++){                
+                const datas = await getProductsItem(getListVentas.result.listVentas[i].products[j].toString());
+                if(datas.status === 'No fount') return res.status(206).json(datas)
+                productoArr.push(datas.result)
+                
+            }            
             arrVentas.push({
                 _id: getListVentas.result.listVentas[i]._id,
                 idUser: `${user.resp.name} ${user.resp.lastName}`,
@@ -183,45 +193,50 @@ class EstadoFinanciero {
                 precioTotal: getListVentas.result.listVentas[i].precioTotal,
                 pagoCliente: getListVentas.result.listVentas[i].pagoCliente,
                 cambioCliente: getListVentas.result.listVentas[i].cambioCliente,
-                products: getListVentas.result.listVentas[i].products,
+                products: productoArr,
                 state: getListVentas.result.listVentas[i].state,
-                dateCreate: getListVentas.result.listVentas[i].dateCreate,
+                dateCreate: dateLocal.result?.dateLocal,
                 hora: getListVentas.result.listVentas[i].dateCreate?.toString().split(' ')[4],
             })
         }
-        if(err == true) return res.status(206).json({status:"No fount", message:'No se puede mostrar los datos'})
+        
         const getListGastos = await getListGastosTfinaciero(idNegocio);
         let arr = [], totalGastos = 0;
-            for (var i = 0; i < getListGastos.result.listGastos.length; i++) {
-                totalGastos = totalGastos + getListGastos.result.listGastos[i].montoGasto
-                const user = await getNameUser(getListGastos.result.listGastos[i].idUser);     
-                if(user.status == 'No fount') return res.status(206).json(user)    
-                let nameR = ''
-                if(getListGastos.result.listGastos[i].responsableUpdate != 'none'){
-                    const responsable = await getNameUser(getListGastos.result.listGastos[i].responsableUpdate);                
-                    if(responsable.status == 'No fount') return res.status(206).json(responsable)
-                    nameR = `${responsable.resp.name} ${responsable.resp.lastName}`
-                }                
-
-                const nameTipoGasto = await validateIdTipoGasto(getListGastos.result.listGastos[i].idTipoGastos)
-                if(nameTipoGasto.status == 'No fount') return res.status(206).json(nameTipoGasto)      
-                
-                arr.push({
-                    _id: getListGastos.result.listGastos[i]._id,
-                    idTipoGastos: nameTipoGasto.resp.name,
-                    description: getListGastos.result.listGastos[i].description,
-                    idUser: `${user.resp.name} ${user.resp.lastName}`,
-                    montoGasto: getListGastos.result.listGastos[i].montoGasto,
-                    isUpdate: getListGastos.result.listGastos[i].isUpdate, 
-                    responsableUpdate: nameR,        
-                    montoAsignadoA:getListGastos.result.listGastos[i].montoAsignadoA,           
-                    dateCreate: getListGastos.result.listGastos[i].dateCreate,
-                    hora: getListGastos.result.listGastos[i].dateCreate?.toString().split(' ')[4],                 
-                    updateDate: getListGastos.result.listGastos[i].updateDate,
-                    horaUpdate: getListGastos.result.listGastos[i].updateDate?.toString().split(' ')[4],
-
-                })
+        for (var i = 0; i < getListGastos.result.listGastos.length; i++) {
+            totalGastos = totalGastos + getListGastos.result.listGastos[i].montoGasto
+            const user = await getNameUser(getListGastos.result.listGastos[i].idUser);
+            if (user.status == 'No fount') return res.status(206).json(user)
+            let nameR = ''
+            if (getListGastos.result.listGastos[i].responsableUpdate != 'none') {
+                const responsable = await getNameUser(getListGastos.result.listGastos[i].responsableUpdate);
+                if (responsable.status == 'No fount') return res.status(206).json(responsable)
+                nameR = `${responsable.resp.name} ${responsable.resp.lastName}`
             }
+
+            const nameTipoGasto = await validateIdTipoGasto(getListGastos.result.listGastos[i].idTipoGastos)
+            if (nameTipoGasto.status == 'No fount') return res.status(206).json(nameTipoGasto)
+
+            const dateLocal = await converterDate(getListGastos.result.listGastos[i].dateCreate);
+            const dateUpdateLocal = await converterDate(getListGastos.result.listGastos[i].updateDate)
+            if(dateLocal.status === 'No fount') return res.status(206).json(dateLocal);
+            if(dateUpdateLocal.status === 'No fount') return res.status(206).json(dateUpdateLocal);
+
+            arr.push({
+                _id: getListGastos.result.listGastos[i]._id,
+                idTipoGastos: nameTipoGasto.resp.name,
+                description: getListGastos.result.listGastos[i].description,
+                idUser: `${user.resp.name} ${user.resp.lastName}`,
+                montoGasto: getListGastos.result.listGastos[i].montoGasto,
+                isUpdate: getListGastos.result.listGastos[i].isUpdate,
+                responsableUpdate: nameR,
+                montoAsignadoA: getListGastos.result.listGastos[i].montoAsignadoA,
+                dateCreate: dateLocal.result?.dateLocal,
+                hora: getListGastos.result.listGastos[i].dateCreate?.toString().split(' ')[4],
+                updateDate: dateUpdateLocal.result?.dateLocal,
+                horaUpdate: getListGastos.result.listGastos[i].updateDate?.toString().split(' ')[4],
+
+            })
+        }
         if (getListGastos.status == 'Not fount') return res.status(206).json(getListGastos);
 
         return res.status(200).json({
@@ -237,7 +252,7 @@ class EstadoFinanciero {
                 dateCreated: getListVentas.result.dateCreated,
                 cantidadVendido: getListVentas.result.listVentas.length,
                 cantidadDeGastos: getListGastos.result.listGastos.length,
-                ventas:{                    
+                ventas: {
                     sumEfectivoTotal,
                     sumCambio,
                     total,
@@ -247,19 +262,15 @@ class EstadoFinanciero {
                 listGastos: arr
             }
         })
-
-
-
     }
 
-    static async upateMontoInicialEstadoFinanciero(req,res){
-        const {idNegocio, idUser} = req.params;
-        const {montoInicial} = req.body;
-        console.log(req.body, ' =================================================================');
+    static async upateMontoInicialEstadoFinanciero(req, res) {
+        const { idNegocio, idUser } = req.params;
+        const { montoInicial } = req.body;      
         //validamos data
-        if(!montoInicial || montoInicial < 0 || isNaN(montoInicial)) return res.status(206).json({
-            status:'No fount', 
-            message:'Es obligatorio poner un numero mayor a 0'
+        if (!montoInicial || montoInicial < 0 || isNaN(montoInicial)) return res.status(206).json({
+            status: 'No fount',
+            message: 'Es obligatorio poner un numero mayor a 0'
         })
         //verificamos si el negocio existe
         const verifyEstadoFinanciero = await validateEstadoFinanciero(idNegocio);
@@ -269,7 +280,7 @@ class EstadoFinanciero {
         if (isAdmin.status == 'No fount') return res.status(206).json(isAdmin)
 
         try {
-            await estadoFinancieroSchema.estadoFinanciero.findByIdAndUpdate({ _id: verifyEstadoFinanciero.result._id }, { montoInicial:(montoInicial*1) + (verifyEstadoFinanciero.result.montoInicial*1) });
+            await estadoFinancieroSchema.estadoFinanciero.findByIdAndUpdate({ _id: verifyEstadoFinanciero.result._id }, { montoInicial: (montoInicial * 1) + (verifyEstadoFinanciero.result.montoInicial * 1) });
             const resp = await estadoFinancieroSchema.estadoFinanciero.findById({ _id: verifyEstadoFinanciero.result._id })
             return res.status(200).json({
                 status: 'ok', message: 'Se actualizo el Monto inicial', result: resp,
@@ -401,5 +412,31 @@ async function validateIdTipoGasto(idTIpoGasto) {
         return { status: 'No fount', message: 'erro 400' }
     }
 }
-
+async function converterDate(date) {   
+    try {
+        let dateLocal = new Date(date).toLocaleString().split(' ')[0]
+        let timeLocal = new Date(date).toLocaleString().split(' ')[1]        
+        return {
+            status:'ok',
+            result:{
+                dateLocal,
+                timeLocal
+            }
+        }
+    } catch (error) {
+        console.log(error);
+        return { status: 'No fount', message: 'Error al canvertir las fechas a la hora local' }
+    }
+}
+async function getProductsItem (idProduct){
+    try {
+        const resp = await pvendido.findById({_id:idProduct});
+        
+        if(!resp) return {status:'No fount', message:"Error al buscar el producto"}
+        return {status:'ok', message:'si existe producto', result:resp}
+    } catch (error) {
+        console.log(error);
+        return { status: 'No fount', message: 'Error 400' }
+    }
+}
 module.exports = EstadoFinanciero;
