@@ -15,8 +15,8 @@ const path =  require('path');
 
 
 // backups DB
-// const backupDb = require('./database/collection/backupsDB/generateBackup');
-// backupDb();
+const backupDb = require('./database/collection/backupsDB/generateBackup');
+backupDb();
 
 const connect = require('./database/collection/connectionDB')
 
