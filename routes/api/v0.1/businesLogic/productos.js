@@ -4,7 +4,7 @@ const { restart } = require('nodemon');
 const SchemaProducts = require('../../../../database/collection/models/producto');
 const SchemaNegocio = require('../../../../database/collection/models/negocio');
 const { user } = require('../../../../database/collection/models/user');
-
+const { redondearPrecio } = require('../../../../Utils/RedondeNumeros/redondeoPrecios')
 
 const { verificacionCamposRequeridos } = require('../../../../Utils/verifyCampos/verifyCampos');
 
@@ -45,7 +45,7 @@ class Products {
                 category: category ? category : '',
                 subcategory: subcategory ? subcategory : '',
                 precioUnitario: precioUnitario ? precioUnitario : 0,
-                precioCosto: precioCosto ? precioCosto : 0,
+                precioCosto: precioCosto ? precioCosto: 0,
                 unidadesDisponibles: unidadesDisponibles ? unidadesDisponibles : 0,
                 colorsAvailable: colorsAvailable ? colorsAvailable : 'color de la foto',
                 envioDesde: dataTienda?.city ? dataTienda.city : 'No definido',

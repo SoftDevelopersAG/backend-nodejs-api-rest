@@ -2,14 +2,17 @@
 
 const { spawn } = require('child_process');
 const path = require('path');
-const fs = require('fs');
+const cron  = require('node-cron')
 
 const DB_NAME = 'restaurantDB';
-const ARCHIVE_PATH = path.join(__dirname, './listBackups', `${DB_NAME}.gzip`);
-
+var dateString = new Date().toLocaleDateString().replace(/[/]/g,'-');
+const nameDB = `${DB_NAME}-${dateString}`;
+const ARCHIVE_PATH = path.join(__dirname, './listBackups', `${nameDB}.gzip`);
 
 const restoreDB=()=>{
     // mongorestore --gzip --db restaurantDB --archive=restaurantDB.gzip
+
+
     const child = spawn('mongorestore', [
         `--gzip`,
         `--db=${DB_NAME}`,
@@ -22,10 +25,11 @@ const restoreDB=()=>{
 
 
 const backupsDB=()=>{
+    
     const child = spawn('mongodump', [
         `--db=${DB_NAME}`,  
         `--archive=${ARCHIVE_PATH}`,
-        `--gzip`,
+        `--gzip`
     ])
 
     child.stdout.on('data',(data)=>{
@@ -45,6 +49,12 @@ const backupsDB=()=>{
     })
 }
 
-// backupsDB();
+// realiza los backups cada dia de las semana
+cron.schedule(' * * * 1 * *',()=>{
+    backupsDB();
+    console.log("se realizo el backup")
+});
+
+
 
 module.exports = backupsDB;

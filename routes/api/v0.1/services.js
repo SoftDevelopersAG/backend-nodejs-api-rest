@@ -33,6 +33,8 @@ const Clientes =require('./businesLogic/clientes')
 //gastos y tipo de gastos y tipo
 const Gastos = require('./businesLogic/gastos');
 
+const PCategorias = require('./businesLogic/pCategoria');
+
 route.get('/',(req, res, next)=>{
     res.status(200).send({"messagae":"Api-rest food sales system runing"})
 })
@@ -138,7 +140,7 @@ route.get('/ventas/show/list/:idNegocio', Ventas.showListVentas);
 
 
 // :::::::::::::::::::PRODUCTS:::::::::::::::::::::::::::::::
-route.post('/products/add/:idNegocio/:idUser',[Auth, AccessRoleControl.isCocinero], Products.addNewProduct);
+route.post('/products/add/:idNegocio/:idUser',[Auth], Products.addNewProduct);
 route.get('/products/get/list/:idNegocio', Products.getAllProducts);
 route.put('/products/update/:idProducto',[Auth, AccessRoleControl.isCocinero], Products.updateProducto);
 
@@ -154,6 +156,15 @@ route.get('/mesas/list/:idSala', Mesa.list);
 route.post('/menu/create/:idUser', Menu.create);
 route.get('/menu/list', Menu.list);
 route.put('/menu/update/:idMenu', Menu.updateMenuDatas);
+
+// ==========categorias====================
+route.post('/pcategoria/add/idNegocio=:idNegocio/idUser=:idUser', PCategorias.addCategoria);
+route.put('/pcategoria/update/idPcategoria=:idPcategoria', PCategorias.updatePcategoria);
+route.get('/pcategoria/detail/idPcategoria=:idPcategoria', PCategorias.getDetailPcategoria);
+route.get('/pcategoria/getlist/idNegocio=:idNegocio', PCategorias.getAllCategoria);
+  // =======subcategorias============
+route.post('/psubcategoria/add/idPcategoria=:idPcategoria/idUser=:idUser',PCategorias.addSubCategoria);
+route.put('/psubcategoria/update/idPsubcategoria=:idPsubcategoria', PCategorias.updatePsubcategoria);
 
 //registrar las imagenes
 route.post('/image/product/:idmenu',[Auth, AccessRoleControl.isCocinero], uploadFileFotoProducto);
@@ -178,7 +189,6 @@ route.get('/userGastos/listUserGastos/:idUser/:fechaInicio/:fechaFinal',[Auth, A
 //lista de gastos del negocio por dia
 route.get('/gastos/listGastosNegocioDia/:idNegocio/:fechaInicio/:fechaFinal',Gastos.listaGastosNegocio);
 route.put('/userGastos/updateGastosUser/:idGastoUser/:idUser', Gastos.updateGastoUser);
-
 
 
 

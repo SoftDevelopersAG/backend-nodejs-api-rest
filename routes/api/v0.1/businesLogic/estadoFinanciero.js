@@ -9,6 +9,8 @@ const { negocio } = require('../../../../database/collection/models/negocio');
 const { tipoGastos } = require('../../../../database/collection/models/tipoGasto')
 const { cliente } = require('../../../../database/collection/models/clientes');
 const {pvendido} = require('../../../../database/collection/models/venta');
+const{redondearPrecio}  =require('../../../../Utils/RedondeNumeros/redondeoPrecios')
+
 class EstadoFinanciero {
 
     static async createEstadoFinanciero(req, res, next) {
@@ -33,9 +35,11 @@ class EstadoFinanciero {
                 await utilsEstadoFinanciero.buscarEstadoFinancieroVigente(idNegocio);
 
                 var dataEstadoFinanciero = await estadoFinancieroSchema.estadoFinanciero.findOne({ idNegocio: idNegocio, state: true });
+            
                 var auxSuma = await dataEstadoFinanciero.montoActualDisponble + dataVenta.precioTotalBackend;
+                var sumaRedondeada = await redondearPrecio(auxSuma);
                 var listVentas = await [...dataEstadoFinanciero.listVentas, dataVenta._id];
-                await estadoFinancieroSchema.estadoFinanciero.findByIdAndUpdate({ _id: dataEstadoFinanciero._id }, { montoActualDisponble: auxSuma, listVentas });
+                await estadoFinancieroSchema.estadoFinanciero.findByIdAndUpdate({ _id: dataEstadoFinanciero._id }, { montoActualDisponble: sumaRedondeada, listVentas });
                 break;
             }
             case "gasto": {
