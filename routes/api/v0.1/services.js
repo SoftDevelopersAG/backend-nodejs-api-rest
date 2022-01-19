@@ -157,7 +157,7 @@ route.post('/menu/create/:idUser', Menu.create);
 route.get('/menu/list', Menu.list);
 route.put('/menu/update/:idMenu', Menu.updateMenuDatas);
 
-// ==========categorias====================
+// ==========categorias de los productos====================
 route.post('/pcategoria/add/idNegocio=:idNegocio/idUser=:idUser', PCategorias.addCategoria);
 route.put('/pcategoria/update/idPcategoria=:idPcategoria', PCategorias.updatePcategoria);
 route.get('/pcategoria/detail/idPcategoria=:idPcategoria', PCategorias.getDetailPcategoria);
