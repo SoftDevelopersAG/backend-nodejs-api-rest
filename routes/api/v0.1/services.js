@@ -193,5 +193,4 @@ route.put('/userGastos/updateGastosUser/:idGastoUser/:idUser', Gastos.updateGast
 
 
 
-
 module.exports = route;

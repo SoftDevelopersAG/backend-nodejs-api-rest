@@ -166,6 +166,8 @@ class Gastos {
         const verifyUser = await validateUser(idUser);
         if (verifyUser.status == 'Not fount') return res.status(404).json(verifyUser)
         //verificamos y sacamos el id del tipo gastos para su registro con el id
+        console.log(idTipoGastos, ' idTipoGastos')
+        console.log(req.body)
         const verifiTipoGasto = await getNameTipoGastos(idTipoGastos);
         if (verifiTipoGasto.status == 'No fount') return res.status(404).json(verifiTipoGasto);
 

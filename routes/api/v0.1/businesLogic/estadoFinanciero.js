@@ -284,7 +284,11 @@ class EstadoFinanciero {
         if (isAdmin.status == 'No fount') return res.status(206).json(isAdmin)
 
         try {
-            await estadoFinancieroSchema.estadoFinanciero.findByIdAndUpdate({ _id: verifyEstadoFinanciero.result._id }, { montoInicial: (montoInicial * 1) + (verifyEstadoFinanciero.result.montoInicial * 1) });
+            await estadoFinancieroSchema.estadoFinanciero.findByIdAndUpdate({ _id: verifyEstadoFinanciero.result._id }, { 
+                montoInicial: (montoInicial * 1) + (verifyEstadoFinanciero.result.montoInicial * 1), 
+                montoActualDisponble:(montoInicial*1) + (verifyEstadoFinanciero.result.montoActualDisponble*1)
+            });
+            
             const resp = await estadoFinancieroSchema.estadoFinanciero.findById({ _id: verifyEstadoFinanciero.result._id })
             return res.status(200).json({
                 status: 'ok', message: 'Se actualizo el Monto inicial', result: resp,
