@@ -17,14 +17,14 @@ class Ventas {
         const { idCliente, products, precioTotal, nombreCliente, pagoCliente, cambioCliente } = await req.body;
         const { idUser, idNegocio } = req.params;
 
-        if(!nombreCliente && !idCliente) return res.status(206).json({status:'No fount', message: "Error es requerido id cliente o nombre cliente" })
+        if (!nombreCliente && !idCliente) return res.status(206).json({ status: 'No fount', message: "Error es requerido id cliente o nombre cliente" })
 
-        if (products.length === 0 || products === undefined || products === null) return res.status(206).send({ status:'No fount', message: "No se ha enviado ningun producto" });
-        var verifyCamposReq = await verificacionCamposRequeridos([idNegocio,precioTotal,pagoCliente, cambioCliente]);
+        if (products.length === 0 || products === undefined || products === null) return res.status(206).send({ status: 'No fount', message: "No se ha enviado ningun producto" });
+        var verifyCamposReq = await verificacionCamposRequeridos([idNegocio, precioTotal, pagoCliente, cambioCliente]);
 
         if (!verifyCamposReq) return res.status(206).send({ status: 'No fount', error: "venta no procesada", message: "Complete los campos requiridos" });
 
-        let cliente = '';       
+        let cliente = '';
         const verifyUser = await validateUser(idUser);
         if (verifyUser.status == 'No fount') return res.status(206).json(verifyUser);
 
@@ -39,7 +39,7 @@ class Ventas {
             return res.status(206).json({ status: 'No fount', message: 'El pago del cliente es menor al cambio' })
         }
 
-        
+
 
         var stateVerify = await verifyListProducts(products);
         if (stateVerify.status === 'No fount') return res.status(206).send({ status: 'No fount', error: "venta no procesada", message: stateVerify });
@@ -141,7 +141,6 @@ class Ventas {
 
     // solo para test - muestra las fechas de las ventas
     static async showListVentas(req, res) {
-        console.log(req.params.idNegocio)
         try {
             const { idNegocio } = req.params;
             const ventas = await VentaSchema.Venta.find({ idNegocio });
@@ -249,9 +248,8 @@ class Ventas {
         if (getVentaNegocio.status == 'No fount') return res.status(206).json(getVentaNegocio);
         if (getGastosNegocio.status == 'No fount') return res.status(206).json(getGastosNegocio);
 
-        const montoInicial = await getDataEstadoFinanciero(idNegocio);
+        const montoInicial = await getDataEstadoFinanciero(idNegocio,fechaInicio, fechaFinal);
         if (montoInicial.status == 'No fount') return res.status(206).json(montoInicial);
-
 
         return res.status(200).json({
             status: 'ok',
@@ -266,12 +264,7 @@ class Ventas {
             productVendido: getVentaNegocio.product,
             gastosRealizados: getGastosNegocio.gastos
         })
-
-
-
-
     }
-
 }
 var getDaysArray = function (start, end) {
     for (var arr = [], dt = new Date(start); dt <= end; dt.setDate(dt.getDate() + 1)) {
@@ -287,7 +280,7 @@ async function getVentasRange({ idNegocio, fechaInicio, fechaFinal }) {
                 { dateCreate: { $gte: new Date(`${fechaInicio.replace(/-/g, '/')} 00:00:00`) } },
                 { dateCreate: { $lte: new Date(`${fechaFinal.replace(/-/g, '/')} 23:59:59`) } }
             ]
-        });
+        }).populate('products');
 
         /* const daylist = getDaysArray(new Date(`${fechaInicio}T04:00:00.000Z`), new Date(`${fechaFinal}T04:00:00.000Z`));
         daylist.map((v) => v.toISOString().slice(0, 10)).join("");        
@@ -317,8 +310,8 @@ async function getVentasRange({ idNegocio, fechaInicio, fechaFinal }) {
             const cliente = await getNameCliente(ventasRange[i].idCLiente);
             if (cliente.status == 'No fount') return err = true
 
-            const dateLocal = await converterDate(ventasRange[i].dateCreate);           
-            if(dateLocal.status === 'No fount') return res.status(206).json(dateLocal);
+            const dateLocal = await converterDate(ventasRange[i].dateCreate);
+            if (dateLocal.status === 'No fount') return res.status(206).json(dateLocal);
             arrVentas.push({
                 _id: ventasRange[i]._id,
                 idUser: `${user.resp.name} ${user.resp.lastName}`,
@@ -377,7 +370,7 @@ async function getGastosRange({ idNegocio, fechaInicio, fechaFinal }) {
             }
 
         } */
-       
+
         let totalGastos = 0;
         let arr = [];
         for (let i = 0; i < gastosRange.length; i++) {
@@ -397,10 +390,9 @@ async function getGastosRange({ idNegocio, fechaInicio, fechaFinal }) {
 
             const dateLocal = await converterDate(gastosRange[i].dateCreate);
             const dateUpdateLocal = await converterDate(gastosRange[i].updateDate)
-            if(dateLocal.status === 'No fount') return res.status(206).json(dateLocal);
-            if(dateUpdateLocal.status === 'No fount') return res.status(206).json(dateUpdateLocal);
-            
-            console.log()
+            if (dateLocal.status === 'No fount') return res.status(206).json(dateLocal);
+            if (dateUpdateLocal.status === 'No fount') return res.status(206).json(dateUpdateLocal);
+
             arr.push({
                 _id: gastosRange[i]._id,
                 idTipoGastos: nameTipoGasto.resp.name,
@@ -432,14 +424,19 @@ async function getGastosRange({ idNegocio, fechaInicio, fechaFinal }) {
     }
 }
 //sacar monto inicial de estado financiero
-async function getDataEstadoFinanciero(idNegocio) {
-    console.log(idNegocio, 'esto es -0-0-')
+async function getDataEstadoFinanciero(idNegocio,fechaInicio, fechaFinal) {
     try {
-        const resp = await estadoFinanciero.findOne({ idNegocio, state: true });
-
-        if (!resp) return { status: 'No fount', message: 'No hay estado financiero activo' }
-
-        return { status: 'ok', message: 'continuar', montoInicial: resp.montoInicial }
+        const resp = await estadoFinanciero.find({
+            idNegocio, $and: [
+                { dateCreated: { $gte: new Date(`${fechaInicio.replace(/-/g, '/')} 00:00:00`) } },
+                { dateCreated: { $lte: new Date(`${fechaFinal.replace(/-/g, '/')} 23:59:59`) } }
+            ]
+        });       
+        let sumMontoInicial = 0;
+        for(var i = 0; i < resp.length; i ++){            
+            sumMontoInicial = resp[i].montoInicial + sumMontoInicial;
+        }
+        return { status: 'ok', message: 'continuar', montoInicial: sumMontoInicial }
 
     } catch (error) {
         console.log(error);
@@ -489,13 +486,13 @@ async function validateIdTipoGasto(idTIpoGasto) {
     }
 }
 
-async function converterDate(date) {   
+async function converterDate(date) {
     try {
         let dateLocal = new Date(date).toLocaleString().split(' ')[0]
-        let timeLocal = new Date(date).toLocaleString().split(' ')[1]        
+        let timeLocal = new Date(date).toLocaleString().split(' ')[1]
         return {
-            status:'ok',
-            result:{
+            status: 'ok',
+            result: {
                 dateLocal,
                 timeLocal
             }

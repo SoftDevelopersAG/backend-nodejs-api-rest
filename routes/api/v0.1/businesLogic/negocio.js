@@ -3,6 +3,8 @@
 const Negocio = require('../../../../database/collection/models/negocio');
 const UplaoFile = require('../../../../Utils/uploadFile');
 const { user } = require('../../../../database/collection/models/user')
+const UtilsEstadoFinancier = require('./utilsEstadFinanciero/utilsEstadoFinanciero');
+
 // const Owner = require('../../../database/collection/user')
 const UsageControl = require('./usageControl')
 
@@ -19,12 +21,12 @@ const createNegocio = async (req, res) => {
         req.body.propietario == "" || req.body.propietario == undefined ||
         req.body.address == "" || req.body.address == undefined ||
         req.body.phoneNumber == "" || req.body.phoneNumber == undefined ||
-        req.body.callingCodes == "" || req.body.callingCodes == undefined ||
+        /*  req.body.callingCodes == "" || req.body.callingCodes == undefined || */
         req.body.country == "" || req.body.country == undefined ||
-        req.body.city == "" || req.body.city == undefined ||
+        req.body.city == "" || req.body.city == undefined /* ||
         req.body.description == "" || req.body.description == undefined ||
         req.body.category == "" || req.body.category == undefined ||
-        req.body.subcategory == "" || req.body.subcategory == undefined
+        req.body.subcategory == "" || req.body.subcategory == undefined */
         //req.body.flagCountry  =="" || req.body.flagCountry == undefined 
 
     ) {
@@ -115,6 +117,9 @@ const createNegocio = async (req, res) => {
                 }
             })
         }
+       
+        await UtilsEstadoFinancier.buscarEstadoFinancieroVigente(data._id);
+        
         return res.status(200).send({
             status: 'ok',
             message: 'negocio creado',

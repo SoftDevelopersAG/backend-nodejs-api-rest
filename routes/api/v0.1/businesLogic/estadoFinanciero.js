@@ -126,6 +126,7 @@ class EstadoFinanciero {
         if (verifyDatas.status == 'No fount') return res.status(206).json(verifyDatas);
 
         const verifyEstadoFinanciero = await validateEstadoFinanciero(idNegocio);
+        console.log(verifyEstadoFinanciero, ' =================================================')
         if (verifyEstadoFinanciero.status == 'No fount') return res.status(206).json(verifyEstadoFinanciero);
 
         const isAdmin = await validateUserIsAdmin(idUser);
@@ -165,7 +166,10 @@ class EstadoFinanciero {
 
         const getListVentas = await getListVentasTfinaciero(idNegocio);
         //console.log(getListVentas, ' =========== getListVentas')
-        if (getListVentas.status == 'Not fount') return res.status(206).json(getListVentas);
+        if (getListVentas.status == 'No fount'){
+            await UtilsEstadoFinancier.buscarEstadoFinancieroVigente(idNegocio);
+            return res.status(206).json(getListVentas);
+        } 
 
         let arrVentas = [], total = 0, sumEfectivoTotal = 0, sumCambio = 0;
         for (let i = 0; i < getListVentas.result.listVentas.length; i++) {
@@ -241,7 +245,7 @@ class EstadoFinanciero {
 
             })
         }
-        if (getListGastos.status == 'Not fount') return res.status(206).json(getListGastos);
+        if (getListGastos.status == 'No fount') return res.status(206).json(getListGastos);
 
         return res.status(200).json({
             status: 'ok',
@@ -293,6 +297,44 @@ class EstadoFinanciero {
             console.log(error)
             return res.status(400).json({ status: 'No fount', message: 'error 400', error })
         }
+    }
+    //sacar los productos vendidos por categoria del estado financiero 
+    static async getPorductosCategori (req,res){
+        const {idNegocio,nameCategori} = req.params;
+
+        const getListVentas = await getListVentasTfinaciero(idNegocio);
+        //console.log(getListVentas, ' =========== getListVentas')
+        if (getListVentas.status == 'No fount') return res.status(206).json(getListVentas);
+        let productos = getListVentas.result.listVentas
+        let arr = [];
+        let sumTotal = 0;
+        for (let i = 0; i < productos.length; i++){           
+            let pr = await productos[i].populate('products');            
+            for (let j = 0; j < pr.products.length; j++){
+                if(pr.products[j].category === nameCategori){
+                    sumTotal = pr.products[j].total + sumTotal;
+                    arr.push({
+                        id: pr.products[j]._id,
+                        nameProduct:pr.products[j].nameProduct,
+                        detalleVenta: pr.products[j].detalleVenta,
+                        category: pr.products[j].category,
+                        precioUnitario: pr.products[j].precioUnitario,
+                        total:pr.products[j].total,
+                    });
+                }
+                
+            } 
+        }       
+        return res.status(200).json({
+            status:'ok',
+            message: 'Lista de categoria de productos dinamico',            
+            result : {                
+                sumTotal,
+                length:arr.length,
+                filterData:arr
+            }
+        })
+
     }
 
 
@@ -367,7 +409,7 @@ async function validateEstadoFinanciero(idNegocio) {
 }
 async function getListVentasTfinaciero(idNegocio) {
     try {
-        const resp = await estadoFinancieroSchema.estadoFinanciero.findOne({ idNegocio, state: true }).populate('listVentas');
+        const resp = await estadoFinancieroSchema.estadoFinanciero.findOne({ idNegocio, state: true }).populate(['listVentas']);
         if (!resp) return { status: 'No fount', message: 'No hay estado financiero activo' };
         return { status: 'ok', message: 'Estado financiero activo', result: resp }
     } catch (error) {
