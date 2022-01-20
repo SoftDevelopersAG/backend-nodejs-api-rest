@@ -139,7 +139,7 @@ const createPventas = async (ArrayListProducts) => {
                 category: dataProduct.category ? dataProduct.category : 'no asignado',
                 subcategory: dataProduct.subcategory ? dataProduct.subcategory : 'no asignado',
 
-                unidadesVendidos: ArrayListProducts[i].unidadesVendidos ? ArrayListProducts[i].unidadesVendidos : 1,
+                unidadesVendidos: /* ArrayListProducts[i].unidadesVendidos ? ArrayListProducts[i].unidadesVendidos : */ 1,
                 precioUnitario: dataProduct.precioUnitario ? dataProduct.precioUnitario : 0,
                 precioCosto: dataProduct.precioCosto ? dataProduct.precioCosto : 0,
                 total:dataProduct.precioUnitario * 1 ,
