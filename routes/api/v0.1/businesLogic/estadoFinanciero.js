@@ -126,7 +126,7 @@ class EstadoFinanciero {
         if (verifyDatas.status == 'No fount') return res.status(206).json(verifyDatas);
 
         const verifyEstadoFinanciero = await validateEstadoFinanciero(idNegocio);
-        console.log(verifyEstadoFinanciero, ' =================================================')
+        /* console.log(verifyEstadoFinanciero, ' =================================================') */
         if (verifyEstadoFinanciero.status == 'No fount') return res.status(206).json(verifyEstadoFinanciero);
 
         const isAdmin = await validateUserIsAdmin(idUser);
@@ -341,6 +341,64 @@ class EstadoFinanciero {
 
     }
 
+    //list de estados financieros
+    static async listEstadosFinancieros(req,res) {
+        const {idNegocio} = req.params;
+        const verifyNegocio = await validateNegocio(idNegocio);
+        if (verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio)
+        try {
+            const resp = await estadoFinancieroSchema.estadoFinanciero.find({idNegocio, state:false}).populate(['listGastos','listVentas']);
+            let arr = []
+            for(let i = 0; i < resp.length; i++){  
+                const dateLocal = await converterDate(resp[i].dateCreated);
+                if (dateLocal.status === 'No fount') return res.status(206).json(dateLocal);    
+
+                const dateLocalCierre = await converterDate(resp[i].cierreDeCaja.fechaCierre);
+                if (dateLocalCierre.status === 'No fount') return res.status(206).json(dateLocalCierre); 
+                const userAdmin = await getNameUser(resp[i].cierreDeCaja.idAdmin);
+                if (userAdmin.status == 'No fount') return res.status(206).json(userAdmin)   
+                const userRespCaja = await getNameUser(resp[i].cierreDeCaja.idCajero);
+                if (userRespCaja.status == 'No fount') return res.status(206).json(userRespCaja)   
+                
+                arr.push({
+                    _id:resp[i]._id,
+                    idNegocio: resp[i].idNegocio,                    
+                    montoInicial: resp[i].montoInicial,
+                    montoActualUtilizado:resp[i].montoActualUtilizado,                   
+                    ventas:0,
+                    montoActualDisponble:resp[i].montoActualDisponble, // total
+                    dateCreated:dateLocal.result?.dateLocal,
+                    hora:dateLocal.result?.timeLocal,
+                    cierreDeCaja:{
+                        detalle:resp[i].cierreDeCaja.detalle,
+                        fechaCierre:dateLocalCierre.result?.dateLocal,
+                        horaCierre:dateLocalCierre.result?.timeLocal,
+                        idAdmin:`${userAdmin.resp.name} ${userAdmin.resp.lastName}`,
+                        idCajero:`${userRespCaja.resp.name} ${userRespCaja.resp.lastName}`
+                    },
+                    listVentas:resp[i].listVentas,
+                    listGastos:resp[i].listGastos,
+                    
+                })
+            }
+            for(let j = 0; j < arr.length; j++){
+                for(let k = 0; k < arr[j].listVentas.length; k++){
+                    arr[j].ventas = arr[j].ventas + arr[j].listVentas[k].precioTotal
+                }
+            }
+
+            return res.status(200).json({
+                status:'ok', 
+                message: 'Lista de estados financieros del negocio',
+                result:arr
+            })
+            
+        } catch (error) {
+            console.log(error);
+            return res.status(400).json({ status: 'No fount', message: 'error 400', error })
+        }
+    }
+
 
 }
 //validamos los datos requiridos
@@ -377,7 +435,7 @@ async function validateUserIsCajero(isCajero) {
         if (!resp) return { status: 'No fount', message: 'Ese usuario no existe' };
         let isAdmin = false
         for (var i = 0; i < resp.role.length; i++) {
-            if (resp.role[i].name == 'caja') {
+            if (resp.role[i].name == 'caja' || resp.role[i].name == 'admin') {
                 isAdmin = true;
             }
         }

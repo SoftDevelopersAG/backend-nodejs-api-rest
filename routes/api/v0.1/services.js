@@ -127,6 +127,7 @@ route.put('/financiero/cierreCaja/:idNegocio/:idUser',[Auth, AccessRoleControl.i
 route.get('/financiero/listProductDetalle/:idNegocio',EstadoFinanciero.listaProductoGastos);
 route.put('/financiero/updateMontoIncial/:idNegocio/:idUser',[Auth, AccessRoleControl.isAdmin], EstadoFinanciero.upateMontoInicialEstadoFinanciero);
 route.get('/financiero/getPorductosCategori/:idNegocio/:nameCategori',/* [Auth, AccessRoleControl.isAdmin], */EstadoFinanciero.getPorductosCategori)
+route.get('/financiero/list/:idNegocio', EstadoFinanciero.listEstadosFinancieros);
 
 
 // ::::::::::::::::::::VENTAS:::::::::::::::::::::::::::::::

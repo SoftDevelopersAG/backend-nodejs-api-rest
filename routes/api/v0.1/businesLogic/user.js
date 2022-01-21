@@ -6,16 +6,16 @@ const User = require('../../../../database/collection/models/user')
 const Token = require('../../../../middleware/token/token')
 const Roles = require('../../../../database/collection/models/Roles')
 const Role = require('../../../../database/collection/models/Roles')
-const {negocio} = require('../../../../database/collection/models/negocio'); 
+const { negocio } = require('../../../../database/collection/models/negocio');
 
-const validateNegocio = async(idNegocio)=>{
+const validateNegocio = async (idNegocio) => {
     try {
-        const resp = await negocio.findById({_id:idNegocio});
-        if(!resp) return {status:'No fount', message: 'Ese negocio no existe'};
-        return {status:'ok', message:'Existe',result:resp}
+        const resp = await negocio.findById({ _id: idNegocio });
+        if (!resp) return { status: 'No fount', message: 'Ese negocio no existe' };
+        return { status: 'ok', message: 'Existe', result: resp }
     } catch (error) {
         console.log(error);
-        return {status:'No fount', message:"error 400"}
+        return { status: 'No fount', message: "error 400" }
     }
 }
 
@@ -29,8 +29,8 @@ const registerAdmin = async (req, res) => {
         phoneNumber,
         password,
         password1,
-    }= req.body
-    
+    } = req.body
+
     if (
         name == '' || name == undefined ||
         lastName == '' || lastName == undefined ||
@@ -41,7 +41,7 @@ const registerAdmin = async (req, res) => {
         password1 == '' || password1 == undefined
 
     ) {
-        res.status(400).send({ status:'No fount', message:'Complete los campos requeridos'});
+        res.status(400).send({ status: 'No fount', message: 'Complete los campos requeridos' });
         return;
     }
     if (password != password1) {
@@ -63,7 +63,7 @@ const registerAdmin = async (req, res) => {
         password: sha1(password),
         password1: password,
     })
-    newUser.role = await Roles.find({ name:'admin'})
+    newUser.role = await Roles.find({ name: 'admin' })
     const existEmail = await User.user.find({ email });
     const existCI = await User.user.find({ ci });
 
@@ -102,8 +102,8 @@ const registerAdmin = async (req, res) => {
     })
 }
 //verificar ci telefono y email
-const verifiDatasUser=async (req,res)=>{
-    const {ci,phoneNumber,email} = req.body;
+const verifiDatasUser = async (req, res) => {
+    const { ci, phoneNumber, email } = req.body;
     try {
         const resp = await User.user.find({ $or: [{ ci }, { phoneNumber }, { email }] }).populate("role");
         if (resp.length > 0) {
@@ -111,11 +111,11 @@ const verifiDatasUser=async (req,res)=>{
             await resp.map((data) => {
                 if (data.ci == ci) {
                     obj['ci'] = 'CI ya esta en uso';
-                    
+
                 }
                 if (data.email == email) {
                     obj['email'] = 'Email ya esta en uso'
-                   
+
                 }
                 /* if (data.phoneNumber == phoneNumber) {
                     obj['phoneNumber'] = 'Telfono ya esta en uso';
@@ -124,7 +124,7 @@ const verifiDatasUser=async (req,res)=>{
             })
             return res.status(206).json({ status: 'No fount', message: obj })
         }
-        return res.status(200).json({ status: 'ok', message: 'continuar'})
+        return res.status(200).json({ status: 'ok', message: 'continuar' })
     } catch (error) {
         console.log(error)
         return res.status(206).json({ status: 'No fount', message: 'error 400' })
@@ -133,11 +133,11 @@ const verifiDatasUser=async (req,res)=>{
 // funccion que permite crear un nuevo usuario
 const signUp = async (req, res, next) => {
     const { name, lastName, ci, email, phoneNumber, direction, urlPhotoAvatar, password, password1, role } = req.body;
-    const {idNegocio} = req.params;
+    const { idNegocio } = req.params;
     console.log(idNegocio, ' =============================================================================')
     const verifyNegocio = await validateNegocio(idNegocio);
-    if(verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio);
-    
+    if (verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio);
+
     if (
         name == '' || name == undefined ||
         lastName == '' || lastName == undefined ||
@@ -149,7 +149,7 @@ const signUp = async (req, res, next) => {
         password1 == '' || password1 == undefined
 
     ) {
-        res.status(400).send({ status:'No fount', message: 'complete los campos requeridos',error: 'complete los campos requeridos' });
+        res.status(400).send({ status: 'No fount', message: 'complete los campos requeridos', error: 'complete los campos requeridos' });
         return null;
     }
     if (password != password1) {
@@ -171,7 +171,7 @@ const signUp = async (req, res, next) => {
         urlPhotoAvatar: urlPhotoAvatar,
         password: sha1(req.body.password),
         password1: password,
-        idNegocio:idNegocio
+        idNegocio: idNegocio
     })
 
     newUser.role = await Roles.find({ name: role === '' || role === undefined ? 'user' : role })
@@ -226,7 +226,7 @@ const signUp = async (req, res, next) => {
 }
 const signIn = async (req, res, next) => {
     const dataUser = await User.user.find({ email: req.body.email, password1: req.body.password }).populate("role");
-    
+
     console.log(dataUser)
     if (dataUser.length === 1 && dataUser[0].email === req.body.email && dataUser[0].password1 === req.body.password && dataUser[0].state === true) {
 
@@ -265,7 +265,7 @@ const signIn = async (req, res, next) => {
 const showListUser = async (req, res, next) => {
 
     const stateUser = await req?.params?.state;
-    const {idNegocio} = req.params;
+    const { idNegocio } = req.params;
     // try{
     switch (stateUser) {
         case "active":
@@ -278,7 +278,7 @@ const showListUser = async (req, res, next) => {
 
         case "all":
 
-            var listUser = await User.user.find({idNegocio}).populate("role")
+            var listUser = await User.user.find({ idNegocio }).populate("role")
             // return res.status(200).send({status:'ok', result:listUser});
 
 
@@ -467,58 +467,71 @@ const removeRoleUser = async (req, res, next) => {
 }
 //lista de usuarios cajeros activos 
 
-const getlistUserActivos = async(req,res)=>{
-    const {idNegocio} = req.params;
+const getlistUserActivos = async (req, res) => {
+    const { idNegocio } = req.params;
     const verifyNegocio = await validateNegocio(idNegocio);
-    if(verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio);
+    if (verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio);
     try {
-        const resp = await User.user.find({state:true}).populate('role');
-        if(!resp) return res.status(206).json({status: 'Not Found',message: 'Ese usuario no existe'});
-        
+        const resp = await User.user.find({ state: true }).populate('role');
+        if (!resp) return res.status(206).json({ status: 'Not Found', message: 'Ese usuario no existe' });
+
         let arr = []
-        await resp.map((data)=>{            
-            for(let i = 0; i < data.role.length; i++){
+        await resp.map((data) => {
+            for (let i = 0; i < data.role.length; i++) {
                 console.log(data.role[i].name)
-                if(data.role[i].name == 'caja'){
+                if (data.role[i].name == 'caja' || data.role[i].name == 'admin') {
                     arr.push(data)
                 }
             }
-           
+
         })
-        return res.status(200).send({ status: 'ok', message: 'Usuario de caja', result:arr });      
-        
+        //>>> para quitar los repetidos del arr
+        let obj = {}
+        for (let d = 0; d < arr.length; d++) {
+            let user = obj[arr[d]._id.toString()];
+            if (!user) {
+                user = obj[arr[d]._id.toString()] = arr[d];
+            }
+        }
+        let newArr = [];
+        for (const id in obj) {
+            newArr.push(obj[id]);
+        }
+        //<<<<<<<
+        return res.status(200).send({ status: 'ok', message: 'Usuario de caja', result: newArr });
+
     } catch (error) {
         console.log(error);
         return res.status(404).send({ status: 'No fount', message: 'No se puede mostra los datos', error });
     }
 }
-const dataNegocioUser = async(req,res)=>{
-    const {idUser,idNegocio} = req.params;
+const dataNegocioUser = async (req, res) => {
+    const { idUser, idNegocio } = req.params;
 
     const verifyNegocio = await validateNegocio(idNegocio);
-    if(verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio);
+    if (verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio);
 
     const verifyUser = await verifyIdUser(idUser);
     if (verifyUser.success == false) return res.status(206).json({ status: 'No fount', error: 'Id incorrecto' });
-    
+
     try {
         const dataNegocio = await {
-            nombre:verifyNegocio.result?.nombre,
-            propietario:verifyNegocio.result?.propietario,
-            phoneNumber:verifyNegocio.result?.phoneNumber,
+            nombre: verifyNegocio.result?.nombre,
+            propietario: verifyNegocio.result?.propietario,
+            phoneNumber: verifyNegocio.result?.phoneNumber,
         }
         const dataUser = await {
             name: verifyUser.dataUser?.name,
             lastname: verifyUser.dataUser?.lastName,
-            ci:verifyUser.dataUser?.ci,
-            role:verifyUser.dataUser?.role,
+            ci: verifyUser.dataUser?.ci,
+            role: verifyUser.dataUser?.role,
         }
         return res.status(200).json({
             status: 'ok',
             message: 'Datos del usuario y del negocio',
-            result:{
-                negocio:dataNegocio,
-                usuario:dataUser
+            result: {
+                negocio: dataNegocio,
+                usuario: dataUser
             }
         })
     } catch (error) {
@@ -658,11 +671,11 @@ const verifiLisence = async (req, res) => {
 }
 
 //verficamos si existe algun usuario 
-const userLength = async(req,res) =>{
+const userLength = async (req, res) => {
     try {
         const resp = await User.user.find();
-        if(resp.length === 0) return res.status(200).json({ status: 'ok', message: 'No hay usuario registrados', userLength:0});
-        return res.status(200).json({ status: 'ok', message:'hay usuario registrados', userLength:resp.length})
+        if (resp.length === 0) return res.status(200).json({ status: 'ok', message: 'No hay usuario registrados', userLength: 0 });
+        return res.status(200).json({ status: 'ok', message: 'hay usuario registrados', userLength: resp.length })
     } catch (error) {
         console.error(error);
         return res.status(400).json({
