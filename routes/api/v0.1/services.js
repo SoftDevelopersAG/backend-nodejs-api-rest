@@ -124,10 +124,16 @@ route.post('/financiero/state', EstadoFinanciero.createEstadoFinanciero);
 route.get('/financiero/ventas/:idNegocio', EstadoFinanciero.getListVentas);
 route.get('/financiero/gastos/:idNegocio', EstadoFinanciero.getListGastos);
 route.put('/financiero/cierreCaja/:idNegocio/:idUser',[Auth, AccessRoleControl.isAdmin], EstadoFinanciero.cierreCaja);
+
+//route.get('/financiero/listProductDetalle/:idNegocio/vPn=:vpn/vPs=:vps/vBs=:vbs?',EstadoFinanciero.listaProductoGastos);
 route.get('/financiero/listProductDetalle/:idNegocio',EstadoFinanciero.listaProductoGastos);
+
 route.put('/financiero/updateMontoIncial/:idNegocio/:idUser',[Auth, AccessRoleControl.isAdmin], EstadoFinanciero.upateMontoInicialEstadoFinanciero);
 route.get('/financiero/getPorductosCategori/:idNegocio/:nameCategori',/* [Auth, AccessRoleControl.isAdmin], */EstadoFinanciero.getPorductosCategori)
 route.get('/financiero/list/:idNegocio', EstadoFinanciero.listEstadosFinancieros);
+route.get('/financiero/listVentasEF/:idNegocio/:idUser/:isUser/pn=:pagenumber/pz=:pagesize/bs=:buscador?', EstadoFinanciero.getVentasEstadoFinanciero);
+route.get('/financiero/listGastosEF/:idNegocio/:idUser/:isUser/pn=:pagenumber/pz=:pagesize/bs=:buscador?', EstadoFinanciero.getGastosEstadoFinacieroActivo);
+
 
 
 // ::::::::::::::::::::VENTAS:::::::::::::::::::::::::::::::
