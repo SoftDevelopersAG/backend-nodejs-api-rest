@@ -96,3 +96,4 @@ server.listen(PORT,()=>{
 
 // importacion del modulo de socketio
 // module.exports = socketIo(server);
+// C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
