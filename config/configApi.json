@@ -2,7 +2,7 @@
     "configApi":[
         {
 
-            "hostApi":"http://192.168.100.9:4000"
+            "hostApi":"http://localhost:4000"
         
         }
     ]
