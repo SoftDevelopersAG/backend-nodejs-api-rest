@@ -143,6 +143,7 @@ route.get('/venta/listVentasUser/:idNegocio/:idUser', Ventas.getListVentasUser);
 route.get('/venta/listVentasRange/:idNegocio/:fechaInicio/:fechaFinal', Ventas.getListVentasRange);//ruta que mustra ventas en rangos de fecha
 
 //reporte de ventas y gastos por rango de fechas
+route.post('/reportGastosVentas/report1/:idNegocio/FechaInicio=:fechaInicio/FechaFinal=:fechaFinal',Ventas.reportGastosVentas);
 route.get('/reportGastosVentas/report1/:idNegocio/FechaInicio=:fechaInicio/FechaFinal=:fechaFinal',Ventas.reportGastosVentas);
 route.get('/ventas/show/list/:idNegocio', Ventas.showListVentas);
 

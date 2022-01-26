@@ -324,15 +324,30 @@ class EstadoFinanciero {
                     sumTotal = pr.products[j].total + sumTotal;
                     arr.push({
                         id: pr.products[j]._id,
+                        idProduct:pr.products[j].idProduct,
                         nameProduct: pr.products[j].nameProduct,
                         detalleVenta: pr.products[j].detalleVenta,
                         category: pr.products[j].category,
                         precioUnitario: pr.products[j].precioUnitario,
-                        total: pr.products[j].total,
+                        cantidad: 0,
+                        total: 0,
                     });
                 }
 
             }
+        }
+        let obj = {}
+        for (let d = 0; d < arr.length; d++) {
+            let product = obj[arr[d].idProduct];
+            if (!product) {
+                product = obj[arr[d].idProduct] = arr[d];
+            }
+            product.cantidad++
+            product.total = product.cantidad * product.precioUnitario
+        }
+        let newArr = [];
+        for (const id in obj) {
+            newArr.push(obj[id]);
         }
         return res.status(200).json({
             status: 'ok',
@@ -340,7 +355,7 @@ class EstadoFinanciero {
             result: {
                 sumTotal,
                 length: arr.length,
-                filterData: arr
+                filterData: newArr
             }
         })
 
@@ -571,7 +586,7 @@ class EstadoFinanciero {
 
         }
         /* console.log(arr, ' --------------------------------') */
-        const arrListVentas = await paginationListGastos({ arrGastos:arr, pagenumber, pagesize, buscador })
+        const arrListVentas = await paginationListGastos({ arrGastos: arr, pagenumber, pagesize, buscador })
 
         return res.status(200).json({
             status: 'ok',
@@ -753,7 +768,7 @@ async function paginationListVentas({ arrVentas = [], pagenumber = 0, pagesize =
     var pageNumber = (pagenumber * 1) || 0;//numero de pagina
     var pageSize = (pagesize * 1) || 4;//tamanio de pagiancion
     var pageCount = Math.ceil(filtrar.length / pageSize);
-    let pag = filtrar.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize);  
+    let pag = filtrar.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize);
 
     return { result: pag, pageCount, pageNumber }
 
@@ -761,9 +776,9 @@ async function paginationListVentas({ arrVentas = [], pagenumber = 0, pagesize =
 //paginas y busqueda de datos de list gastos del estado financiero
 async function paginationListGastos({ arrGastos = [], pagenumber = 0, pagesize = 4, buscador = '' }) {
     const filtrar = arrGastos.filter((item) => {
-        return item.idUser.toLowerCase().includes(buscador.toLowerCase()) ||            
-            item.hora.toLowerCase().includes(buscador.toLowerCase())||
-            item.montoAsignadoA.toLowerCase().includes(buscador.toLowerCase())||
+        return item.idUser.toLowerCase().includes(buscador.toLowerCase()) ||
+            item.hora.toLowerCase().includes(buscador.toLowerCase()) ||
+            item.montoAsignadoA.toLowerCase().includes(buscador.toLowerCase()) ||
             item.idTipoGastos.toLowerCase().includes(buscador.toLowerCase())
     })
     var pageNumber = (pagenumber * 1) || 0;//numero de pagina

@@ -162,7 +162,7 @@ class Ventas {
     //lista de todas las ventas por rangos
     static async getListVentasRange(req, res) {
         const { idNegocio, fechaInicio, fechaFinal } = req.params;
-        console.log(new Date(`${fechaInicio.replace(/-/g, '/')} 00:00:00`), new Date(`${fechaFinal.replace(/-/g, '/')} 00:02:58`));
+        //console.log(new Date(`${fechaInicio.replace(/-/g, '/')} 00:00:00`), new Date(`${fechaFinal.replace(/-/g, '/')} 00:02:58`));
 
         try {
             const ventas = await VentaSchema.Venta.find({
@@ -232,6 +232,7 @@ class Ventas {
 
     static async reportGastosVentas(req, res) {
         const { idNegocio, fechaInicio, fechaFinal } = req.params;
+        const { pgnV, pgsV, buscadorV, pgnG, pgsG, buscadorG,nameCategori } = req.body;
         const verifyNegocio = await validateNegocio(idNegocio);
         if (verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio)
         var date1 = new Date(fechaInicio);
@@ -248,8 +249,13 @@ class Ventas {
         if (getVentaNegocio.status == 'No fount') return res.status(206).json(getVentaNegocio);
         if (getGastosNegocio.status == 'No fount') return res.status(206).json(getGastosNegocio);
 
-        const montoInicial = await getDataEstadoFinanciero(idNegocio,fechaInicio, fechaFinal);
+        const montoInicial = await getDataEstadoFinanciero(idNegocio, fechaInicio, fechaFinal);
         if (montoInicial.status == 'No fount') return res.status(206).json(montoInicial);
+
+        const paginationVentas = await paginationListVentas({ arrVentas: getVentaNegocio.product, pagenumber: pgnV, pagesize: pgsV, buscador: buscadorV });
+        const paginationGastos = await paginationListGastos({ arrGastos: getGastosNegocio.gastos, pagenumber: pgnG, pagesize: pgsG, buscador: buscadorG });
+
+        const productCategory = await getCategoriProduct(getVentaNegocio.product,nameCategori);
 
         return res.status(200).json({
             status: 'ok',
@@ -261,8 +267,9 @@ class Ventas {
             total: (getVentaNegocio.totalVentas - getGastosNegocio.totalGastos) + montoInicial.montoInicial,
             cantidadVendido: getVentaNegocio.cantidadVendido,
             gastosLength: getGastosNegocio.gastosLength,
-            productVendido: getVentaNegocio.product,
-            gastosRealizados: getGastosNegocio.gastos
+            productVendido: paginationVentas,
+            gastosRealizados: paginationGastos,
+            productCategory
         })
     }
 }
@@ -424,16 +431,16 @@ async function getGastosRange({ idNegocio, fechaInicio, fechaFinal }) {
     }
 }
 //sacar monto inicial de estado financiero
-async function getDataEstadoFinanciero(idNegocio,fechaInicio, fechaFinal) {
+async function getDataEstadoFinanciero(idNegocio, fechaInicio, fechaFinal) {
     try {
         const resp = await estadoFinanciero.find({
             idNegocio, $and: [
                 { dateCreated: { $gte: new Date(`${fechaInicio.replace(/-/g, '/')} 00:00:00`) } },
                 { dateCreated: { $lte: new Date(`${fechaFinal.replace(/-/g, '/')} 23:59:59`) } }
             ]
-        });       
+        });
         let sumMontoInicial = 0;
-        for(var i = 0; i < resp.length; i ++){            
+        for (var i = 0; i < resp.length; i++) {
             sumMontoInicial = resp[i].montoInicial + sumMontoInicial;
         }
         return { status: 'ok', message: 'continuar', montoInicial: sumMontoInicial }
@@ -501,6 +508,76 @@ async function converterDate(date) {
         console.log(error);
         return { status: 'No fount', message: 'Error al canvertir las fechas a la hora local' }
     }
+}
+
+//paginas y busqueda de datos de list ventas del estado financiero
+async function paginationListVentas({ arrVentas = [], pagenumber = 0, pagesize = 4, buscador = '' }) {
+    //console.log(arrVentas, ' 0---0-0000---')
+    const filtrar = arrVentas.filter((item) => {
+        return item.idUser.toLowerCase().includes(buscador.toLowerCase()) ||
+            item.idCLiente.toLowerCase().includes(buscador.toLowerCase()) ||
+            item.hora.toLowerCase().includes(buscador.toLowerCase())
+    })
+    var pageNumber = (pagenumber * 1) || 0;//numero de pagina
+    var pageSize = (pagesize * 1) || 4;//tamanio de pagiancion
+    var pageCount = Math.ceil(filtrar.length / pageSize);
+    let pag = filtrar.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize);
+    return { result: pag, pageCount, pageNumber }
+
+}
+//paginas y busqueda de datos de list gastos del estado financiero
+async function paginationListGastos({ arrGastos = [], pagenumber = 0, pagesize = 4, buscador = '' }) {
+    const filtrar = arrGastos.filter((item) => {
+        return item.idUser.toLowerCase().includes(buscador.toLowerCase()) ||
+            item.hora.toLowerCase().includes(buscador.toLowerCase()) ||
+            item.montoAsignadoA.toLowerCase().includes(buscador.toLowerCase()) ||
+            item.idTipoGastos.toLowerCase().includes(buscador.toLowerCase())
+    })
+    var pageNumber = (pagenumber * 1) || 0;//numero de pagina
+    var pageSize = (pagesize * 1) || 4;//tamanio de pagiancion
+    var pageCount = Math.ceil(filtrar.length / pageSize);
+    let pag = filtrar.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize);
+    return { result: pag, pageCount, pageNumber }
+
+}
+
+//get productos vendidos por categoria del rango de fechas que se selecciona
+const getCategoriProduct = async (arrVentas= [],nameCategori = 'Sodas') => {    
+    let arr = [];
+    let sumTotal = 0;
+    for (let i = 0; i < arrVentas.length; i++) {
+        let pr = arrVentas[i].products
+        for (let j = 0; j < pr.length; j++) {
+            if (pr[j].category === nameCategori) {
+                sumTotal = pr[j].total + sumTotal;
+                arr.push({
+                    id: pr[j]._id,
+                    idProduct:pr[j].idProduct,
+                    nameProduct: pr[j].nameProduct,
+                    detalleVenta: pr[j].detalleVenta,
+                    category: pr[j].category,
+                    precioUnitario: pr[j].precioUnitario,                    
+                    cantidad:0,
+                    total: 0,
+                });
+            }
+
+        }
+    }
+    let obj = {}
+    for (let d = 0; d < arr.length; d++) {
+      let product = obj[arr[d].idProduct];
+      if (!product) {
+        product = obj[arr[d].idProduct] = arr[d];
+      }
+      product.cantidad ++
+      product.total = product.cantidad * product.precioUnitario
+    }    
+    let newArr = [];
+    for (const id in obj) {
+      newArr.push(obj[id]);
+    }
+    return {arrProductCategory:newArr,sumTotal}
 }
 
 module.exports = Ventas;
