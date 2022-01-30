@@ -158,8 +158,9 @@ class EstadoFinanciero {
         }
     }
     static async listaProductoGastos(req, res) {
-        //console.log(' esto es =============================================================')
-        const { idNegocio, vpn, vps, vbs } = req.params;
+        const { idNegocio } = req.params;
+        const { pgnV, pgsV, buscadorV, pgnG, pgsG, buscadorG,nameCategori } = req.body;
+
         const verifyNegocio = await validateNegocio(idNegocio);
         //console.log(verifyNegocio, '===== esto es verifiNegocio')
         if (verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio);
@@ -248,7 +249,8 @@ class EstadoFinanciero {
         }
         if (getListGastos.status == 'No fount') return res.status(206).json(getListGastos);
 
-        const arrListVentas = await paginationListVentas({ arrVentas, pagenumber: vpn, pagesize: vps, buscador: vbs })
+        const paginationVentas = await paginationListVentas({ arrVentas: arrVentas, pagenumber: pgnV, pagesize: pgsV, buscador: buscadorV });
+        const paginationGastos = await paginationListGastos({ arrGastos: arr, pagenumber: pgnG, pagesize: pgsG, buscador: buscadorG });
 
         return res.status(200).json({
             status: 'ok',
@@ -269,10 +271,8 @@ class EstadoFinanciero {
                     total,
                 },
                 totalGastos,
-                listVentas: arrVentas,
-                listGastos: arr,
-
-                arrListVentas: arrListVentas
+                listVentas: paginationVentas,
+                listGastos: paginationGastos,
             }
         })
     }
@@ -511,7 +511,6 @@ class EstadoFinanciero {
     //sacar los gaastos del estado financiero activo filtrado tmb por user
     static async getGastosEstadoFinacieroActivo(req, res) {
         const { idNegocio, idUser, isUser, pagenumber, pagesize, buscador } = req.params;
-        console.log(pagenumber, pagesize, buscador, ' sdfjlskdjf')
         const verifyNegocio = await validateNegocio(idNegocio);
         if (verifyNegocio.status == 'No fount') return res.status(206).json(verifyNegocio);
 

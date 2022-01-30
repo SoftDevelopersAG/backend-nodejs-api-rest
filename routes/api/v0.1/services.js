@@ -126,7 +126,7 @@ route.get('/financiero/gastos/:idNegocio', EstadoFinanciero.getListGastos);
 route.put('/financiero/cierreCaja/:idNegocio/:idUser',[Auth, AccessRoleControl.isAdmin], EstadoFinanciero.cierreCaja);
 
 //route.get('/financiero/listProductDetalle/:idNegocio/vPn=:vpn/vPs=:vps/vBs=:vbs?',EstadoFinanciero.listaProductoGastos);
-route.get('/financiero/listProductDetalle/:idNegocio',EstadoFinanciero.listaProductoGastos);
+route.post('/financiero/listProductDetalle/:idNegocio',EstadoFinanciero.listaProductoGastos);
 
 route.put('/financiero/updateMontoIncial/:idNegocio/:idUser',[Auth, AccessRoleControl.isAdmin], EstadoFinanciero.upateMontoInicialEstadoFinanciero);
 route.get('/financiero/getPorductosCategori/:idNegocio/:nameCategori',/* [Auth, AccessRoleControl.isAdmin], */EstadoFinanciero.getPorductosCategori)
