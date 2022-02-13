@@ -50,7 +50,7 @@ const backupsDB=()=>{
 }
 
 // realiza los backups cada dia de las semana
-cron.schedule(' * * * 1 * *',()=>{
+cron.schedule('2 18 * * *',()=>{
     backupsDB();
     console.log("se realizo el backup")
 });

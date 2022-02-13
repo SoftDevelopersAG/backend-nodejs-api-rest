@@ -1,0 +1,11 @@
+{
+    "ListMacAddres": [
+        {
+            "name": "Wi-Fi",
+            "mac_address": "28:56:5A:41:4B:2B",
+            "vendor": "Realtek Semiconductor Corp",
+            "model": "Realtek RTL8723BE 802.11 bgn Wi-Fi Adapter",
+            "type": "Wireless"
+        }
+    ]
+}

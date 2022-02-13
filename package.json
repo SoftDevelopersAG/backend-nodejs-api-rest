@@ -5,8 +5,21 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start2": "node app.js"
   },
+  "nodemonConfig":{
+    "ignore":["config/configApi.json"]
+  },
+  "bin": "app.js",
+  "pkg": {
+    "scripts": "build/**/*.js",
+    "assets": [
+      "public/**/*",
+      "file/**/*"
+    ],
+    "target": "node8"
+  },
+
   "author": "GonzaloEspinoza",
   "license": "MIT",
   "dependencies": {
@@ -18,7 +31,9 @@
     "mongoose": "^6.0.12",
     "morgan": "^1.10.0",
     "multer": "^1.4.3",
+    "network": "^0.6.1",
     "node-cron": "^3.0.0",
+    "node-windows": "^1.0.0-beta.6",
     "sha1": "^1.1.1",
     "socket.io": "^4.4.0"
   },
