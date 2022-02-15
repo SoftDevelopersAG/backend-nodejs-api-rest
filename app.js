@@ -2,6 +2,11 @@
 'use strict'
 const express = require('express');
 const morga = require('morgan')
+var os = require('os');
+const ipHost = require('./config/configApi.json')
+
+const NetworkConfig = require('./Utils/networkServices/networkConfig');
+NetworkConfig.updateIpServer();
 
 const app = express();
 
@@ -90,7 +95,7 @@ app.post('/listnames',(req,res)=>{
 
 
 server.listen(PORT,()=>{
-    console.log(`Api-Rest runing in port : http://localhost:${PORT}`)
+    console.log(`Api-Rest runing in port : ${ipHost.configApi[0].hostApi}:${PORT}`)
 })
 
 

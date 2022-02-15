@@ -1,0 +1,31 @@
+<service>
+	<id>serverfood.exe</id>
+	<name>server food</name>
+	<description>servidor destinado la sistema de punto de ventas emicion de tickets</description>
+	<executable>C:\Program Files\nodejs\node.exe</executable>
+	<argument>--harmony</argument>
+	<argument>D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember\node_modules\node-windows\lib\wrapper.js</argument>
+	<argument>--file</argument>
+	<argument>D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember\app.js</argument>
+	<argument>--scriptoptions=</argument>
+	<argument>--log</argument>
+	<argument>server food wrapper</argument>
+	<argument>--grow</argument>
+	<argument>0.25</argument>
+	<argument>--wait</argument>
+	<argument>1</argument>
+	<argument>--maxrestarts</argument>
+	<argument>3</argument>
+	<argument>--abortonerror</argument>
+	<argument>n</argument>
+	<argument>--stopparentfirst</argument>
+	<argument>undefined</argument>
+	<logmode>rotate</logmode>
+	<stoptimeout>30sec</stoptimeout>
+	<serviceaccount>
+		<domain>DESKTOP-UL53AHL</domain>
+		<user>LocalSystem</user>
+		<password></password>
+	</serviceaccount>
+	<workingdirectory>D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember</workingdirectory>
+</service>
