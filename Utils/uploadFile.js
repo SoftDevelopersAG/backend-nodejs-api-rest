@@ -27,6 +27,18 @@ var upload = multer({
     storage: storage
 }).single("image");
 
+//subir imagenes de galeria
+const storageG = multer.diskStorage({
+    destination: "./public/galery",
+    filename: (req, file, cb) => {
+        var extensionArchivo = path.extname(file.originalname);
+        /* console.log(extensionArchivo);
+        console.log("IMG_"+Date.now()+extensionArchivo); */
+        cb(null, "IMG_" + Date.now() + extensionArchivo);
+    }
+});
+const galeryUpload = multer({ storage : storageG});
+
 
 const uploadFile = (req, res) => {
 
@@ -184,5 +196,6 @@ const uploadPhotoAvatar = (req, res) => {
 module.exports = {
     uploadFile,
     uploadFileFotoProducto,
-    uploadPhotoAvatar
+    uploadPhotoAvatar,
+    galeryUpload
 }
