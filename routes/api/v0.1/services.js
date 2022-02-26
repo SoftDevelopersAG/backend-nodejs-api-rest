@@ -26,7 +26,9 @@ const Menu = require('./businesLogic/menu');
 const EstadoFinanciero = require('./businesLogic/estadoFinanciero');
 
 //imagen
-const {uploadFileFotoProducto} = require('../../../Utils/uploadFile');
+const {uploadFileFotoProducto,galeryUpload} = require('../../../Utils/uploadFile');
+//galeria
+const GaleriaRoutes = require('./businesLogic/galeria');
 
 //clientes
 const Clientes =require('./businesLogic/clientes')
@@ -206,6 +208,15 @@ route.get('/userGastos/listUserGastos/:idUser/:fechaInicio/:fechaFinal',[Auth, A
 //lista de gastos del negocio por dia
 route.get('/gastos/listGastosNegocioDia/:idNegocio/:fechaInicio/:fechaFinal',Gastos.listaGastosNegocio);
 route.put('/userGastos/updateGastosUser/:idGastoUser/:idUser', Gastos.updateGastoUser);
+
+//ruta de galeria`
+route.post('/galery/create/:idNegocio/:idUser', galeryUpload.single('img'),  GaleriaRoutes.create);
+route.get('/galery/listAll/:idNegocio', GaleriaRoutes.list);
+route.put('/galery/update/:idGalery', galeryUpload.single('img'),  GaleriaRoutes.update);
+route.delete('/galery/delete/:idGalery', GaleriaRoutes.delete);
+
+
+
 
 
 

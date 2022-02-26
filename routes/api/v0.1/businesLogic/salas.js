@@ -12,7 +12,7 @@ class SalasRoutes {
         const stateValidateIdNegocio = await validateIdNeogocio(idNegocio);        
         if (stateValidateIdNegocio.status == 'No fount') return res.status(206).json(stateValidateIdNegocio);
         const verifyUser = await validateUser(idUser);
-        if (verifyUser.status == 'Not fount') return res.status(404).json(verifyUser)
+        if (verifyUser.status == 'No fount') return res.status(206).json(verifyUser)
 
         const newSala = new salas({
             nameSala,
