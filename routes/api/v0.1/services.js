@@ -34,11 +34,19 @@ const Clientes =require('./businesLogic/clientes')
 const Gastos = require('./businesLogic/gastos');
 
 const PCategorias = require('./businesLogic/pCategoria');
+const NetworkConfig = require('../../../Utils/networkServices/networkConfig');
 
 route.get('/',(req, res, next)=>{
     res.status(200).send({"messagae":"Api-rest food sales system runing"})
 })
 
+
+route.get('/get/ip/server', async(req, res, next)=>{
+    
+    const ipServer = await NetworkConfig.getIpServer();
+
+    res.status(200).send({"ip":ipServer})
+});
 
 // endpoint test socket-io
 // io.on('connection',()=>{

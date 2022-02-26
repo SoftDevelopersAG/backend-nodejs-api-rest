@@ -11,6 +11,7 @@ const File = new Schema({
     physicalPath: String,
     relativePath: String,
     linkFile:     String,
+    linkFilePartial: String,
     size:         Number
 
 })
