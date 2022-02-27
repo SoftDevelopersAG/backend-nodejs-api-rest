@@ -47,7 +47,7 @@ route.get('/get/ip/server', async(req, res, next)=>{
     
     const ipServer = await NetworkConfig.getIpServer();
 
-    res.status(200).send({"ip":ipServer})
+    res.status(200).send({"Status":"ok", "Message":"Consulta exitosa","Result":[{"ipServerFood":ipServer}]})
 });
 
 // endpoint test socket-io
