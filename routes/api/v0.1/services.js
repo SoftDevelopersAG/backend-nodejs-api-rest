@@ -162,6 +162,7 @@ route.get('/ventas/show/list/:idNegocio', Ventas.showListVentas);
 route.post('/products/add/:idNegocio/:idUser',[Auth], Products.addNewProduct);
 route.get('/products/get/list/:idNegocio', Products.getAllProducts);
 route.put('/products/update/:idProducto',[Auth, AccessRoleControl.isCocinero], Products.updateProducto);
+route.delete('/products/delete', Products.deleteProduct);
 
 /* =======================salas=============================== */
 route.post('/salas/create/:idUser/:idNegocio',[Auth, AccessRoleControl.isAdmin], SalasRoutes.create); // solo admin

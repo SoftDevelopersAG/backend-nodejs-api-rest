@@ -7,6 +7,7 @@ const { user } = require('../../../../database/collection/models/user');
 const { redondearPrecio } = require('../../../../Utils/RedondeNumeros/redondeoPrecios')
 
 const { verificacionCamposRequeridos } = require('../../../../Utils/verifyCampos/verifyCampos');
+const Verify = require('../../../../Utils/verifyCampos/verifyCampos');
 
 
 class Products {
@@ -73,6 +74,7 @@ class Products {
         }
 
     }
+
     static async updateProducto(req, res) {        
         const { nameProduct, category, subcategory, precioUnitario, precioCosto, unidadesDisponibles, description } = req.body;
         const { idProducto } = req.params;
@@ -131,6 +133,30 @@ class Products {
             console.log('error al obtener los productos\n', err);
             res.status(500).send({ error: 'No fount', message: 'error al obtener los productos' });
         }
+    }
+
+    static async deleteProduct(req, res, next){
+
+       try{
+        const {ipProduct, state} = req.body;
+
+        var verifyCampo = await Verify.verificacionCamposRequeridos([ipProduct, state]);
+        if(!verifyCampo) return res.status(206).send({ status: 'No fount', message: 'Complete los campos requeidos'  });
+
+        var result = await SchemaProducts.producto.findById({_id: ipProduct});
+        if(!result) return res.status(206).send({status: 'No fount', message: 'El producto no existe'});
+        // await SchemaProducts.producto.findByIdAndUpdate({_id: ipProduct},  {state});
+        await SchemaProducts.producto.findOneAndDelete({_id: ipProduct});
+
+        // var respuestaUpdate = await SchemaProducts.producto.findById({_id: ipProduct});
+        res.status(200).send({status: 'ok', message: 'Producto eleminado correctamente', result: {id:result?._id, nameProduct:result?.nameProduct}});
+
+       }
+       catch(err){
+        console.log('error al eliminar el producto\n', err);
+        res.status(500).send({ status: 'No fount', error: 'no eliminado', message: 'error al eliminar el producto' });
+       }
+
     }
 
 }
