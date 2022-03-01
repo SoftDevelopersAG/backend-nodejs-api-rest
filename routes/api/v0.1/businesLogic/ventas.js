@@ -9,7 +9,11 @@ const { negocio } = require('../../../../database/collection/models/negocio');
 const { gastosUser } = require('../../../../database/collection/models/gastosUser');
 const { estadoFinanciero } = require('../../../../database/collection/models/estadoFinanciero');
 const { tipoGastos } = require('../../../../database/collection/models/tipoGasto')
+const SchemaVenta = require('../../../../database/collection/models/venta');
 const moment = require('moment');
+const Verify = require('../../../../Utils/verifyCampos/verifyCampos');
+
+
 class Ventas {
 
     static async addNewVenta(req, res, next) {
@@ -272,7 +276,80 @@ class Ventas {
             productCategory
         })
     }
+
+
+    
+    static async getStateVentas(req, res, next){
+
+       try{
+            var {stateOrdenRestaurante} = req.params;
+            var verify = await Verify.verificacionCamposRequeridos([stateOrdenRestaurante]);
+            if(!verify) return res.status(206).json({status:'No fount',message:'complete los campos requeridos'});
+
+
+            const estasdoFinanciero = await estadoFinanciero.findOne({state:true}).populate(['listVentas']);
+            const listVentas = estasdoFinanciero.listVentas;
+
+            if(stateOrdenRestaurante==='todo'){
+                    var lengthList = listVentas.length;
+                    // var listVentasDetail = SchemaVenta.Venta.fin
+                    return  res.status(200).send({"status":"ok","message":"lista de ventas", "tolalResults":lengthList,"result":listVentas});
+            }
+            if(stateOrdenRestaurante==='espera' || stateOrdenRestaurante === 'proceso' || stateOrdenRestaurante ==='enviado'){
+                    const listaVentasPendientes = await listVentas.filter((listVentas) => listVentas.stateOrdenRestaurante === stateOrdenRestaurante);
+                    var lengthList = listaVentasPendientes.length;
+                    return res.status(200).send({"status":"ok","message":"lista de ventas", "tolalResults":lengthList,"result":listaVentasPendientes});
+            }else{
+
+                return res.status(200).json({status:'No fount',message:'Parametro de la peticion no valido'});
+            }
+            
+       }
+       catch(error){
+                console.log("error en la consulta, stateOrdenRestaurante\n",error);
+                return res.status(400).send({status:'No fount',error:"error en el servidor",err:error});
+       }
+
+        
+    }
+
+    static async setStateOrdenRestaurante(req, res){
+        const { idVenta, idNegocio,  stateOrdenRestaurante } = req.body.data;
+        console.log(req.body.data)
+
+        try{
+            
+            var verify = await Verify.verificacionCamposRequeridos([idVenta,idNegocio,stateOrdenRestaurante]);
+            if(!verify)return res.status(206).send({status:'No fount',message:'complete los campos requeridos'});
+            if(stateOrdenRestaurante==="espera" || stateOrdenRestaurante==="proceso" || stateOrdenRestaurante==="enviado"){
+                var queryVenta = await VentaSchema.Venta.find({_id:idVenta, idNegocio:idNegocio},{stateOrdenRestaurante});
+                if(queryVenta.length===0)return res.status(206).send({status:'No fount',message:'No se encontro la venta'});
+                var resultVenta = await VentaSchema.Venta.findByIdAndUpdate({_id:idVenta, idNegocio:idNegocio},{stateOrdenRestaurante});
+
+                var resultVentaUpdate = await VentaSchema.Venta.find({_id:idVenta, idNegocio:idNegocio});
+                var totalResults = resultVentaUpdate.length;
+
+                return res.status(200).send({status:'ok',message:'stateOrdenRestaurante de la venta actualizado', totalResults:totalResults, result:resultVentaUpdate});
+
+            }else{
+                return res.status(200).json({status:'No fount',message:'Parametro de la peticion no valido'});
+            }
+        }
+        catch(error){
+            console.log("error en la actalizacion, setStateOrdenRestaurante\n",error);
+            res.status(400).send({status:'No fount',error:"error en el servidor :",err:error});
+        }
+      
+    }
+
 }
+
+
+
+
+
+
+
 var getDaysArray = function (start, end) {
     for (var arr = [], dt = new Date(start); dt <= end; dt.setDate(dt.getDate() + 1)) {
         arr.push(new Date(dt));
@@ -578,6 +655,7 @@ const getCategoriProduct = async (arrVentas= [],nameCategori = 'Sodas') => {
       newArr.push(obj[id]);
     }
     return {arrProductCategory:newArr,sumTotal}
+
 }
 
 module.exports = Ventas;

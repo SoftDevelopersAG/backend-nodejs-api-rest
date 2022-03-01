@@ -151,6 +151,10 @@ route.post('/venta/create/:idNegocio/:idUser', Ventas.addNewVenta);
 route.post('/venta/list', Ventas.getVentas);
 route.get('/venta/listVentasUser/:idNegocio/:idUser', Ventas.getListVentasUser);
 route.get('/venta/listVentasRange/:idNegocio/:fechaInicio/:fechaFinal', Ventas.getListVentasRange);//ruta que mustra ventas en rangos de fecha
+route.get('/venta/list/states/stateOrdenRestaurante=:stateOrdenRestaurante?',Ventas.getStateVentas);
+route.post('/venta/update/stateOrdenRestaurante',Ventas.setStateOrdenRestaurante);
+
+
 
 //reporte de ventas y gastos por rango de fechas
 route.post('/reportGastosVentas/report1/:idNegocio/FechaInicio=:fechaInicio/FechaFinal=:fechaFinal',Ventas.reportGastosVentas);

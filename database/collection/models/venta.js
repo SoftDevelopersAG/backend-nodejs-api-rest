@@ -23,8 +23,9 @@ const VentaSchema = new Schema({
     state: {
         type:String,
         enum:['pendiente','preparado','entregado','Cancelado'],
-        default:'Cancelado'
+        default:'pendiente'
     },
+    stateOrdenRestaurante : { type: String, enum : ['espera', 'proceso', 'enviado'], default : 'espera'},
     tipoDePago:{
         type:String,
         emun:TIPOS_POGO,
