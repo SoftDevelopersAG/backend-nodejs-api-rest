@@ -1,0 +1,22 @@
+2022-03-06 10:10:53 - Starting C:\Program Files\nodejs\node.exe  --harmony D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember\node_modules\node-windows\lib\wrapper.js --file D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember\app.js --scriptoptions= --log "server food wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-03-06 10:10:53 - Started 16748
+2022-03-06 11:54:11 - Starting C:\Program Files\nodejs\node.exe  --harmony D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember\node_modules\node-windows\lib\wrapper.js --file D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember\app.js --scriptoptions= --log "server food wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-03-06 11:54:11 - Started 6552
+2022-03-07 07:29:37 - Starting C:\Program Files\nodejs\node.exe  --harmony D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember\node_modules\node-windows\lib\wrapper.js --file D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember\app.js --scriptoptions= --log "server food wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-03-07 07:29:37 - Started 6708
+2022-03-08 19:43:23 - Stopping serverfood.exe
+2022-03-08 19:43:23 - ProcessKill 6708
+2022-03-08 19:43:23 - Found child process: 6784 Name: conhost.exe
+2022-03-08 19:43:23 - Found child process: 8248 Name: node.exe
+2022-03-08 19:43:24 - Stopping process 6784
+2022-03-08 19:43:24 - Send SIGINT 6784
+2022-03-08 19:43:24 - SIGINT to 6784 failed - Killing as fallback
+2022-03-08 19:43:24 - Stopping process 8248
+2022-03-08 19:43:24 - Send SIGINT 8248
+2022-03-08 19:43:24 - SIGINT to 8248 failed - Killing as fallback
+2022-03-08 19:43:24 - Stopping process 6708
+2022-03-08 19:43:24 - Send SIGINT 6708
+2022-03-08 19:43:24 - SIGINT to 6708 failed - Killing as fallback
+2022-03-08 19:43:24 - Finished serverfood.exe
+2022-03-09 07:50:45 - Starting C:\Program Files\nodejs\node.exe  --harmony D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember\node_modules\node-windows\lib\wrapper.js --file D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember\app.js --scriptoptions= --log "server food wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-03-09 07:50:45 - Started 6424

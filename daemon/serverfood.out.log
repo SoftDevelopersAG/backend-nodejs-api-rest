@@ -1,0 +1,2269 @@
+Estableciendo la conexion a la DB...
+Api-Rest runing in port : http://192.168.100.9:4000:4000
+connect to the mongoDB succesful
+192.168.100.9
+true  esto es lo que quiero ver 
+[0mPOST /cliente/verify/licence [32m200[0m 120.909 ms - 43[0m
+[0mGET /api/v0.1/get/ip/server [36m304[0m 12.500 ms - -[0m
+[0mGET /user/verifyUserLength [36m304[0m 39.292 ms - -[0m
+[
+  {
+    _id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+    name: 'carlos',
+    lastName: 'miranda',
+    ci: '85969696',
+    email: 'carlos@gmail.com',
+    phoneNumber: 12345678,
+    direction: '',
+    urlPhotoAvatar: '',
+    password: 'd033e22ae348aeb5660fc2140aec35850c4da997',
+    password1: 'admin',
+    interactionLogs: [],
+    state: true,
+    role: [ [Object] ],
+    dateCreateAcount: 2022-01-15T19:38:06.452Z,
+    updateDateAcount: 2022-01-15T19:38:06.452Z,
+    __v: 0,
+    idNegocio: '61e3229ed1af535ab90ab1b7'
+  }
+]
+{
+  id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+[0mPOST /user/signin [32m200[0m 58.017 ms - 586[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86400
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 19.390 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86400
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 11.332 ms - -[0m
+[0mGET /user/getDataNegocioUser/61e3229ed1af535ab90ab1b2/61e3229ed1af535ab90ab1b7 [36m304[0m 28.203 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 53.631 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 14.627 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86398
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"31a-lMaHKZ3I+RziBn1oyw72BCDNtvI"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86398
+acces role control
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 15.210 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+{
+  _id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+  name: 'carlos',
+  lastName: 'miranda',
+  ci: '85969696',
+  email: 'carlos@gmail.com',
+  phoneNumber: 12345678,
+  direction: '',
+  urlPhotoAvatar: '',
+  password: 'd033e22ae348aeb5660fc2140aec35850c4da997',
+  password1: 'admin',
+  interactionLogs: [],
+  state: true,
+  role: [ new ObjectId("61e24525c511ca6febb8d7f6") ],
+  dateCreateAcount: 2022-01-15T19:38:06.452Z,
+  updateDateAcount: 2022-01-15T19:38:06.452Z,
+  __v: 0,
+  idNegocio: '61e3229ed1af535ab90ab1b7'
+}
+[ new ObjectId("61e24525c511ca6febb8d7f6") ]
+[
+  {
+    _id: new ObjectId("61e24525c511ca6febb8d7f6"),
+    name: 'admin',
+    __v: 0
+  }
+]  ----------------------*-*-*-*
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [32m200[0m 56.751 ms - 180[0m
+[0mGET /user/list/state=all/61e3229ed1af535ab90ab1b7 [36m304[0m 95.684 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 91.246 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 56.343 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 61.678 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 31.998 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 25.650 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 21.522 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 18.014 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 14.030 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 12.898 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 14.037 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 13.275 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 13.040 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.020 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86396
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [32m200[0m 16.907 ms - 2977[0m
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 20.445 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 41.275 ms - -[0m
+[0mGET /file/IMG_1644177092050.jpg [36m304[0m 15.103 ms - -[0m
+[0mGET /file/IMG_1645997419250.jpg [36m304[0m 16.125 ms - -[0m
+[0mGET /file/IMG_1644033587424.jpg [36m304[0m 16.307 ms - -[0m
+[0mGET /file/IMG_1644177150028.jpg [36m304[0m 16.701 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 85.345 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 126.828 ms - -[0m
+[0mGET /pcategoria/getlist/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 45.903 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 57.939 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 16.336 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 12.215 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 13.713 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.019 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86393
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"31a-lMaHKZ3I+RziBn1oyw72BCDNtvI"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86393
+acces role control
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 12.199 ms - -[0m
+{
+  _id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+  name: 'carlos',
+  lastName: 'miranda',
+  ci: '85969696',
+  email: 'carlos@gmail.com',
+  phoneNumber: 12345678,
+  direction: '',
+  urlPhotoAvatar: '',
+  password: 'd033e22ae348aeb5660fc2140aec35850c4da997',
+  password1: 'admin',
+  interactionLogs: [],
+  state: true,
+  role: [ new ObjectId("61e24525c511ca6febb8d7f6") ],
+  dateCreateAcount: 2022-01-15T19:38:06.452Z,
+  updateDateAcount: 2022-01-15T19:38:06.452Z,
+  __v: 0,
+  idNegocio: '61e3229ed1af535ab90ab1b7'
+}
+[ new ObjectId("61e24525c511ca6febb8d7f6") ]
+[ '61e3229ed1af535ab90ab1b7' ]
+[
+  {
+    _id: new ObjectId("61e24525c511ca6febb8d7f6"),
+    name: 'admin',
+    __v: 0
+  }
+]  ----------------------*-*-*-*
+[0mGET /user/list/state=all/61e3229ed1af535ab90ab1b7 [36m304[0m 40.279 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 63.693 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 84.870 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 78.336 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 69.074 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.267 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.569 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 12.023 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 13.374 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 13.084 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.721 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.480 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.007 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 15.971 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 12.031 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86392
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 10.959 ms - -[0m
+[0mPOST /cliente/buscar [32m200[0m 10.533 ms - 604[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 11.891 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 24.656 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 28.747 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 16.521 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 12.518 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 9.269 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 15.340 ms - -[0m
+[0mGET /gastos/listTipoGastos/61e3229ed1af535ab90ab1b7 [36m304[0m 15.585 ms - -[0m
+0 ================================================================pag
+0 ================================================================pageCount
+0 ================================================================pageNumber
+[0mGET /financiero/listGastosEF/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2/true/pn=0/pz=5/bs= [36m304[0m 37.604 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 53.605 ms - -[0m
+[0mPOST /reportGastosVentas/report1/61e3229ed1af535ab90ab1b7/FechaInicio=2022-03-06/FechaFinal=2022-03-06 [32m200[0m 123.454 ms - 5138[0m
+[ 'espera-proceso' ]
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+[0mGET /venta/list/states/stateOrdenRestaurante=espera-proceso [32m200[0m 114.661 ms - 27067[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86384
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 11.190 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 13.942 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 22.010 ms - -[0m
+[0mGET /file/IMG_1644033587424.jpg [36m304[0m 4.311 ms - -[0m
+[0mGET /file/IMG_1644177092050.jpg [36m304[0m 4.228 ms - -[0m
+[0mGET /file/IMG_1644177150028.jpg [36m304[0m 4.885 ms - -[0m
+[0mGET /file/IMG_1645997419250.jpg [36m304[0m 5.342 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 35.244 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 32.015 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 39.832 ms - -[0m
+[0mGET /pcategoria/getlist/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 19.059 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 27.482 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.188 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86384
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"31a-lMaHKZ3I+RziBn1oyw72BCDNtvI"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86384
+acces role control
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 8.992 ms - -[0m
+{
+  _id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+  name: 'carlos',
+  lastName: 'miranda',
+  ci: '85969696',
+  email: 'carlos@gmail.com',
+  phoneNumber: 12345678,
+  direction: '',
+  urlPhotoAvatar: '',
+  password: 'd033e22ae348aeb5660fc2140aec35850c4da997',
+  password1: 'admin',
+  interactionLogs: [],
+  state: true,
+  role: [ new ObjectId("61e24525c511ca6febb8d7f6") ],
+  dateCreateAcount: 2022-01-15T19:38:06.452Z,
+  updateDateAcount: 2022-01-15T19:38:06.452Z,
+  __v: 0,
+  idNegocio: '61e3229ed1af535ab90ab1b7'
+}
+[ new ObjectId("61e24525c511ca6febb8d7f6") ]
+[ '61e3229ed1af535ab90ab1b7' ]
+[
+  {
+    _id: new ObjectId("61e24525c511ca6febb8d7f6"),
+    name: 'admin',
+    __v: 0
+  }
+]  ----------------------*-*-*-*
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 25.883 ms - -[0m
+[0mGET /user/list/state=all/61e3229ed1af535ab90ab1b7 [36m304[0m 35.420 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 36.185 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 23.926 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 21.907 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.694 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 12.049 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.829 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 7.787 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.780 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 7.511 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.152 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.336 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.065 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.627 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86383
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 10.612 ms - -[0m
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 16.772 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 26.321 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 30.764 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 15.468 ms - -[0m
+[0mGET /pcategoria/getlist/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 12.714 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 25.434 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.260 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.955 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86382
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"31a-lMaHKZ3I+RziBn1oyw72BCDNtvI"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86382
+acces role control
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 9.427 ms - -[0m
+{
+  _id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+  name: 'carlos',
+  lastName: 'miranda',
+  ci: '85969696',
+  email: 'carlos@gmail.com',
+  phoneNumber: 12345678,
+  direction: '',
+  urlPhotoAvatar: '',
+  password: 'd033e22ae348aeb5660fc2140aec35850c4da997',
+  password1: 'admin',
+  interactionLogs: [],
+  state: true,
+  role: [ new ObjectId("61e24525c511ca6febb8d7f6") ],
+  dateCreateAcount: 2022-01-15T19:38:06.452Z,
+  updateDateAcount: 2022-01-15T19:38:06.452Z,
+  __v: 0,
+  idNegocio: '61e3229ed1af535ab90ab1b7'
+}
+[ new ObjectId("61e24525c511ca6febb8d7f6") ]
+[
+  {
+    _id: new ObjectId("61e24525c511ca6febb8d7f6"),
+    name: 'admin',
+    __v: 0
+  }
+]  ----------------------*-*-*-*
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 19.084 ms - -[0m
+[0mGET /user/list/state=all/61e3229ed1af535ab90ab1b7 [36m304[0m 30.140 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 30.323 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 15.732 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 16.769 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 12.242 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.582 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.294 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.161 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.603 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 7.999 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.504 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 13.820 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.155 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.951 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86382
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mPOST /cliente/buscar [32m200[0m 8.055 ms - 604[0m
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 12.189 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 20.080 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 18.048 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 16.290 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 35.688 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 26.530 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /gastos/listTipoGastos/61e3229ed1af535ab90ab1b7 [36m304[0m 17.678 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 35.283 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+0 ================================================================pag
+0 ================================================================pageCount
+0 ================================================================pageNumber
+[0mGET /financiero/listGastosEF/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2/true/pn=0/pz=5/bs= [36m304[0m 67.575 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 65.408 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 36.222 ms - -[0m
+[0mPOST /reportGastosVentas/report1/61e3229ed1af535ab90ab1b7/FechaInicio=2022-03-06/FechaFinal=2022-03-06 [32m200[0m 103.592 ms - 5138[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86382
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"31a-lMaHKZ3I+RziBn1oyw72BCDNtvI"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86382
+acces role control
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 9.373 ms - -[0m
+{
+  _id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+  name: 'carlos',
+  lastName: 'miranda',
+  ci: '85969696',
+  email: 'carlos@gmail.com',
+  phoneNumber: 12345678,
+  direction: '',
+  urlPhotoAvatar: '',
+  password: 'd033e22ae348aeb5660fc2140aec35850c4da997',
+  password1: 'admin',
+  interactionLogs: [],
+  state: true,
+  role: [ new ObjectId("61e24525c511ca6febb8d7f6") ],
+  dateCreateAcount: 2022-01-15T19:38:06.452Z,
+  updateDateAcount: 2022-01-15T19:38:06.452Z,
+  __v: 0,
+  idNegocio: '61e3229ed1af535ab90ab1b7'
+}
+[ new ObjectId("61e24525c511ca6febb8d7f6") ]
+[
+  {
+    _id: new ObjectId("61e24525c511ca6febb8d7f6"),
+    name: 'admin',
+    __v: 0
+  }
+]  ----------------------*-*-*-*
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 19.331 ms - -[0m
+[0mGET /user/list/state=all/61e3229ed1af535ab90ab1b7 [36m304[0m 27.465 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 28.044 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 17.032 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.153 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.018 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.303 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.980 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.721 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.303 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.288 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.996 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.314 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.419 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 7.457 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86381
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 8.537 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 12.750 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 25.845 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 30.682 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 13.230 ms - -[0m
+[0mGET /pcategoria/getlist/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 10.449 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 15.249 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 7.934 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.083 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86381
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"31a-lMaHKZ3I+RziBn1oyw72BCDNtvI"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86381
+acces role control
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 6.575 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+{
+  _id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+  name: 'carlos',
+  lastName: 'miranda',
+  ci: '85969696',
+  email: 'carlos@gmail.com',
+  phoneNumber: 12345678,
+  direction: '',
+  urlPhotoAvatar: '',
+  password: 'd033e22ae348aeb5660fc2140aec35850c4da997',
+  password1: 'admin',
+  interactionLogs: [],
+  state: true,
+  role: [ new ObjectId("61e24525c511ca6febb8d7f6") ],
+  dateCreateAcount: 2022-01-15T19:38:06.452Z,
+  updateDateAcount: 2022-01-15T19:38:06.452Z,
+  __v: 0,
+  idNegocio: '61e3229ed1af535ab90ab1b7'
+}
+[ new ObjectId("61e24525c511ca6febb8d7f6") ]
+[
+  {
+    _id: new ObjectId("61e24525c511ca6febb8d7f6"),
+    name: 'admin',
+    __v: 0
+  }
+]  ----------------------*-*-*-*
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 25.078 ms - -[0m
+[0mGET /user/list/state=all/61e3229ed1af535ab90ab1b7 [36m304[0m 35.857 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 32.947 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 16.509 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 21.183 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.380 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.598 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.721 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.198 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.558 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.633 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 7.883 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.409 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.339 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.085 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86380
+[0mPOST /cliente/buscar [32m200[0m 7.616 ms - 604[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 15.438 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 12.722 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 23.531 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 30.768 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 13.353 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 26.466 ms - -[0m
+[0mGET /gastos/listTipoGastos/61e3229ed1af535ab90ab1b7 [36m304[0m 14.226 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+0 ================================================================pag
+0 ================================================================pageCount
+0 ================================================================pageNumber
+[0mGET /financiero/listGastosEF/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2/true/pn=0/pz=5/bs= [36m304[0m 41.259 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 45.655 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 68.173 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mPOST /reportGastosVentas/report1/61e3229ed1af535ab90ab1b7/FechaInicio=2022-03-06/FechaFinal=2022-03-06 [32m200[0m 134.681 ms - 5138[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 50.713 ms - -[0m
+Estableciendo la conexion a la DB...
+Api-Rest runing in port : http://192.168.100.9:4000:4000
+connect to the mongoDB succesful
+169.254.91.251
+true  esto es lo que quiero ver 
+[0mPOST /cliente/verify/licence [32m200[0m 435.068 ms - 43[0m
+[0mGET /api/v0.1/get/ip/server [32m200[0m 19.209 ms - 101[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+79271
+[0mGET /user/verifyUserLength [36m304[0m 80.682 ms - -[0m
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 69.747 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 143.106 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+79271
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 7.121 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 23.854 ms - -[0m
+[0mGET /user/getDataNegocioUser/61e3229ed1af535ab90ab1b2/61e3229ed1af535ab90ab1b7 [36m304[0m 50.171 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 32.056 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+79257
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 7.686 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 27.641 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 43.462 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 71.374 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 46.115 ms - -[0m
+[0mGET /pcategoria/getlist/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 78.724 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 101.996 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 108.138 ms - -[0m
+[0mGET /file/IMG_1644177150028.jpg [32m200[0m 168.480 ms - 72475[0m
+[0mGET /file/IMG_1644177092050.jpg [32m200[0m 174.500 ms - 66687[0m
+[0mGET /file/IMG_1644033587424.jpg [32m200[0m 186.264 ms - 39003[0m
+[0mGET /file/IMG_1645997419250.jpg [32m200[0m 177.524 ms - 220799[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 78.425 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 17.636 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 15.914 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+79246
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 5.479 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 6.824 ms - -[0m
+[0mPOST /cliente/buscar [32m200[0m 20.210 ms - 604[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 28.226 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 25.627 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 52.405 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 15.661 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 34.486 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /gastos/listTipoGastos/61e3229ed1af535ab90ab1b7 [36m304[0m 31.905 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 66.431 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 70.486 ms - -[0m
+0 ================================================================pag
+0 ================================================================pageCount
+0 ================================================================pageNumber
+[0mGET /financiero/listGastosEF/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2/true/pn=0/pz=5/bs= [36m304[0m 104.418 ms - -[0m
+[0mPOST /reportGastosVentas/report1/61e3229ed1af535ab90ab1b7/FechaInicio=2022-03-06/FechaFinal=2022-03-06 [32m200[0m 243.063 ms - 5138[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+79213
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 11.078 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 15.241 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 27.963 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 37.478 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 20.300 ms - -[0m
+[0mGET /pcategoria/getlist/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 18.887 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 37.122 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.766 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 15.057 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 12.259 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.407 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 14.065 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+79203
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 5.977 ms - -[0m
+[0mPOST /cliente/buscar [32m200[0m 8.240 ms - 604[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 14.140 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 31.532 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 38.843 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 18.551 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /gastos/listTipoGastos/61e3229ed1af535ab90ab1b7 [36m304[0m 19.412 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 45.995 ms - -[0m
+0 ================================================================pag
+0 ================================================================pageCount
+0 ================================================================pageNumber
+[0mGET /financiero/listGastosEF/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2/true/pn=0/pz=5/bs= [36m304[0m 56.542 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 56.386 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 34.027 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mPOST /reportGastosVentas/report1/61e3229ed1af535ab90ab1b7/FechaInicio=2022-03-06/FechaFinal=2022-03-06 [32m200[0m 116.652 ms - 5138[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 24.713 ms - -[0m
+[0mGET /negocio/dataNegocio/61e3229ed1af535ab90ab1b7 [36m304[0m 3.023 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 10.867 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7', 15, '15', 0 ]
+{
+  id: '61fdf633634ac3fd81f19cbe',
+  idProduct: '61fdf633634ac3fd81f19cbe',
+  nombre: 'Nombre del producto',
+  description: '',
+  precio: 15,
+  unidadesVendidos: 1,
+  total: 15
+}  esto es
+eatados financiero
+ {
+  cierreDeCaja: {
+    detalle: '',
+    conformiadCajero: false,
+    conformidadAdministrador: false,
+    fechaInicio: 2022-03-03T19:20:17.000Z,
+    fechaCierre: 2022-03-03T19:20:17.000Z
+  },
+  _id: new ObjectId("622114f1a4917359493bc73a"),
+  idNegocio: '61e3229ed1af535ab90ab1b7',
+  montoInicial: 0,
+  montoCierreCaja: 0,
+  montoActualDisponble: 546,
+  montoTotal: 0,
+  montoActualUtilizado: 0,
+  listVentas: [
+    {
+      _id: new ObjectId("6221155da4917359493bc75e"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 8,
+      precioTotal: 12,
+      precioTotalBackend: 12,
+      pagoCliente: 20,
+      cambioCliente: 8,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-03T19:22:05.224Z,
+      updateDate: 2022-03-03T19:22:05.224Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("622116b4a4917359493bc8ce"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: '622116a4a4917359493bc8bd',
+      nit: '',
+      venta: 9,
+      precioTotal: 6,
+      precioTotalBackend: 6,
+      pagoCliente: 6,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'proceso',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-03T19:27:48.713Z,
+      updateDate: 2022-03-03T19:27:48.713Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("622366a1254547ab67b44344"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 10,
+      precioTotal: 6,
+      precioTotalBackend: 6,
+      pagoCliente: 6,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'espera',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T13:33:21.304Z,
+      updateDate: 2022-03-05T13:33:21.304Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("62236a60254547ab67b4440e"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 11,
+      precioTotal: 60,
+      precioTotalBackend: 60,
+      pagoCliente: 60,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'espera',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T13:49:20.083Z,
+      updateDate: 2022-03-05T13:49:20.083Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("62237e6ed1c7d4a48fb48f91"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 12,
+      precioTotal: 45,
+      precioTotalBackend: 45,
+      pagoCliente: 45,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'proceso',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T15:14:54.215Z,
+      updateDate: 2022-03-05T15:14:54.215Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("62237e91d1c7d4a48fb48fb0"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 13,
+      precioTotal: 12,
+      precioTotalBackend: 12,
+      pagoCliente: 12,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'proceso',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T15:15:29.093Z,
+      updateDate: 2022-03-05T15:15:29.093Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6223be05cb196b120915411c"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 14,
+      precioTotal: 120,
+      precioTotalBackend: 120,
+      pagoCliente: 120,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'proceso',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T19:46:13.430Z,
+      updateDate: 2022-03-05T19:46:13.430Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6223e4a1189e5474188013c4"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 15,
+      precioTotal: 186,
+      precioTotalBackend: 186,
+      pagoCliente: 186,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'espera',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T22:30:57.786Z,
+      updateDate: 2022-03-05T22:30:57.786Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224af3b6d92299911920742"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 16,
+      precioTotal: 36,
+      precioTotalBackend: 36,
+      pagoCliente: 36,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'espera',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T12:55:23.149Z,
+      updateDate: 2022-03-06T12:55:23.149Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b0606d92299911920770"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 17,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'espera',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:00:16.147Z,
+      updateDate: 2022-03-06T13:00:16.147Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b2206d92299911920788"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 18,
+      precioTotal: 18,
+      precioTotalBackend: 18,
+      pagoCliente: 18,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'espera',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:07:44.786Z,
+      updateDate: 2022-03-06T13:07:44.786Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b2fd6d922999119207a0"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 19,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'espera',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:11:25.257Z,
+      updateDate: 2022-03-06T13:11:25.257Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b8436d922999119207e6"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 20,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'espera',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:33:55.331Z,
+      updateDate: 2022-03-06T13:33:55.331Z,
+      __v: 0
+    }
+  ],
+  listGastos: [],
+  state: true,
+  dateCreated: 2022-03-03T19:20:17.394Z,
+  updateDate: 2022-03-03T19:20:17.394Z,
+  __v: 0
+}
+[0mPOST /venta/create/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2 [32m200[0m 160.812 ms - 993[0m
+0 ================================================================pag
+0 ================================================================pageCount
+0 ================================================================pageNumber
+[0mGET /financiero/listGastosEF/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2/true/pn=0/pz=5/bs= [36m304[0m 23.685 ms - -[0m
+[ 'espera-proceso' ]
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+new ObjectId("6224e7a5c54ccd70b73150b2")
+[0mGET /venta/list/states/stateOrdenRestaurante=espera-proceso [32m200[0m 139.588 ms - 28001[0m
+{
+  idVenta: '6224e7a5c54ccd70b73150b2',
+  idNegocio: '61e3229ed1af535ab90ab1b7',
+  stateOrdenRestaurante: 'enviado'
+}
+[ '6224e7a5c54ccd70b73150b2', '61e3229ed1af535ab90ab1b7', 'enviado' ]
+[0mPOST /venta/update/stateOrdenRestaurante [32m200[0m 13.764 ms - 543[0m
+{
+  idVenta: '622116b4a4917359493bc8ce',
+  idNegocio: '61e3229ed1af535ab90ab1b7',
+  stateOrdenRestaurante: 'enviado'
+}
+[ '622116b4a4917359493bc8ce', '61e3229ed1af535ab90ab1b7', 'enviado' ]
+[0mPOST /venta/update/stateOrdenRestaurante [32m200[0m 11.092 ms - 548[0m
+{
+  idVenta: '622366a1254547ab67b44344',
+  idNegocio: '61e3229ed1af535ab90ab1b7',
+  stateOrdenRestaurante: 'enviado'
+}
+[ '622366a1254547ab67b44344', '61e3229ed1af535ab90ab1b7', 'enviado' ]
+[0mPOST /venta/update/stateOrdenRestaurante [32m200[0m 12.397 ms - 540[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+78985
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 9.853 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [32m200[0m 24.446 ms - 180[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 28.562 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 24.800 ms - -[0m
+[0mGET /cliente/list/61e3229ed1af535ab90ab1b7 [32m200[0m 22.005 ms - 607[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 58.310 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 12.318 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.817 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.991 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.419 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.662 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.323 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.054 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.978 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+78980
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 5.375 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 21.536 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 25.390 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 26.660 ms - -[0m
+[0mGET /gastos/listTipoGastos/61e3229ed1af535ab90ab1b7 [36m304[0m 4.867 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+78977
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 8.195 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 16.485 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 22.766 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 20.752 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /pcategoria/getlist/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 15.551 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 26.454 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 10.471 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+78955
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 13.208 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 24.533 ms - -[0m
+[0mGET /galery/listAll/61e3229ed1af535ab90ab1b7 [36m304[0m 23.813 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 28.181 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 12.529 ms - -[0m
+true  esto es lo que quiero ver 
+[0mPOST /cliente/verify/licence [32m200[0m 1.094 ms - 43[0m
+[0mGET /api/v0.1/get/ip/server [36m304[0m 4.110 ms - -[0m
+[0mGET /user/verifyUserLength [36m304[0m 8.664 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 19.811 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+78896
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 4.350 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+78896
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 4.151 ms - -[0m
+[0mGET /user/getDataNegocioUser/61e3229ed1af535ab90ab1b2/61e3229ed1af535ab90ab1b7 [36m304[0m 20.301 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 34.394 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 23.051 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+78882
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 11.413 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [32m200[0m 11.325 ms - 2976[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 38.760 ms - -[0m
+[0mGET /file/IMG_1644033587424.jpg [36m304[0m 8.602 ms - -[0m
+[0mGET /file/IMG_1644177092050.jpg [36m304[0m 8.727 ms - -[0m
+[0mGET /file/IMG_1644177150028.jpg [36m304[0m 8.981 ms - -[0m
+[0mGET /file/IMG_1645997419250.jpg [36m304[0m 9.284 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 64.946 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 52.207 ms - -[0m
+[0mGET /pcategoria/getlist/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 19.920 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 59.517 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.364 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 15.308 ms - -[0m
+true  esto es lo que quiero ver 
+[0mPOST /cliente/verify/licence [32m200[0m 2.392 ms - 43[0m
+[0mGET /api/v0.1/get/ip/server [36m304[0m 2.396 ms - -[0m
+[0mGET /user/verifyUserLength [36m304[0m 7.582 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+78855
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 8.180 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 20.439 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+78855
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 4.251 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 13.008 ms - -[0m
+[0mGET /user/getDataNegocioUser/61e3229ed1af535ab90ab1b2/61e3229ed1af535ab90ab1b7 [36m304[0m 16.201 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 46.563 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+78832
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 7.013 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 13.044 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 26.365 ms - -[0m
+[0mGET /file/IMG_1644033587424.jpg [36m304[0m 9.973 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 37.935 ms - -[0m
+[0mGET /file/IMG_1644177092050.jpg [36m304[0m 1.606 ms - -[0m
+[0mGET /file/IMG_1644177150028.jpg [36m304[0m 1.774 ms - -[0m
+[0mGET /file/IMG_1645997419250.jpg [36m304[0m 1.839 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 41.765 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 43.251 ms - -[0m
+[0mGET /pcategoria/getlist/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 11.976 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 14.113 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 13.146 ms - -[0m
+Estableciendo la conexion a la DB...
+Api-Rest runing in port : http://169.254.91.251:4000:4000
+connect to the mongoDB succesful
+192.168.100.9
+[0mGET /api/v0.1/ [32m200[0m 87.572 ms - 48[0m
+[0mGET /favicon.ico [33m404[0m 14.550 ms - 150[0m
+[0mGET /api/v0.1/ [36m304[0m 5.385 ms - -[0m
+true  esto es lo que quiero ver 
+[0mPOST /cliente/verify/licence [32m200[0m 569.803 ms - 43[0m
+[0mGET /api/v0.1/get/ip/server [32m200[0m 27.365 ms - 100[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA2LCAyMDIyIDEwOjU1IEFNIiwiZW5kIjoiTWFyY2ggNywgMjAyMiAxMDo1NSBBTSIsImV4cGlyYSI6MTY0NjY2NDkyNiwidGltZUxpZmUiOjg2NDAwfQ.0KhXALfT79bfgWGb6xEZD7M7k1-A32QAt2zTDGZdxr0
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 6, 2022 10:55 AM',
+  end: 'March 7, 2022 10:55 AM',
+  expira: 1646664926,
+  timeLife: 86400
+}
+token no valido, acceso denegado
+-43670
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [33m401[0m 117.377 ms - 46[0m
+[0mGET /user/verifyUserLength [36m304[0m 185.228 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 223.389 ms - -[0m
+[
+  {
+    _id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+    name: 'carlos',
+    lastName: 'miranda',
+    ci: '85969696',
+    email: 'carlos@gmail.com',
+    phoneNumber: 12345678,
+    direction: '',
+    urlPhotoAvatar: '',
+    password: 'd033e22ae348aeb5660fc2140aec35850c4da997',
+    password1: 'admin',
+    interactionLogs: [],
+    state: true,
+    role: [ [Object] ],
+    dateCreateAcount: 2022-01-15T19:38:06.452Z,
+    updateDateAcount: 2022-01-15T19:38:06.452Z,
+    __v: 0,
+    idNegocio: '61e3229ed1af535ab90ab1b7'
+  }
+]
+{
+  id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+  email: 'carlos@gmail.com',
+  init: 'March 7, 2022 11:03 PM',
+  end: 'March 8, 2022 11:03 PM',
+  expira: 1646795014,
+  timeLife: 86400
+}
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k
+[0mPOST /user/signin [32m200[0m 17.114 ms - 586[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 7, 2022 11:03 PM',
+  end: 'March 8, 2022 11:03 PM',
+  expira: 1646795014,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86400
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 6.410 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 7, 2022 11:03 PM',
+  end: 'March 8, 2022 11:03 PM',
+  expira: 1646795014,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86400
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 10.431 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 24.798 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 16.654 ms - -[0m
+[0mGET /user/getDataNegocioUser/61e3229ed1af535ab90ab1b2/61e3229ed1af535ab90ab1b7 [36m304[0m 46.874 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 7, 2022 11:03 PM',
+  end: 'March 8, 2022 11:03 PM',
+  expira: 1646795014,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86386
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 12.320 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"31a-lMaHKZ3I+RziBn1oyw72BCDNtvI"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 7, 2022 11:03 PM',
+  end: 'March 8, 2022 11:03 PM',
+  expira: 1646795014,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86386
+acces role control
+{
+  _id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+  name: 'carlos',
+  lastName: 'miranda',
+  ci: '85969696',
+  email: 'carlos@gmail.com',
+  phoneNumber: 12345678,
+  direction: '',
+  urlPhotoAvatar: '',
+  password: 'd033e22ae348aeb5660fc2140aec35850c4da997',
+  password1: 'admin',
+  interactionLogs: [],
+  state: true,
+  role: [ new ObjectId("61e24525c511ca6febb8d7f6") ],
+  dateCreateAcount: 2022-01-15T19:38:06.452Z,
+  updateDateAcount: 2022-01-15T19:38:06.452Z,
+  __v: 0,
+  idNegocio: '61e3229ed1af535ab90ab1b7'
+}
+[ new ObjectId("61e24525c511ca6febb8d7f6") ]
+[
+  {
+    _id: new ObjectId("61e24525c511ca6febb8d7f6"),
+    name: 'admin',
+    __v: 0
+  }
+]  ----------------------*-*-*-*
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 72.142 ms - -[0m
+[0mGET /user/list/state=all/61e3229ed1af535ab90ab1b7 [36m304[0m 81.703 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 85.344 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 50.212 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 65.059 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 32.240 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 20.826 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 30.378 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 20.559 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 18.633 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 20.562 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 13.684 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 19.565 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 20.183 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.912 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 7, 2022 11:03 PM',
+  end: 'March 8, 2022 11:03 PM',
+  expira: 1646795014,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86384
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 11.469 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 21.130 ms - -[0m
+[0mPOST /cliente/buscar [32m200[0m 23.749 ms - 604[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 17.946 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 40.250 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 36.520 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 14.535 ms - -[0m
+[0mGET /file/IMG_1644033587424.jpg [36m304[0m 36.773 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /file/IMG_1644177092050.jpg [36m304[0m 45.030 ms - -[0m
+[0mGET /file/IMG_1644177150028.jpg [36m304[0m 58.666 ms - -[0m
+[0mGET /file/IMG_1645997419250.jpg [36m304[0m 60.115 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 95.832 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 33.172 ms - -[0m
+[0mPOST /reportGastosVentas/report1/61e3229ed1af535ab90ab1b7/FechaInicio=2022-03-07/FechaFinal=2022-03-07 [32m200[0m 126.400 ms - 371[0m
+[0mGET /gastos/listTipoGastos/61e3229ed1af535ab90ab1b7 [36m304[0m 169.014 ms - -[0m
+0 ================================================================pag
+0 ================================================================pageCount
+0 ================================================================pageNumber
+[0mGET /financiero/listGastosEF/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2/true/pn=0/pz=5/bs= [36m304[0m 177.732 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 196.331 ms - -[0m
+[ 'espera-proceso' ]
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+[0mGET /venta/list/states/stateOrdenRestaurante=espera-proceso [32m200[0m 136.818 ms - 25224[0m
+{
+  idVenta: '62236a60254547ab67b4440e',
+  idNegocio: '61e3229ed1af535ab90ab1b7',
+  stateOrdenRestaurante: 'espera'
+}
+[ '62236a60254547ab67b4440e', '61e3229ed1af535ab90ab1b7', 'espera' ]
+[0mPOST /venta/update/stateOrdenRestaurante [32m200[0m 37.861 ms - 650[0m
+{
+  idVenta: '62236a60254547ab67b4440e',
+  idNegocio: '61e3229ed1af535ab90ab1b7',
+  stateOrdenRestaurante: 'enviado'
+}
+[ '62236a60254547ab67b4440e', '61e3229ed1af535ab90ab1b7', 'enviado' ]
+[0mPOST /venta/update/stateOrdenRestaurante [32m200[0m 16.183 ms - 651[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 7, 2022 11:03 PM',
+  end: 'March 8, 2022 11:03 PM',
+  expira: 1646795014,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86314
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 8.991 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 19.208 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 28.758 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 16.929 ms - -[0m
+[0mGET /cliente/list/61e3229ed1af535ab90ab1b7 [36m304[0m 9.604 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 14.951 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.585 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.700 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 6.980 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.746 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 7.664 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 7.092 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.433 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.071 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 7, 2022 11:03 PM',
+  end: 'March 8, 2022 11:03 PM',
+  expira: 1646795014,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86314
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 6.814 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 19.971 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 26.204 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 13.937 ms - -[0m
+[0mGET /gastos/listTipoGastos/61e3229ed1af535ab90ab1b7 [36m304[0m 3.300 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 7, 2022 11:03 PM',
+  end: 'March 8, 2022 11:03 PM',
+  expira: 1646795014,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86313
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 6.467 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 16.256 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 25.029 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 19.625 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 9.411 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 10.879 ms - -[0m
+[0mGET /pcategoria/getlist/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 37.526 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 7, 2022 11:03 PM',
+  end: 'March 8, 2022 11:03 PM',
+  expira: 1646795014,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86313
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 7.956 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 25.587 ms - -[0m
+[0mGET /galery/listAll/61e3229ed1af535ab90ab1b7 [36m304[0m 26.475 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 26.738 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 16.940 ms - -[0m

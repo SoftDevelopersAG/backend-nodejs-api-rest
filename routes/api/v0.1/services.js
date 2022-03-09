@@ -153,6 +153,9 @@ route.get('/venta/listVentasUser/:idNegocio/:idUser', Ventas.getListVentasUser);
 route.get('/venta/listVentasRange/:idNegocio/:fechaInicio/:fechaFinal', Ventas.getListVentasRange);//ruta que mustra ventas en rangos de fecha
 route.get('/venta/list/states/stateOrdenRestaurante=:stateOrdenRestaurante?',Ventas.getStateVentas);
 route.post('/venta/update/stateOrdenRestaurante',Ventas.setStateOrdenRestaurante);
+route.get('/venta/list/products/idVenta=:idVenta',Ventas.getListProductsVentas);
+    //para ver el numero de ticket
+route.get('/venta/numero/ticket/idNegocio=:idNegocio',Ventas.getNumeroTicket)
 
 
 

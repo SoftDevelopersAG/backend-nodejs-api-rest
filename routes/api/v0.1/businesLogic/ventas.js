@@ -12,6 +12,7 @@ const { tipoGastos } = require('../../../../database/collection/models/tipoGasto
 const SchemaVenta = require('../../../../database/collection/models/venta');
 const moment = require('moment');
 const Verify = require('../../../../Utils/verifyCampos/verifyCampos');
+const socketControllers = require('../../../../socket/controllers/socketControllers');
 
 
 class Ventas {
@@ -288,17 +289,46 @@ class Ventas {
 
 
             const estasdoFinanciero = await estadoFinanciero.findOne({state:true}).populate(['listVentas']);
-            const listVentas = estasdoFinanciero.listVentas;
+            
+            const listVentas =await estasdoFinanciero.listVentas;
+            
 
             if(stateOrdenRestaurante==='todo'){
-                    var lengthList = listVentas.length;
-                    // var listVentasDetail = SchemaVenta.Venta.fin
-                    return  res.status(200).send({"status":"ok","message":"lista de ventas", "tolalResults":lengthList,"result":listVentas});
+                // var listVentasDetail = SchemaVenta.Venta.fin
+                var listVentasDetail = new Array();
+                for(var i =0; i<listVentas.length;i++){
+                    // if(listVentas[i].stateOrdenRestaurante===stateOrdenRestaurante){
+                        var dataVenta =await listProductosPortVentas(listVentas[i]._id);
+                        listVentasDetail.push(dataVenta);
+                    // }
+                }
+                var lengthList = listVentasDetail.length;
+                return  res.status(200).send({"status":"ok","message":"lista de ventas", "tolalResults":lengthList,"result":listVentasDetail});
+            }
+            if(stateOrdenRestaurante==='espera-proceso'){
+                var listVentasDetail=new Array();
+                    for(var i =0; i<listVentas.length;i++){
+                        if(listVentas[i].stateOrdenRestaurante==='proceso' || listVentas[i].stateOrdenRestaurante==='espera'){
+                            var dataVenta =await listProductosPortVentas(listVentas[i]._id);
+                            listVentasDetail.push(dataVenta);
+                        }
+                     }
+                 
+                var lengthList = listVentasDetail.length;
+                return  res.status(200).send({"status":"ok","message":"lista de ventas, en espera y en proceso", "tolalResults":lengthList,"result":listVentasDetail});
             }
             if(stateOrdenRestaurante==='espera' || stateOrdenRestaurante === 'proceso' || stateOrdenRestaurante ==='enviado'){
-                    const listaVentasPendientes = await listVentas.filter((listVentas) => listVentas.stateOrdenRestaurante === stateOrdenRestaurante);
-                    var lengthList = listaVentasPendientes.length;
-                    return res.status(200).send({"status":"ok","message":"lista de ventas", "tolalResults":lengthList,"result":listaVentasPendientes});
+                    // const listaVentasPendientes = await listVentas.filter((listVentas) => listVentas.stateOrdenRestaurante === stateOrdenRestaurante);
+                    var listVentasDetail = new Array();
+                    for(var i =0; i<listVentas.length;i++){
+                        if(listVentas[i].stateOrdenRestaurante===stateOrdenRestaurante){
+                            var dataVenta =await listProductosPortVentas(listVentas[i]._id);
+                            listVentasDetail.push(dataVenta);
+                        }
+                    }
+                    var lengthList = listVentasDetail.length;
+                 
+                    return res.status(200).send({"status":"ok","message":"lista de ventas", "tolalResults":lengthList,"result":listVentasDetail});
             }else{
 
                 return res.status(200).json({status:'No fount',message:'Parametro de la peticion no valido'});
@@ -309,8 +339,18 @@ class Ventas {
                 console.log("error en la consulta, stateOrdenRestaurante\n",error);
                 return res.status(400).send({status:'No fount',error:"error en el servidor",err:error});
        }
+    }
 
-        
+    static async getListProductsVentas(req, res, next){
+        var {idVenta} = req.params;
+        var veryfi = await Verify.verificacionCamposRequeridos([idVenta]);
+        if(!veryfi)return res.status(206).send({status:'No fount',message:'complete los campos requeridos'});
+
+        const listVentas = await SchemaVenta.Venta.findOne({_id:idVenta}).populate(['products']);
+        if(!listVentas)return res.status(206).send({status:'No fount',message:'No se encontro la venta'});
+
+        var lengthListProducts =await  listVentas.products.length;
+        return res.status(200).send({status:'ok',message:'lista de productos de la venta', totalResults:listVentas.length,totalResultsProducts:lengthListProducts,result:listVentas});
     }
 
     static async setStateOrdenRestaurante(req, res){
@@ -328,6 +368,8 @@ class Ventas {
 
                 var resultVentaUpdate = await VentaSchema.Venta.find({_id:idVenta, idNegocio:idNegocio});
                 var totalResults = resultVentaUpdate.length;
+                
+                socketControllers('[ventas] changeStateTickets',resultVentaUpdate);
 
                 return res.status(200).send({status:'ok',message:'stateOrdenRestaurante de la venta actualizado', totalResults:totalResults, result:resultVentaUpdate});
 
@@ -342,9 +384,39 @@ class Ventas {
       
     }
 
+    static async getNumeroTicket(req, res){
+
+        try{
+            var {idNegocio} = req.params;
+            var veryfi = await Verify.verificacionCamposRequeridos([idNegocio]);
+            if(!veryfi)return res.status(206).send({status:'No fount',message:'complete los campos requeridos', err:"idNegocio requerido"});
+            var dataNegocio = await negocio.findById({_id:idNegocio});
+            var listVentas= await SchemaVenta.Venta.find({idNegocio});
+
+            var ultimoTicketEmitido = listVentas.length;
+            var numeroTicketActual = listVentas.length+1;
+            var dataResponse = {
+                nombreNegocio: dataNegocio.nombre,
+                idNegocio:dataNegocio._id,
+                ultimoTicketEmitido:ultimoTicketEmitido,
+                numeroTicketActual:numeroTicketActual,
+            }
+            
+            return res.status(200).send({status:'ok',message:'numero de ticket', result:dataResponse});
+        }catch(err){
+            return res.status(400).send({status:'No fount',error:"error en el servidor, no se puede obtner el número de ticket",err:err});
+        }
+    }
+
 }
 
 
+const listProductosPortVentas = async (idVentas) => {
+    console.log(idVentas)
+    var dataVenta = await VentaSchema.Venta.findById({_id:idVentas}).populate(['products']);
+    // console.log(dataVenta)
+    return dataVenta;
+}
 
 
 
