@@ -2267,3 +2267,7 @@ token vigente, acceso permitido
 [ '61e3229ed1af535ab90ab1b7' ]
 [0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 26.738 ms - -[0m
 [0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 16.940 ms - -[0m
+Estableciendo la conexion a la DB...
+Api-Rest runing in port : http://192.168.100.9:4000:4000
+connect to the mongoDB succesful
+192.168.100.9
