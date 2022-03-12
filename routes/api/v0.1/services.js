@@ -37,6 +37,7 @@ const Gastos = require('./businesLogic/gastos');
 
 const PCategorias = require('./businesLogic/pCategoria');
 const NetworkConfig = require('../../../Utils/networkServices/networkConfig');
+const CallTickets = require('./businesLogic/callTickets');
 
 route.get('/',(req, res, next)=>{
     res.status(200).send({"messagae":"Api-rest food sales system runing"})
@@ -156,6 +157,8 @@ route.post('/venta/update/stateOrdenRestaurante',Ventas.setStateOrdenRestaurante
 route.get('/venta/list/products/idVenta=:idVenta',Ventas.getListProductsVentas);
     //para ver el numero de ticket
 route.get('/venta/numero/ticket/idNegocio=:idNegocio',Ventas.getNumeroTicket)
+    // call tickets
+route.get('/venta/calltickets/stateOrdenRestaurante=:stateOrdenRestaurante?',CallTickets.dataVentasToCallTickets)
 
 
 

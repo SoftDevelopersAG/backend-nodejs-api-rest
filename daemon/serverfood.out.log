@@ -2271,3 +2271,2508 @@ Estableciendo la conexion a la DB...
 Api-Rest runing in port : http://192.168.100.9:4000:4000
 connect to the mongoDB succesful
 192.168.100.9
+Estableciendo la conexion a la DB...
+Api-Rest runing in port : http://192.168.100.9:4000:4000
+connect to the mongoDB succesful
+192.168.100.9
+se realizo el backup
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 32 36 30 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 179 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 34 30 31 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 26 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 34 30 32 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 185 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 34 33 36 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 31 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 34 33 38 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 179 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 34 37 37 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 25 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 34 37 37 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 185 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 30 37 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 31 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 30 38 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 183 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 31 30 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 180 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 31 33 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 183 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 31 34 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 188 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 33 32 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 29 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 33 32 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 179 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 34 33 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 27 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 34 33 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 182 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 35 37 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 34 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 35 38 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 191 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 36 39 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 25 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 37 30 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 184 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 38 32 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 28 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 38 33 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 187 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 39 35 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 37 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 35 39 36 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 182 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 36 30 39 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 30 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 36 31 30 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 179 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 36 32 34 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 33 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 36 32 34 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 179 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 36 33 37 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 27 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 36 33 37 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 179 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 36 34 37 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 25 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 36 34 38 2d 30 34 30 30 09 77 72 69 74 69 6e 67 20 72 65 73 74 61 75 72 61 6e 74 44 42 2e ... 182 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 36 35 33 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 25 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 36 36 36 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 30 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 36 36 38 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 25 more bytes>
+stderr:
+ <Buffer 32 30 32 32 2d 30 33 2d 31 31 54 31 38 3a 30 32 3a 30 33 2e 36 37 32 2d 30 34 30 30 09 64 6f 6e 65 20 64 75 6d 70 69 6e 67 20 72 65 73 74 61 75 72 61 ... 28 more bytes>
+Backup database succesful
+[0mGET /api/v0.1/ [32m200[0m 383.584 ms - 48[0m
+[0mGET /favicon.ico [33m404[0m 14.575 ms - 150[0m
+socket conected:  gSIvUW7tLb2CZzSnAAAB
+[ 'enviado' ]
+socket conected:  O3scey7idGttqeZMAAAD
+new ObjectId("6221155da4917359493bc75e")
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+new ObjectId("6224e7a5c54ccd70b73150b2")
+new ObjectId("6228019780200523a08f0218")
+[0mGET /api/v0.1/venta/list/states/stateOrdenRestaurante=enviado [36m304[0m 310.350 ms - -[0m
+true  esto es lo que quiero ver 
+[0mPOST /cliente/verify/licence [32m200[0m 790.101 ms - 43[0m
+[0mGET /api/v0.1/get/ip/server [36m304[0m 4.692 ms - -[0m
+[0mGET /user/verifyUserLength [36m304[0m 12.940 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCA3LCAyMDIyIDExOjAzIFBNIiwiZW5kIjoiTWFyY2ggOCwgMjAyMiAxMTowMyBQTSIsImV4cGlyYSI6MTY0Njc5NTAxNCwidGltZUxpZmUiOjg2NDAwfQ.phuqmt6SjypN7YZGgfb-kZbloRMfnGXVqFxOBwCDe_k
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 7, 2022 11:03 PM',
+  end: 'March 8, 2022 11:03 PM',
+  expira: 1646795014,
+  timeLife: 86400
+}
+token no valido, acceso denegado
+-255129
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [33m401[0m 11.292 ms - 46[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 57.678 ms - -[0m
+[
+  {
+    _id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+    name: 'carlos',
+    lastName: 'miranda',
+    ci: '85969696',
+    email: 'carlos@gmail.com',
+    phoneNumber: 12345678,
+    direction: '',
+    urlPhotoAvatar: '',
+    password: 'd033e22ae348aeb5660fc2140aec35850c4da997',
+    password1: 'admin',
+    interactionLogs: [],
+    state: true,
+    role: [ [Object] ],
+    dateCreateAcount: 2022-01-15T19:38:06.452Z,
+    updateDateAcount: 2022-01-15T19:38:06.452Z,
+    __v: 0,
+    idNegocio: '61e3229ed1af535ab90ab1b7'
+  }
+]
+{
+  id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+[0mPOST /user/signin [32m200[0m 22.021 ms - 586[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86400
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 5.545 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86399
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 6.998 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 19.145 ms - -[0m
+[0mGET /user/getDataNegocioUser/61e3229ed1af535ab90ab1b2/61e3229ed1af535ab90ab1b7 [36m304[0m 39.225 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 28.801 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86396
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"31a-lMaHKZ3I+RziBn1oyw72BCDNtvI"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86396
+acces role control
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 10.562 ms - -[0m
+{
+  _id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+  name: 'carlos',
+  lastName: 'miranda',
+  ci: '85969696',
+  email: 'carlos@gmail.com',
+  phoneNumber: 12345678,
+  direction: '',
+  urlPhotoAvatar: '',
+  password: 'd033e22ae348aeb5660fc2140aec35850c4da997',
+  password1: 'admin',
+  interactionLogs: [],
+  state: true,
+  role: [ new ObjectId("61e24525c511ca6febb8d7f6") ],
+  dateCreateAcount: 2022-01-15T19:38:06.452Z,
+  updateDateAcount: 2022-01-15T19:38:06.452Z,
+  __v: 0,
+  idNegocio: '61e3229ed1af535ab90ab1b7'
+}
+[ new ObjectId("61e24525c511ca6febb8d7f6") ]
+[
+  {
+    _id: new ObjectId("61e24525c511ca6febb8d7f6"),
+    name: 'admin',
+    __v: 0
+  }
+]  ----------------------*-*-*-*
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 29.076 ms - -[0m
+[0mGET /user/list/state=all/61e3229ed1af535ab90ab1b7 [36m304[0m 41.654 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 41.441 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 28.319 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 32.201 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 13.506 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.274 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.009 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.872 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.969 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 7.998 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.941 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.569 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.692 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.143 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86395
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [32m200[0m 8.906 ms - 2976[0m
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 11.736 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 26.463 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 37.853 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 89.320 ms - -[0m
+[0mGET /file/IMG_1644033587424.jpg [36m304[0m 106.231 ms - -[0m
+[0mGET /file/IMG_1645997419250.jpg [36m304[0m 107.018 ms - -[0m
+[0mGET /file/IMG_1644177150028.jpg [36m304[0m 108.365 ms - -[0m
+[0mGET /file/IMG_1644177092050.jpg [36m304[0m 113.167 ms - -[0m
+[0mGET /pcategoria/getlist/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 121.696 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 133.413 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 15.006 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 18.845 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86394
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"31a-lMaHKZ3I+RziBn1oyw72BCDNtvI"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86394
+acces role control
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 11.370 ms - -[0m
+{
+  _id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+  name: 'carlos',
+  lastName: 'miranda',
+  ci: '85969696',
+  email: 'carlos@gmail.com',
+  phoneNumber: 12345678,
+  direction: '',
+  urlPhotoAvatar: '',
+  password: 'd033e22ae348aeb5660fc2140aec35850c4da997',
+  password1: 'admin',
+  interactionLogs: [],
+  state: true,
+  role: [ new ObjectId("61e24525c511ca6febb8d7f6") ],
+  dateCreateAcount: 2022-01-15T19:38:06.452Z,
+  updateDateAcount: 2022-01-15T19:38:06.452Z,
+  __v: 0,
+  idNegocio: '61e3229ed1af535ab90ab1b7'
+}
+[ new ObjectId("61e24525c511ca6febb8d7f6") ]
+[
+  {
+    _id: new ObjectId("61e24525c511ca6febb8d7f6"),
+    name: 'admin',
+    __v: 0
+  }
+]  ----------------------*-*-*-*
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 30.734 ms - -[0m
+[0mGET /user/list/state=all/61e3229ed1af535ab90ab1b7 [36m304[0m 43.630 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 46.173 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 26.851 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 12.259 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.906 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 12.409 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.327 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.093 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.106 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.034 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 13.298 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 12.356 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.731 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.531 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86393
+[0mPOST /cliente/buscar [32m200[0m 8.699 ms - 604[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 14.994 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 13.804 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 23.327 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 29.463 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 20.989 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 16.349 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 35.461 ms - -[0m
+[0mGET /gastos/listTipoGastos/61e3229ed1af535ab90ab1b7 [36m304[0m 32.408 ms - -[0m
+0 ================================================================pag
+0 ================================================================pageCount
+0 ================================================================pageNumber
+[0mGET /financiero/listGastosEF/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2/true/pn=0/pz=5/bs= [36m304[0m 48.679 ms - -[0m
+[0mPOST /reportGastosVentas/report1/61e3229ed1af535ab90ab1b7/FechaInicio=2022-03-11/FechaFinal=2022-03-11 [32m200[0m 56.487 ms - 371[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 62.210 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 56.444 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86390
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"31a-lMaHKZ3I+RziBn1oyw72BCDNtvI"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86390
+acces role control
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 9.443 ms - -[0m
+{
+  _id: new ObjectId("61e3229ed1af535ab90ab1b2"),
+  name: 'carlos',
+  lastName: 'miranda',
+  ci: '85969696',
+  email: 'carlos@gmail.com',
+  phoneNumber: 12345678,
+  direction: '',
+  urlPhotoAvatar: '',
+  password: 'd033e22ae348aeb5660fc2140aec35850c4da997',
+  password1: 'admin',
+  interactionLogs: [],
+  state: true,
+  role: [ new ObjectId("61e24525c511ca6febb8d7f6") ],
+  dateCreateAcount: 2022-01-15T19:38:06.452Z,
+  updateDateAcount: 2022-01-15T19:38:06.452Z,
+  __v: 0,
+  idNegocio: '61e3229ed1af535ab90ab1b7'
+}
+[ new ObjectId("61e24525c511ca6febb8d7f6") ]
+[
+  {
+    _id: new ObjectId("61e24525c511ca6febb8d7f6"),
+    name: 'admin',
+    __v: 0
+  }
+]  ----------------------*-*-*-*
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 18.683 ms - -[0m
+[0mGET /user/list/state=all/61e3229ed1af535ab90ab1b7 [36m304[0m 27.619 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 26.919 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 16.897 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.309 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.807 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.508 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.012 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 7.897 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.730 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.617 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.386 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.908 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.333 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.978 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86389
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 10.390 ms - -[0m
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 12.380 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 26.030 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 31.773 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 13.387 ms - -[0m
+[0mGET /pcategoria/getlist/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 11.193 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 21.617 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.386 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 7.811 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86387
+[0mPOST /cliente/buscar [32m200[0m 6.368 ms - 604[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 11.385 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 9.568 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 23.471 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 27.400 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 25.525 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /gastos/listTipoGastos/61e3229ed1af535ab90ab1b7 [36m304[0m 12.941 ms - -[0m
+[0mPOST /reportGastosVentas/report1/61e3229ed1af535ab90ab1b7/FechaInicio=2022-03-11/FechaFinal=2022-03-11 [32m200[0m 42.893 ms - 371[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 57.587 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+0 ================================================================pag
+0 ================================================================pageCount
+0 ================================================================pageNumber
+[0mGET /financiero/listGastosEF/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2/true/pn=0/pz=5/bs= [36m304[0m 78.670 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 20.824 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 93.612 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 35.268 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86382
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 5.697 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 18.199 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 19.999 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 13.223 ms - -[0m
+[0mGET /cliente/list/61e3229ed1af535ab90ab1b7 [36m304[0m 8.455 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 19.872 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.012 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.108 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 11.593 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 12.852 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.146 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.163 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 9.608 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.911 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86380
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 9.286 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 22.129 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 30.280 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 21.548 ms - -[0m
+[0mGET /gastos/listTipoGastos/61e3229ed1af535ab90ab1b7 [36m304[0m 6.560 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86378
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 9.774 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 22.043 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 27.849 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 18.574 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /pcategoria/getlist/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 10.910 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 15.635 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 13.672 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86377
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 8.540 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 21.627 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /galery/listAll/61e3229ed1af535ab90ab1b7 [36m304[0m 67.849 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 66.392 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 93.345 ms - -[0m
+true  esto es lo que quiero ver 
+[0mPOST /cliente/verify/licence [32m200[0m 1.674 ms - 43[0m
+[0mGET /api/v0.1/get/ip/server [36m304[0m 2.686 ms - -[0m
+[0mGET /user/verifyUserLength [36m304[0m 6.261 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 23.860 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86363
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 3.204 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86363
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 4.944 ms - -[0m
+[0mGET /user/getDataNegocioUser/61e3229ed1af535ab90ab1b2/61e3229ed1af535ab90ab1b7 [36m304[0m 12.544 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 26.768 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 10.340 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86359
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 9.526 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 11.606 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 18.880 ms - -[0m
+[0mGET /file/IMG_1644033587424.jpg [36m304[0m 3.975 ms - -[0m
+[0mGET /file/IMG_1644177092050.jpg [36m304[0m 4.432 ms - -[0m
+[0mGET /file/IMG_1644177150028.jpg [36m304[0m 5.026 ms - -[0m
+[0mGET /file/IMG_1645997419250.jpg [36m304[0m 5.430 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 30.849 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 15.320 ms - -[0m
+[0mGET /pcategoria/getlist/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 10.995 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 43.792 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.720 ms - -[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 8.356 ms - -[0m
+{
+  host: '127.0.0.1:4000',
+  connection: 'keep-alive',
+  accept: 'application/json, text/plain, */*',
+  authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) frontend/0.1.0 Chrome/94.0.4606.81 Electron/15.3.0 Safari/537.36',
+  'sec-fetch-site': 'cross-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'es-419',
+  'if-none-match': 'W/"3a-bYsB4eaddZPRNzOs3qpg/BDSR1s"'
+} esto son los headers sds
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYxZTMyMjllZDFhZjUzNWFiOTBhYjFiMiIsImVtYWlsIjoiY2FybG9zQGdtYWlsLmNvbSIsImluaXQiOiJNYXJjaCAxMSwgMjAyMiA5OjU2IFBNIiwiZW5kIjoiTWFyY2ggMTIsIDIwMjIgOTo1NiBQTSIsImV4cGlyYSI6MTY0NzEzNjU2MiwidGltZUxpZmUiOjg2NDAwfQ.KWDSVCHDUiBcBoDQtiVlDlTtyfcDp_c3GsT1WtImaSQ
+{
+  id: '61e3229ed1af535ab90ab1b2',
+  email: 'carlos@gmail.com',
+  init: 'March 11, 2022 9:56 PM',
+  end: 'March 12, 2022 9:56 PM',
+  expira: 1647136562,
+  timeLife: 86400
+}
+token vigente, acceso permitido
+86356
+[0mPOST /cliente/buscar [32m200[0m 7.567 ms - 604[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /api/verifyToken/61e3229ed1af535ab90ab1b2 [36m304[0m 12.453 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 10.014 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 16.470 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 18.599 ms - -[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 12.565 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 9.996 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 9.235 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 8.749 ms - -[0m
+[0mGET /gastos/listTipoGastos/61e3229ed1af535ab90ab1b7 [36m304[0m 6.443 ms - -[0m
+0 ================================================================pag
+0 ================================================================pageCount
+0 ================================================================pageNumber
+[0mGET /financiero/listGastosEF/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2/true/pn=0/pz=5/bs= [36m304[0m 21.633 ms - -[0m
+[0mPOST /reportGastosVentas/report1/61e3229ed1af535ab90ab1b7/FechaInicio=2022-03-11/FechaFinal=2022-03-11 [32m200[0m 21.332 ms - 371[0m
+[0mGET /user/roleList/61e3229ed1af535ab90ab1b2 [36m304[0m 24.045 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 20.757 ms - -[0m
+[
+  {
+    _id: new ObjectId("6221155da4917359493bc75e"),
+    idUser: 'carlos miranda',
+    idCLiente: 'Publico General',
+    venta: 8,
+    precioTotal: 12,
+    pagoCliente: 20,
+    cambioCliente: 8,
+    products: [ [Object], [Object] ],
+    state: 'Cancelado',
+    dateCreate: '3/3/2022',
+    hora: '15:22:05'
+  },
+  {
+    _id: new ObjectId("622116b4a4917359493bc8ce"),
+    idUser: 'carlos miranda',
+    idCLiente: 'juan  morales',
+    venta: 9,
+    precioTotal: 6,
+    pagoCliente: 6,
+    cambioCliente: 0,
+    products: [ [Object] ],
+    state: 'Cancelado',
+    dateCreate: '3/3/2022',
+    hora: '15:27:48'
+  },
+  {
+    _id: new ObjectId("622366a1254547ab67b44344"),
+    idUser: 'carlos miranda',
+    idCLiente: 'Publico General',
+    venta: 10,
+    precioTotal: 6,
+    pagoCliente: 6,
+    cambioCliente: 0,
+    products: [ [Object] ],
+    state: 'Cancelado',
+    dateCreate: '5/3/2022',
+    hora: '09:33:21'
+  },
+  {
+    _id: new ObjectId("62236a60254547ab67b4440e"),
+    idUser: 'carlos miranda',
+    idCLiente: 'Publico General',
+    venta: 11,
+    precioTotal: 60,
+    pagoCliente: 60,
+    cambioCliente: 0,
+    products: [ [Object], [Object], [Object], [Object], [Object] ],
+    state: 'Cancelado',
+    dateCreate: '5/3/2022',
+    hora: '09:49:20'
+  },
+  {
+    _id: new ObjectId("62237e6ed1c7d4a48fb48f91"),
+    idUser: 'carlos miranda',
+    idCLiente: 'Publico General',
+    venta: 12,
+    precioTotal: 45,
+    pagoCliente: 45,
+    cambioCliente: 0,
+    products: [ [Object], [Object], [Object] ],
+    state: 'Cancelado',
+    dateCreate: '5/3/2022',
+    hora: '11:14:54'
+  },
+  {
+    _id: new ObjectId("62237e91d1c7d4a48fb48fb0"),
+    idUser: 'carlos miranda',
+    idCLiente: 'Publico General',
+    venta: 13,
+    precioTotal: 12,
+    pagoCliente: 12,
+    cambioCliente: 0,
+    products: [ [Object], [Object] ],
+    state: 'Cancelado',
+    dateCreate: '5/3/2022',
+    hora: '11:15:29'
+  },
+  {
+    _id: new ObjectId("6223be05cb196b120915411c"),
+    idUser: 'carlos miranda',
+    idCLiente: 'Publico General',
+    venta: 14,
+    precioTotal: 120,
+    pagoCliente: 120,
+    cambioCliente: 0,
+    products: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object]
+    ],
+    state: 'Cancelado',
+    dateCreate: '5/3/2022',
+    hora: '15:46:13'
+  },
+  {
+    _id: new ObjectId("6223e4a1189e5474188013c4"),
+    idUser: 'carlos miranda',
+    idCLiente: 'Publico General',
+    venta: 15,
+    precioTotal: 186,
+    pagoCliente: 186,
+    cambioCliente: 0,
+    products: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object]
+    ],
+    state: 'Cancelado',
+    dateCreate: '5/3/2022',
+    hora: '18:30:57'
+  },
+  {
+    _id: new ObjectId("6224af3b6d92299911920742"),
+    idUser: 'carlos miranda',
+    idCLiente: 'Publico General',
+    venta: 16,
+    precioTotal: 36,
+    pagoCliente: 36,
+    cambioCliente: 0,
+    products: [ [Object], [Object], [Object] ],
+    state: 'Cancelado',
+    dateCreate: '6/3/2022',
+    hora: '08:55:23'
+  },
+  {
+    _id: new ObjectId("6224b0606d92299911920770"),
+    idUser: 'carlos miranda',
+    idCLiente: 'Publico General',
+    venta: 17,
+    precioTotal: 15,
+    pagoCliente: 15,
+    cambioCliente: 0,
+    products: [ [Object] ],
+    state: 'Cancelado',
+    dateCreate: '6/3/2022',
+    hora: '09:00:16'
+  },
+  {
+    _id: new ObjectId("6224b2206d92299911920788"),
+    idUser: 'carlos miranda',
+    idCLiente: 'Publico General',
+    venta: 18,
+    precioTotal: 18,
+    pagoCliente: 18,
+    cambioCliente: 0,
+    products: [ [Object] ],
+    state: 'Cancelado',
+    dateCreate: '6/3/2022',
+    hora: '09:07:44'
+  },
+  {
+    _id: new ObjectId("6224b2fd6d922999119207a0"),
+    idUser: 'carlos miranda',
+    idCLiente: 'Publico General',
+    venta: 19,
+    precioTotal: 15,
+    pagoCliente: 15,
+    cambioCliente: 0,
+    products: [ [Object] ],
+    state: 'Cancelado',
+    dateCreate: '6/3/2022',
+    hora: '09:11:25'
+  },
+  {
+    _id: new ObjectId("6224b8436d922999119207e6"),
+    idUser: 'carlos miranda',
+    idCLiente: 'Publico General',
+    venta: 20,
+    precioTotal: 15,
+    pagoCliente: 15,
+    cambioCliente: 0,
+    products: [ [Object] ],
+    state: 'Cancelado',
+    dateCreate: '6/3/2022',
+    hora: '09:33:55'
+  },
+  {
+    _id: new ObjectId("6224e7a5c54ccd70b73150b2"),
+    idUser: 'carlos miranda',
+    idCLiente: 'Publico General',
+    venta: 21,
+    precioTotal: 15,
+    pagoCliente: 15,
+    cambioCliente: 0,
+    products: [ [Object] ],
+    state: 'Cancelado',
+    dateCreate: '6/3/2022',
+    hora: '12:56:05'
+  },
+  {
+    _id: new ObjectId("6228019780200523a08f0218"),
+    idUser: 'carlos miranda',
+    idCLiente: 'Publico General',
+    venta: 22,
+    precioTotal: 15,
+    pagoCliente: 15,
+    cambioCliente: 0,
+    products: [ [Object] ],
+    state: 'Cancelado',
+    dateCreate: '8/3/2022',
+    hora: '21:23:35'
+  }
+]  0---0-0000---
+[0mGET /financiero/listVentasEF/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2/true/pn=0/pz=5/bs= [32m200[0m 283.500 ms - 7443[0m
+[ 'espera-proceso' ]
+[0mGET /venta/list/states/stateOrdenRestaurante=espera-proceso [32m200[0m 12.182 ms - 96[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mPOST /cliente/buscar [32m200[0m 7.304 ms - 604[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 15.325 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 11.505 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 12.085 ms - -[0m
+[0mGET /file/IMG_1644033587424.jpg [36m304[0m 0.890 ms - -[0m
+[0mGET /file/IMG_1644177092050.jpg [36m304[0m 2.395 ms - -[0m
+[0mGET /file/IMG_1644177150028.jpg [36m304[0m 2.353 ms - -[0m
+[0mGET /file/IMG_1645997419250.jpg [36m304[0m 2.585 ms - -[0m
+[0mGET /negocio/dataNegocio/61e3229ed1af535ab90ab1b7 [36m304[0m 4.077 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 10.745 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7', 6, '6', 0 ]
+{
+  id: '620026fdf14f7b2cfd6ba9b6',
+  idProduct: '620026fdf14f7b2cfd6ba9b6',
+  nombre: 'saltemas',
+  description: '',
+  precio: 6,
+  unidadesVendidos: 1,
+  total: 6
+}  esto es
+eatados financiero
+ {
+  cierreDeCaja: {
+    detalle: '',
+    conformiadCajero: false,
+    conformidadAdministrador: false,
+    fechaInicio: 2022-03-03T19:20:17.000Z,
+    fechaCierre: 2022-03-03T19:20:17.000Z
+  },
+  _id: new ObjectId("622114f1a4917359493bc73a"),
+  idNegocio: '61e3229ed1af535ab90ab1b7',
+  montoInicial: 0,
+  montoCierreCaja: 0,
+  montoActualDisponble: 576,
+  montoTotal: 0,
+  montoActualUtilizado: 0,
+  listVentas: [
+    {
+      _id: new ObjectId("6221155da4917359493bc75e"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 8,
+      precioTotal: 12,
+      precioTotalBackend: 12,
+      pagoCliente: 20,
+      cambioCliente: 8,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-03T19:22:05.224Z,
+      updateDate: 2022-03-03T19:22:05.224Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("622116b4a4917359493bc8ce"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: '622116a4a4917359493bc8bd',
+      nit: '',
+      venta: 9,
+      precioTotal: 6,
+      precioTotalBackend: 6,
+      pagoCliente: 6,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-03T19:27:48.713Z,
+      updateDate: 2022-03-03T19:27:48.713Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("622366a1254547ab67b44344"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 10,
+      precioTotal: 6,
+      precioTotalBackend: 6,
+      pagoCliente: 6,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T13:33:21.304Z,
+      updateDate: 2022-03-05T13:33:21.304Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("62236a60254547ab67b4440e"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 11,
+      precioTotal: 60,
+      precioTotalBackend: 60,
+      pagoCliente: 60,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T13:49:20.083Z,
+      updateDate: 2022-03-05T13:49:20.083Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("62237e6ed1c7d4a48fb48f91"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 12,
+      precioTotal: 45,
+      precioTotalBackend: 45,
+      pagoCliente: 45,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T15:14:54.215Z,
+      updateDate: 2022-03-05T15:14:54.215Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("62237e91d1c7d4a48fb48fb0"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 13,
+      precioTotal: 12,
+      precioTotalBackend: 12,
+      pagoCliente: 12,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T15:15:29.093Z,
+      updateDate: 2022-03-05T15:15:29.093Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6223be05cb196b120915411c"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 14,
+      precioTotal: 120,
+      precioTotalBackend: 120,
+      pagoCliente: 120,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T19:46:13.430Z,
+      updateDate: 2022-03-05T19:46:13.430Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6223e4a1189e5474188013c4"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 15,
+      precioTotal: 186,
+      precioTotalBackend: 186,
+      pagoCliente: 186,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T22:30:57.786Z,
+      updateDate: 2022-03-05T22:30:57.786Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224af3b6d92299911920742"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 16,
+      precioTotal: 36,
+      precioTotalBackend: 36,
+      pagoCliente: 36,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T12:55:23.149Z,
+      updateDate: 2022-03-06T12:55:23.149Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b0606d92299911920770"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 17,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:00:16.147Z,
+      updateDate: 2022-03-06T13:00:16.147Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b2206d92299911920788"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 18,
+      precioTotal: 18,
+      precioTotalBackend: 18,
+      pagoCliente: 18,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:07:44.786Z,
+      updateDate: 2022-03-06T13:07:44.786Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b2fd6d922999119207a0"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 19,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:11:25.257Z,
+      updateDate: 2022-03-06T13:11:25.257Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b8436d922999119207e6"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 20,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:33:55.331Z,
+      updateDate: 2022-03-06T13:33:55.331Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224e7a5c54ccd70b73150b2"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 21,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T16:56:05.758Z,
+      updateDate: 2022-03-06T16:56:05.758Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6228019780200523a08f0218"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 22,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-09T01:23:35.196Z,
+      updateDate: 2022-03-09T01:23:35.196Z,
+      __v: 0
+    }
+  ],
+  listGastos: [],
+  state: true,
+  dateCreated: 2022-03-03T19:20:17.394Z,
+  updateDate: 2022-03-03T19:20:17.394Z,
+  __v: 0
+}
+[0mPOST /venta/create/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2 [32m200[0m 221.125 ms - 976[0m
+0 ================================================================pag
+0 ================================================================pageCount
+0 ================================================================pageNumber
+[0mGET /financiero/listGastosEF/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2/true/pn=0/pz=5/bs= [36m304[0m 15.659 ms - -[0m
+[ 'espera-proceso' ]
+new ObjectId("622bfe07c0aec7776c4ef21d")
+[0mGET /venta/list/states/stateOrdenRestaurante=espera-proceso [32m200[0m 23.906 ms - 1012[0m
+[0mPOST /cliente/buscar [32m200[0m 6.827 ms - 604[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [32m200[0m 24.363 ms - 180[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [32m200[0m 23.602 ms - 2976[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 23.724 ms - -[0m
+[ 'espera-proceso' ]
+new ObjectId("622bfe07c0aec7776c4ef21d")
+[0mGET /venta/list/states/stateOrdenRestaurante=espera-proceso [36m304[0m 16.405 ms - -[0m
+{
+  idVenta: '622bfe07c0aec7776c4ef21d',
+  idNegocio: '61e3229ed1af535ab90ab1b7',
+  stateOrdenRestaurante: 'espera'
+}
+[ '622bfe07c0aec7776c4ef21d', '61e3229ed1af535ab90ab1b7', 'espera' ]
+[0mPOST /venta/update/stateOrdenRestaurante [32m200[0m 15.274 ms - 539[0m
+[ 'enviado' ]
+new ObjectId("6221155da4917359493bc75e")
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+new ObjectId("6224e7a5c54ccd70b73150b2")
+new ObjectId("6228019780200523a08f0218")
+[0mGET /api/v0.1/venta/list/states/stateOrdenRestaurante=enviado [36m304[0m 106.845 ms - -[0m
+[ 'enviado' ]
+new ObjectId("6221155da4917359493bc75e")
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+new ObjectId("6224e7a5c54ccd70b73150b2")
+new ObjectId("6228019780200523a08f0218")
+[0mGET /api/v0.1/venta/list/states/stateOrdenRestaurante=enviado [36m304[0m 97.125 ms - -[0m
+{
+  idVenta: '622bfe07c0aec7776c4ef21d',
+  idNegocio: '61e3229ed1af535ab90ab1b7',
+  stateOrdenRestaurante: 'proceso'
+}
+[ '622bfe07c0aec7776c4ef21d', '61e3229ed1af535ab90ab1b7', 'proceso' ]
+[0mPOST /venta/update/stateOrdenRestaurante [32m200[0m 11.609 ms - 540[0m
+[ 'enviado' ]
+new ObjectId("6221155da4917359493bc75e")
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+new ObjectId("6224e7a5c54ccd70b73150b2")
+new ObjectId("6228019780200523a08f0218")
+[0mGET /api/v0.1/venta/list/states/stateOrdenRestaurante=enviado [36m304[0m 81.715 ms - -[0m
+[ 'enviado' ]
+new ObjectId("6221155da4917359493bc75e")
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+new ObjectId("6224e7a5c54ccd70b73150b2")
+new ObjectId("6228019780200523a08f0218")
+[0mGET /api/v0.1/venta/list/states/stateOrdenRestaurante=enviado [36m304[0m 94.885 ms - -[0m
+{
+  idVenta: '622bfe07c0aec7776c4ef21d',
+  idNegocio: '61e3229ed1af535ab90ab1b7',
+  stateOrdenRestaurante: 'enviado'
+}
+[ '622bfe07c0aec7776c4ef21d', '61e3229ed1af535ab90ab1b7', 'enviado' ]
+[0mPOST /venta/update/stateOrdenRestaurante [32m200[0m 12.936 ms - 540[0m
+[ 'enviado' ]
+new ObjectId("6221155da4917359493bc75e")
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+new ObjectId("6224e7a5c54ccd70b73150b2")
+new ObjectId("6228019780200523a08f0218")
+new ObjectId("622bfe07c0aec7776c4ef21d")
+[0mGET /api/v0.1/venta/list/states/stateOrdenRestaurante=enviado [32m200[0m 211.822 ms - 31265[0m
+[ 'enviado' ]
+new ObjectId("6221155da4917359493bc75e")
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+new ObjectId("6224e7a5c54ccd70b73150b2")
+new ObjectId("6228019780200523a08f0218")
+new ObjectId("622bfe07c0aec7776c4ef21d")
+[0mGET /api/v0.1/venta/list/states/stateOrdenRestaurante=enviado [36m304[0m 93.977 ms - -[0m
+[ 'enviado' ]
+new ObjectId("6221155da4917359493bc75e")
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+new ObjectId("6224e7a5c54ccd70b73150b2")
+new ObjectId("6228019780200523a08f0218")
+new ObjectId("622bfe07c0aec7776c4ef21d")
+[0mGET /api/v0.1/venta/list/states/stateOrdenRestaurante=enviado [32m200[0m 132.689 ms - 31265[0m
+socket conected:  dQxdJqlBOibYNXJmAAAF
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mPOST /cliente/buscar [32m200[0m 6.812 ms - 604[0m
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 16.277 ms - -[0m
+[0mGET /products/get/list/61e3229ed1af535ab90ab1b7 [36m304[0m 18.697 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 18.144 ms - -[0m
+[0mGET /file/IMG_1644033587424.jpg [36m304[0m 6.679 ms - -[0m
+[0mGET /file/IMG_1644177092050.jpg [36m304[0m 8.815 ms - -[0m
+[0mGET /file/IMG_1645997419250.jpg [36m304[0m 9.858 ms - -[0m
+[0mGET /file/IMG_1644177150028.jpg [36m304[0m 11.302 ms - -[0m
+[0mGET /negocio/dataNegocio/61e3229ed1af535ab90ab1b7 [36m304[0m 2.850 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [36m304[0m 9.639 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7', 6, '6', 0 ]
+{
+  id: '620026fdf14f7b2cfd6ba9b6',
+  idProduct: '620026fdf14f7b2cfd6ba9b6',
+  nombre: 'saltemas',
+  description: '',
+  precio: 6,
+  unidadesVendidos: 1,
+  total: 6
+}  esto es
+eatados financiero
+ {
+  cierreDeCaja: {
+    detalle: '',
+    conformiadCajero: false,
+    conformidadAdministrador: false,
+    fechaInicio: 2022-03-03T19:20:17.000Z,
+    fechaCierre: 2022-03-03T19:20:17.000Z
+  },
+  _id: new ObjectId("622114f1a4917359493bc73a"),
+  idNegocio: '61e3229ed1af535ab90ab1b7',
+  montoInicial: 0,
+  montoCierreCaja: 0,
+  montoActualDisponble: 582,
+  montoTotal: 0,
+  montoActualUtilizado: 0,
+  listVentas: [
+    {
+      _id: new ObjectId("6221155da4917359493bc75e"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 8,
+      precioTotal: 12,
+      precioTotalBackend: 12,
+      pagoCliente: 20,
+      cambioCliente: 8,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-03T19:22:05.224Z,
+      updateDate: 2022-03-03T19:22:05.224Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("622116b4a4917359493bc8ce"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: '622116a4a4917359493bc8bd',
+      nit: '',
+      venta: 9,
+      precioTotal: 6,
+      precioTotalBackend: 6,
+      pagoCliente: 6,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-03T19:27:48.713Z,
+      updateDate: 2022-03-03T19:27:48.713Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("622366a1254547ab67b44344"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 10,
+      precioTotal: 6,
+      precioTotalBackend: 6,
+      pagoCliente: 6,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T13:33:21.304Z,
+      updateDate: 2022-03-05T13:33:21.304Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("62236a60254547ab67b4440e"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 11,
+      precioTotal: 60,
+      precioTotalBackend: 60,
+      pagoCliente: 60,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T13:49:20.083Z,
+      updateDate: 2022-03-05T13:49:20.083Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("62237e6ed1c7d4a48fb48f91"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 12,
+      precioTotal: 45,
+      precioTotalBackend: 45,
+      pagoCliente: 45,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T15:14:54.215Z,
+      updateDate: 2022-03-05T15:14:54.215Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("62237e91d1c7d4a48fb48fb0"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 13,
+      precioTotal: 12,
+      precioTotalBackend: 12,
+      pagoCliente: 12,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T15:15:29.093Z,
+      updateDate: 2022-03-05T15:15:29.093Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6223be05cb196b120915411c"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 14,
+      precioTotal: 120,
+      precioTotalBackend: 120,
+      pagoCliente: 120,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T19:46:13.430Z,
+      updateDate: 2022-03-05T19:46:13.430Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6223e4a1189e5474188013c4"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 15,
+      precioTotal: 186,
+      precioTotalBackend: 186,
+      pagoCliente: 186,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T22:30:57.786Z,
+      updateDate: 2022-03-05T22:30:57.786Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224af3b6d92299911920742"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 16,
+      precioTotal: 36,
+      precioTotalBackend: 36,
+      pagoCliente: 36,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T12:55:23.149Z,
+      updateDate: 2022-03-06T12:55:23.149Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b0606d92299911920770"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 17,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:00:16.147Z,
+      updateDate: 2022-03-06T13:00:16.147Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b2206d92299911920788"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 18,
+      precioTotal: 18,
+      precioTotalBackend: 18,
+      pagoCliente: 18,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:07:44.786Z,
+      updateDate: 2022-03-06T13:07:44.786Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b2fd6d922999119207a0"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 19,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:11:25.257Z,
+      updateDate: 2022-03-06T13:11:25.257Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b8436d922999119207e6"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 20,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:33:55.331Z,
+      updateDate: 2022-03-06T13:33:55.331Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224e7a5c54ccd70b73150b2"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 21,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T16:56:05.758Z,
+      updateDate: 2022-03-06T16:56:05.758Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6228019780200523a08f0218"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 22,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-09T01:23:35.196Z,
+      updateDate: 2022-03-09T01:23:35.196Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("622bfe07c0aec7776c4ef21d"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 23,
+      precioTotal: 6,
+      precioTotalBackend: 6,
+      pagoCliente: 6,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-12T01:57:27.607Z,
+      updateDate: 2022-03-12T01:57:27.607Z,
+      __v: 0
+    }
+  ],
+  listGastos: [],
+  state: true,
+  dateCreated: 2022-03-03T19:20:17.394Z,
+  updateDate: 2022-03-03T19:20:17.394Z,
+  __v: 0
+}
+[0mPOST /venta/create/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2 [32m200[0m 107.622 ms - 976[0m
+0 ================================================================pag
+0 ================================================================pageCount
+0 ================================================================pageNumber
+[0mGET /financiero/listGastosEF/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2/true/pn=0/pz=5/bs= [36m304[0m 14.392 ms - -[0m
+[0mGET /negocio/dataNegocio/61e3229ed1af535ab90ab1b7 [36m304[0m 4.216 ms - -[0m
+[ '61e3229ed1af535ab90ab1b7' ]
+[0mGET /venta/numero/ticket/idNegocio=61e3229ed1af535ab90ab1b7 [32m200[0m 21.059 ms - 180[0m
+[ '61e3229ed1af535ab90ab1b7', 6, '6', 0 ]
+{
+  id: '620026fdf14f7b2cfd6ba9b6',
+  idProduct: '620026fdf14f7b2cfd6ba9b6',
+  nombre: 'saltemas',
+  description: '',
+  precio: 6,
+  unidadesVendidos: 1,
+  total: 6
+}  esto es
+eatados financiero
+ {
+  cierreDeCaja: {
+    detalle: '',
+    conformiadCajero: false,
+    conformidadAdministrador: false,
+    fechaInicio: 2022-03-03T19:20:17.000Z,
+    fechaCierre: 2022-03-03T19:20:17.000Z
+  },
+  _id: new ObjectId("622114f1a4917359493bc73a"),
+  idNegocio: '61e3229ed1af535ab90ab1b7',
+  montoInicial: 0,
+  montoCierreCaja: 0,
+  montoActualDisponble: 588,
+  montoTotal: 0,
+  montoActualUtilizado: 0,
+  listVentas: [
+    {
+      _id: new ObjectId("6221155da4917359493bc75e"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 8,
+      precioTotal: 12,
+      precioTotalBackend: 12,
+      pagoCliente: 20,
+      cambioCliente: 8,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-03T19:22:05.224Z,
+      updateDate: 2022-03-03T19:22:05.224Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("622116b4a4917359493bc8ce"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: '622116a4a4917359493bc8bd',
+      nit: '',
+      venta: 9,
+      precioTotal: 6,
+      precioTotalBackend: 6,
+      pagoCliente: 6,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-03T19:27:48.713Z,
+      updateDate: 2022-03-03T19:27:48.713Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("622366a1254547ab67b44344"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 10,
+      precioTotal: 6,
+      precioTotalBackend: 6,
+      pagoCliente: 6,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T13:33:21.304Z,
+      updateDate: 2022-03-05T13:33:21.304Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("62236a60254547ab67b4440e"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 11,
+      precioTotal: 60,
+      precioTotalBackend: 60,
+      pagoCliente: 60,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T13:49:20.083Z,
+      updateDate: 2022-03-05T13:49:20.083Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("62237e6ed1c7d4a48fb48f91"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 12,
+      precioTotal: 45,
+      precioTotalBackend: 45,
+      pagoCliente: 45,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T15:14:54.215Z,
+      updateDate: 2022-03-05T15:14:54.215Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("62237e91d1c7d4a48fb48fb0"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 13,
+      precioTotal: 12,
+      precioTotalBackend: 12,
+      pagoCliente: 12,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T15:15:29.093Z,
+      updateDate: 2022-03-05T15:15:29.093Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6223be05cb196b120915411c"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 14,
+      precioTotal: 120,
+      precioTotalBackend: 120,
+      pagoCliente: 120,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T19:46:13.430Z,
+      updateDate: 2022-03-05T19:46:13.430Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6223e4a1189e5474188013c4"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 15,
+      precioTotal: 186,
+      precioTotalBackend: 186,
+      pagoCliente: 186,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-05T22:30:57.786Z,
+      updateDate: 2022-03-05T22:30:57.786Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224af3b6d92299911920742"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 16,
+      precioTotal: 36,
+      precioTotalBackend: 36,
+      pagoCliente: 36,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T12:55:23.149Z,
+      updateDate: 2022-03-06T12:55:23.149Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b0606d92299911920770"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 17,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:00:16.147Z,
+      updateDate: 2022-03-06T13:00:16.147Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b2206d92299911920788"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 18,
+      precioTotal: 18,
+      precioTotalBackend: 18,
+      pagoCliente: 18,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:07:44.786Z,
+      updateDate: 2022-03-06T13:07:44.786Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b2fd6d922999119207a0"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 19,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:11:25.257Z,
+      updateDate: 2022-03-06T13:11:25.257Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224b8436d922999119207e6"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 20,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T13:33:55.331Z,
+      updateDate: 2022-03-06T13:33:55.331Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6224e7a5c54ccd70b73150b2"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 21,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-06T16:56:05.758Z,
+      updateDate: 2022-03-06T16:56:05.758Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("6228019780200523a08f0218"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 22,
+      precioTotal: 15,
+      precioTotalBackend: 15,
+      pagoCliente: 15,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-09T01:23:35.196Z,
+      updateDate: 2022-03-09T01:23:35.196Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("622bfe07c0aec7776c4ef21d"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 23,
+      precioTotal: 6,
+      precioTotalBackend: 6,
+      pagoCliente: 6,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'enviado',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-12T01:57:27.607Z,
+      updateDate: 2022-03-12T01:57:27.607Z,
+      __v: 0
+    },
+    {
+      _id: new ObjectId("622bff67c0aec7776c4ef338"),
+      idNegocio: '61e3229ed1af535ab90ab1b7',
+      idUser: '61e3229ed1af535ab90ab1b2',
+      idCLiente: 'Publico General',
+      nit: '',
+      venta: 24,
+      precioTotal: 6,
+      precioTotalBackend: 6,
+      pagoCliente: 6,
+      cambioCliente: 0,
+      products: [Array],
+      state: 'Cancelado',
+      stateOrdenRestaurante: 'espera',
+      tipoDePago: 'efectivo',
+      dateCreate: 2022-03-12T02:03:19.057Z,
+      updateDate: 2022-03-12T02:03:19.057Z,
+      __v: 0
+    }
+  ],
+  listGastos: [],
+  state: true,
+  dateCreated: 2022-03-03T19:20:17.394Z,
+  updateDate: 2022-03-03T19:20:17.394Z,
+  __v: 0
+}
+[0mPOST /venta/create/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2 [32m200[0m 98.851 ms - 976[0m
+0 ================================================================pag
+0 ================================================================pageCount
+0 ================================================================pageNumber
+[0mGET /financiero/listGastosEF/61e3229ed1af535ab90ab1b7/61e3229ed1af535ab90ab1b2/true/pn=0/pz=5/bs= [36m304[0m 25.316 ms - -[0m
+[ 'espera-proceso' ]
+new ObjectId("622bff67c0aec7776c4ef338")
+new ObjectId("622bff71c0aec7776c4ef350")
+[0mGET /venta/list/states/stateOrdenRestaurante=espera-proceso [32m200[0m 18.408 ms - 1929[0m
+{
+  idVenta: '622bff67c0aec7776c4ef338',
+  idNegocio: '61e3229ed1af535ab90ab1b7',
+  stateOrdenRestaurante: 'enviado'
+}
+[ '622bff67c0aec7776c4ef338', '61e3229ed1af535ab90ab1b7', 'enviado' ]
+[0mPOST /venta/update/stateOrdenRestaurante [32m200[0m 15.237 ms - 540[0m
+[ 'enviado' ]
+new ObjectId("6221155da4917359493bc75e")
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+new ObjectId("6224e7a5c54ccd70b73150b2")
+new ObjectId("6228019780200523a08f0218")
+new ObjectId("622bfe07c0aec7776c4ef21d")
+new ObjectId("622bff67c0aec7776c4ef338")
+[0mGET /api/v0.1/venta/list/states/stateOrdenRestaurante=enviado [32m200[0m 112.370 ms - 32183[0m
+[ 'enviado' ]
+new ObjectId("6221155da4917359493bc75e")
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+[ 'enviado' ]
+new ObjectId("6224e7a5c54ccd70b73150b2")
+new ObjectId("6221155da4917359493bc75e")
+new ObjectId("6228019780200523a08f0218")
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("622bfe07c0aec7776c4ef21d")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("622bff67c0aec7776c4ef338")
+new ObjectId("62236a60254547ab67b4440e")
+[0mGET /api/v0.1/venta/list/states/stateOrdenRestaurante=enviado [36m304[0m 123.598 ms - -[0m
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+new ObjectId("6224e7a5c54ccd70b73150b2")
+new ObjectId("6228019780200523a08f0218")
+new ObjectId("622bfe07c0aec7776c4ef21d")
+new ObjectId("622bff67c0aec7776c4ef338")
+[0mGET /api/v0.1/venta/list/states/stateOrdenRestaurante=enviado [32m200[0m 118.550 ms - 32183[0m
+{
+  idVenta: '622bff71c0aec7776c4ef350',
+  idNegocio: '61e3229ed1af535ab90ab1b7',
+  stateOrdenRestaurante: 'enviado'
+}
+[ '622bff71c0aec7776c4ef350', '61e3229ed1af535ab90ab1b7', 'enviado' ]
+[0mPOST /venta/update/stateOrdenRestaurante [32m200[0m 20.633 ms - 540[0m
+[ 'enviado' ]
+new ObjectId("6221155da4917359493bc75e")
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("6224b2206d92299911920788")
+[ 'enviado' ]
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6221155da4917359493bc75e")
+new ObjectId("6224b8436d922999119207e6")
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("6224e7a5c54ccd70b73150b2")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("6228019780200523a08f0218")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("622bfe07c0aec7776c4ef21d")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("622bff67c0aec7776c4ef338")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("622bff71c0aec7776c4ef350")
+new ObjectId("6223be05cb196b120915411c")
+[0mGET /api/v0.1/venta/list/states/stateOrdenRestaurante=enviado [32m200[0m 182.272 ms - 33101[0m
+new ObjectId("6223e4a1189e5474188013c4")
+[ 'enviado' ]
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("6221155da4917359493bc75e")
+new ObjectId("6224b0606d92299911920770")
+new ObjectId("622116b4a4917359493bc8ce")
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("622366a1254547ab67b44344")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("62236a60254547ab67b4440e")
+new ObjectId("6224b8436d922999119207e6")
+new ObjectId("62237e6ed1c7d4a48fb48f91")
+new ObjectId("6224e7a5c54ccd70b73150b2")
+new ObjectId("62237e91d1c7d4a48fb48fb0")
+new ObjectId("6228019780200523a08f0218")
+new ObjectId("6223be05cb196b120915411c")
+new ObjectId("622bfe07c0aec7776c4ef21d")
+new ObjectId("6223e4a1189e5474188013c4")
+new ObjectId("622bff67c0aec7776c4ef338")
+new ObjectId("6224af3b6d92299911920742")
+new ObjectId("622bff71c0aec7776c4ef350")
+new ObjectId("6224b0606d92299911920770")
+[0mGET /api/v0.1/venta/list/states/stateOrdenRestaurante=enviado [32m200[0m 218.293 ms - 33101[0m
+new ObjectId("6224b2206d92299911920788")
+new ObjectId("6224b2fd6d922999119207a0")
+new ObjectId("6224b8436d922999119207e6")
+new ObjectId("6224e7a5c54ccd70b73150b2")
+new ObjectId("6228019780200523a08f0218")
+new ObjectId("622bfe07c0aec7776c4ef21d")
+new ObjectId("622bff67c0aec7776c4ef338")
+new ObjectId("622bff71c0aec7776c4ef350")
+[0mGET /api/v0.1/venta/list/states/stateOrdenRestaurante=enviado [36m304[0m 155.856 ms - -[0m
+socket disconnect:  dQxdJqlBOibYNXJmAAAF

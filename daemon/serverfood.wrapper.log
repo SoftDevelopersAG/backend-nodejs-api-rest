@@ -20,3 +20,19 @@
 2022-03-08 19:43:24 - Finished serverfood.exe
 2022-03-09 07:50:45 - Starting C:\Program Files\nodejs\node.exe  --harmony D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember\node_modules\node-windows\lib\wrapper.js --file D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember\app.js --scriptoptions= --log "server food wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
 2022-03-09 07:50:45 - Started 6424
+2022-03-09 14:27:54 - Starting C:\Program Files\nodejs\node.exe  --harmony D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember\node_modules\node-windows\lib\wrapper.js --file D:\desarrollo-de-software-2021\proyectos-de-nodejs-2021\api-rest-node-restaurante-remember\app.js --scriptoptions= --log "server food wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-03-09 14:27:54 - Started 6628
+2022-03-11 22:23:59 - Stopping serverfood.exe
+2022-03-11 22:23:59 - ProcessKill 6628
+2022-03-11 22:23:59 - Found child process: 6752 Name: conhost.exe
+2022-03-11 22:23:59 - Found child process: 8052 Name: node.exe
+2022-03-11 22:23:59 - Stopping process 6752
+2022-03-11 22:23:59 - Send SIGINT 6752
+2022-03-11 22:23:59 - SIGINT to 6752 failed - Killing as fallback
+2022-03-11 22:23:59 - Stopping process 8052
+2022-03-11 22:23:59 - Send SIGINT 8052
+2022-03-11 22:23:59 - SIGINT to 8052 failed - Killing as fallback
+2022-03-11 22:23:59 - Stopping process 6628
+2022-03-11 22:23:59 - Send SIGINT 6628
+2022-03-11 22:23:59 - SIGINT to 6628 failed - Killing as fallback
+2022-03-11 22:23:59 - Finished serverfood.exe

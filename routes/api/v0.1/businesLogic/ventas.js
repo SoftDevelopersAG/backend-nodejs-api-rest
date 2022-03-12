@@ -13,6 +13,7 @@ const SchemaVenta = require('../../../../database/collection/models/venta');
 const moment = require('moment');
 const Verify = require('../../../../Utils/verifyCampos/verifyCampos');
 const socketControllers = require('../../../../socket/controllers/socketControllers');
+const { default: CallTickets } = require('./callTickets');
 
 
 class Ventas {
@@ -369,8 +370,11 @@ class Ventas {
                 var resultVentaUpdate = await VentaSchema.Venta.find({_id:idVenta, idNegocio:idNegocio});
                 var totalResults = resultVentaUpdate.length;
                 
+                // SOCKETS----
+               
                 socketControllers('[ventas] changeStateTickets',resultVentaUpdate);
-
+               
+                // ---SOCKETS---
                 return res.status(200).send({status:'ok',message:'stateOrdenRestaurante de la venta actualizado', totalResults:totalResults, result:resultVentaUpdate});
 
             }else{
@@ -383,6 +387,8 @@ class Ventas {
         }
       
     }
+
+   
 
     static async getNumeroTicket(req, res){
 
@@ -409,6 +415,9 @@ class Ventas {
     }
 
 }
+
+
+
 
 
 const listProductosPortVentas = async (idVentas) => {
