@@ -36,11 +36,20 @@ const Clientes =require('./businesLogic/clientes')
 const Gastos = require('./businesLogic/gastos');
 
 const PCategorias = require('./businesLogic/pCategoria');
+const NetworkConfig = require('../../../Utils/networkServices/networkConfig');
+const CallTickets = require('./businesLogic/callTickets');
 
 route.get('/',(req, res, next)=>{
     res.status(200).send({"messagae":"Api-rest food sales system runing"})
 })
 
+
+route.get('/get/ip/server', async(req, res, next)=>{
+    
+    const ipServer = await NetworkConfig.getIpServer();
+
+    res.status(200).send({"Status":"ok", "Message":"Consulta exitosa","Result":[{"ipServerFood":ipServer}]})
+});
 
 // endpoint test socket-io
 // io.on('connection',()=>{
@@ -143,6 +152,15 @@ route.post('/venta/create/:idNegocio/:idUser', Ventas.addNewVenta);
 route.post('/venta/list', Ventas.getVentas);
 route.get('/venta/listVentasUser/:idNegocio/:idUser', Ventas.getListVentasUser);
 route.get('/venta/listVentasRange/:idNegocio/:fechaInicio/:fechaFinal', Ventas.getListVentasRange);//ruta que mustra ventas en rangos de fecha
+route.get('/venta/list/states/stateOrdenRestaurante=:stateOrdenRestaurante?',Ventas.getStateVentas);
+route.post('/venta/update/stateOrdenRestaurante',Ventas.setStateOrdenRestaurante);
+route.get('/venta/list/products/idVenta=:idVenta',Ventas.getListProductsVentas);
+    //para ver el numero de ticket
+route.get('/venta/numero/ticket/idNegocio=:idNegocio',Ventas.getNumeroTicket)
+    // call tickets
+route.get('/venta/calltickets/stateOrdenRestaurante=:stateOrdenRestaurante?',CallTickets.dataVentasToCallTickets)
+
+
 
 //reporte de ventas y gastos por rango de fechas
 route.post('/reportGastosVentas/report1/:idNegocio/FechaInicio=:fechaInicio/FechaFinal=:fechaFinal',Ventas.reportGastosVentas);
@@ -154,6 +172,7 @@ route.get('/ventas/show/list/:idNegocio', Ventas.showListVentas);
 route.post('/products/add/:idNegocio/:idUser',[Auth], Products.addNewProduct);
 route.get('/products/get/list/:idNegocio', Products.getAllProducts);
 route.put('/products/update/:idProducto',[Auth, AccessRoleControl.isCocinero], Products.updateProducto);
+route.delete('/products/delete', Products.deleteProduct);
 
 /* =======================salas=============================== */
 route.post('/salas/create/:idUser/:idNegocio',[Auth, AccessRoleControl.isAdmin], SalasRoutes.create); // solo admin

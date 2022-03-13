@@ -11,7 +11,7 @@ const { producto } = require('../database/collection/models/producto');
 const User = require('../database/collection/models/user');
 const socketControllers = require('../socket/controllers/socketControllers');
 
-// congig beasic of mullter::::::::::
+// config basic of mullter::::::::::
 const storage = multer.diskStorage({
     destination: "./public/file",
     filename: (req, file, cb) => {
@@ -63,6 +63,7 @@ const uploadFile = (req, res) => {
                 physicalPath: req.file.path,
                 relativePath: ConfigApi.configApi[0].hostApi,    //  http://localhost:9000/
                 linkFile: ConfigApi.configApi[0].hostApi + ruta,
+                linkFilePartial:ruta,
                 size: req.file.size
             });
 
@@ -112,6 +113,7 @@ const uploadFileFotoProducto = (req, res) => {
                     physicalPath: req.file.path,
                     relativePath: ConfigApi.configApi[0].hostApi,    //  http://localhost:9000/
                     linkFile: ConfigApi.configApi[0].hostApi + ruta,
+                    linkFilePartial:ruta,
                     size: req.file.size
                 });
 
@@ -137,7 +139,6 @@ const uploadFileFotoProducto = (req, res) => {
                     //     res.status(200).send({restaurant:newRest})
                     // }
                 })
-                console.log(newFile, '878787')
             }
         } catch (error) {
             console.log(error);

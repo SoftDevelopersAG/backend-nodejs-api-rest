@@ -12,7 +12,7 @@ class NetworkConfig{
     static async updateIpServer(currentIP = ''){
        try{
             network.get_active_interface(function(err, data) {
-                console.log(data);
+                console.log(data.ip_address);
                 if(data.ip_address != ipServer.configApi[0].hostApi){
                     var data = {"configApi":[
                         {
@@ -29,6 +29,21 @@ class NetworkConfig{
            console.log("Error al actualizar la ip del servidor\n",error);
        }
         
+    }
+
+    static async getIpServer(){
+        try{
+   
+            var  ipServerCurrent  = fs.readFileSync(path.join(__dirname, '../../config/configApi.json'), 'utf8');
+            // console.log(JSON.parse(ipServerCurrent));
+            var ipServer = await JSON.parse(ipServerCurrent);
+        
+            return ipServer?.configApi[0]?.hostApi;
+        }
+        catch(error){
+            console.log("Error al obtener la ip del servidor\n",error);
+            return ipServer.configApi[0].hostApi;
+        }
     }
 }
 

@@ -21,9 +21,9 @@ svc.on('install',function(){
     svc.start();
 })
 
-svc.install();
-svc.start();
+//svc.install();
+// svc.start();
 // svc.uninstall();
-// svc.stop();
+svc.stop();
 
 // node nodeService.js
