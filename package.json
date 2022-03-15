@@ -7,8 +7,10 @@
     "start": "nodemon app.js",
     "start2": "node app.js"
   },
-  "nodemonConfig":{
-    "ignore":["config/configApi.json"]
+  "nodemonConfig": {
+    "ignore": [
+      "config/configApi.json"
+    ]
   },
   "bin": "app.js",
   "pkg": {
@@ -19,7 +21,6 @@
     ],
     "target": "node8"
   },
-
   "author": "GonzaloEspinoza",
   "license": "MIT",
   "dependencies": {
@@ -39,6 +40,7 @@
     "socket.io": "^4.4.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.14",
+    "nw-builder": "^3.5.7"
   }
 }
