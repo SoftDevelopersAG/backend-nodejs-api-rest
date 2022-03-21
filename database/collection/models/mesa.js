@@ -8,6 +8,7 @@ const Mesa = new Schema({
     numberChair:Number,
     numberClinetes:Number,
     idSala:String,
+    state  : {type: Boolean,default:false},
     dateCreate : { type : Date, default : Date.now },
     updateDate : { type : Date, default : Date.now },
 });

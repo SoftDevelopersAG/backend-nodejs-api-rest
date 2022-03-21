@@ -45,7 +45,7 @@ class Ventas {
             return res.status(206).json({ status: 'No fount', message: 'El pago del cliente es menor al cambio' })
         }
 
-
+        console.log(products, 'esto es del producto ============================================11111111111111111111')
 
         var stateVerify = await verifyListProducts(products);
         if (stateVerify.status === 'No fount') return res.status(206).send({ status: 'No fount', error: "venta no procesada", message: stateVerify });

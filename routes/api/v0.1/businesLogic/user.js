@@ -174,7 +174,7 @@ const signUp = async (req, res, next) => {
         idNegocio: idNegocio
     })
 
-    newUser.role = await Roles.find({ name: role === '' || role === undefined ? 'user' : role })
+    newUser.role = await Roles.find({ name: role === '' || role === undefined ? 'user' : role });
 
     const existEmail = await User.user.find({ email });
     const existCI = await User.user.find({ ci });

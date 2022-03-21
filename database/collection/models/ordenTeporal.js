@@ -18,10 +18,7 @@ const OrdenTemporal = new Schema({
 
 });
 
-
 var orderTemporal  = mongoose.model('ordertemporal', OrdenTemporal);
-
-
 
 module.exports = {
      orderTemporal

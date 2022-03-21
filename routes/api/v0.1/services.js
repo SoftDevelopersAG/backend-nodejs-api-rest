@@ -35,6 +35,8 @@ const Clientes =require('./businesLogic/clientes')
 //gastos y tipo de gastos y tipo
 const Gastos = require('./businesLogic/gastos');
 
+const Ordenes = require('./businesLogic/ordenes')
+
 const PCategorias = require('./businesLogic/pCategoria');
 const NetworkConfig = require('../../../Utils/networkServices/networkConfig');
 const CallTickets = require('./businesLogic/callTickets');
@@ -226,10 +228,18 @@ route.get('/galery/listAll/:idNegocio', GaleriaRoutes.list);
 route.put('/galery/update/:idGalery', galeryUpload.single('img'),  GaleriaRoutes.update);
 route.delete('/galery/delete/:idGalery', GaleriaRoutes.delete);
 
+//registrar orden
+route.post('/ordenes/create/:idRestaurant/:idMesero', Ordenes.registerOrdenMesa);
+route.put('/ordenes/updateOrden/:idOrden', Ordenes.updateOrden);
+route.get('/ordenes/ordenMesa/:idMesa',Ordenes.ordenMesa);
+route.get('/ordenes/listOrdenesCaja/:idRestaurant',Ordenes.listOrdenesCaja);
+//actualizar la orden a cancelado
+route.put('/ordenes/updateOrdenCancelado/:idOrden', Ordenes.updateOrdenCancelado);
 
 
 
-
+//para el cocinero 
+route.get('/ordenes/listOrdenMesaCocina/:idRestaurante',Ordenes.listOrdenMesaCocina)
 
 
 module.exports = route;
